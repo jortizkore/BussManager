@@ -1,0 +1,16 @@
+C:\Users\centro\source\repos\BussManager\BussManager\bin\Debug\BussManager.exe.config
+C:\Users\centro\source\repos\BussManager\BussManager\bin\Debug\BussManager.exe
+C:\Users\centro\source\repos\BussManager\BussManager\bin\Debug\BussManager.pdb
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Dashboard.resources
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Properties.Resources.resources
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.csproj.GenerateResource.cache
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.csproj.CoreCompileInputs.cache
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.exe
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.pdb
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.csprojAssemblyReference.cache
+C:\Users\centro\source\repos\BussManager\BussManager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.csproj.CopyComplete
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Login.frmLogin.resources
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Settings.modelo_equipos.frmModeloEquipos.resources
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Settings.clase_equipos.frmClases.resources
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Settings.Tipo_reparaciones.frmTipoReparaciones.resources
