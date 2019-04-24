@@ -36,9 +36,9 @@
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcaEqioposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoReparacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.claseDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testGrid = new System.Windows.Forms.DataGridView();
-            this.claseDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testGrid)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             this.loginToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(880, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(661, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,6 +69,7 @@
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
             this.equiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.equiposToolStripMenuItem.Text = "Equipos";
+            this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
             // 
             // accesoriosToolStripMenuItem
             // 
@@ -91,7 +92,7 @@
             this.tipoReparacionesToolStripMenuItem,
             this.claseDeEquiposToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.registrosToolStripMenuItem.Text = "Registros";
             // 
             // marcaEqioposToolStripMenuItem
@@ -108,6 +109,13 @@
             this.tipoReparacionesToolStripMenuItem.Text = "Tipo reparaciones";
             this.tipoReparacionesToolStripMenuItem.Click += new System.EventHandler(this.tipoReparacionesToolStripMenuItem_Click);
             // 
+            // claseDeEquiposToolStripMenuItem
+            // 
+            this.claseDeEquiposToolStripMenuItem.Name = "claseDeEquiposToolStripMenuItem";
+            this.claseDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.claseDeEquiposToolStripMenuItem.Text = "Clase de Equipos";
+            this.claseDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.claseDeEquiposToolStripMenuItem_Click);
+            // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
@@ -118,23 +126,16 @@
             // testGrid
             // 
             this.testGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.testGrid.Location = new System.Drawing.Point(16, 84);
+            this.testGrid.Location = new System.Drawing.Point(12, 95);
             this.testGrid.Name = "testGrid";
-            this.testGrid.Size = new System.Drawing.Size(852, 150);
+            this.testGrid.Size = new System.Drawing.Size(234, 150);
             this.testGrid.TabIndex = 1;
-            // 
-            // claseDeEquiposToolStripMenuItem
-            // 
-            this.claseDeEquiposToolStripMenuItem.Name = "claseDeEquiposToolStripMenuItem";
-            this.claseDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.claseDeEquiposToolStripMenuItem.Text = "Clase de Equipos";
-            this.claseDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.claseDeEquiposToolStripMenuItem_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 450);
+            this.ClientSize = new System.Drawing.Size(661, 450);
             this.Controls.Add(this.testGrid);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

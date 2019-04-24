@@ -14,3 +14,4 @@ C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Login
 C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Settings.modelo_equipos.frmModeloEquipos.resources
 C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Settings.clase_equipos.frmClases.resources
 C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Settings.Tipo_reparaciones.frmTipoReparaciones.resources
+C:\Users\centro\source\repos\BussManager\BussManager\obj\Debug\BussManager.Inventario.Equipos.frmEquipos.resources

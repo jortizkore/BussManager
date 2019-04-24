@@ -82,6 +82,18 @@ namespace BussManager.Settings.modelo_equipos
 
         }
 
+        public string TraerModelo(int id)
+        {
+            var result = TraerModelos().Where(m => m.id_modelo == id).First();
+            if (result != null)
+            {
+                return result.descripcion;
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }
 

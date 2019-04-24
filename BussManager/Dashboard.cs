@@ -11,6 +11,8 @@ using BussManager.Login;
 using BussManager.Settings.clase_equipos;
 using BussManager.Settings.modelo_equipos;
 using BussManager.Settings.Tipo_reparaciones;
+using BussManager.Inventario.Equipos;
+
 namespace BussManager
 {
     public partial class Dashboard : Form
@@ -52,6 +54,12 @@ namespace BussManager
         {
             frmClases frmClaseEquipos = new frmClases();
             frmClaseEquipos.ShowDialog();
+        }
+
+        private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEquipos frmEquipo = new frmEquipos();
+            frmEquipo.ShowDialog();
         }
     }
 }

@@ -18,12 +18,12 @@ namespace BussManager.Settings.clase_equipos
             var query = "Select * from clase";
             var result = db.bringJsonData(query);
 
-            if(result != string.Empty)
+            if (result != string.Empty)
             {
                 var clases = JArray.Parse(result);
                 foreach (var item in clases)
                 {
-                        list.Add(new clase
+                    list.Add(new clase
                     {
                         id = int.Parse(item["id_clase"].ToString()),
                         descripcion = item["clase"].ToString(),
@@ -61,7 +61,7 @@ namespace BussManager.Settings.clase_equipos
             });
 
             return db.CorrerSP(sp, parametros);
-            
+
         }
 
         public bool ModificarClase(int id, string clase, string comentario)
@@ -96,6 +96,23 @@ namespace BussManager.Settings.clase_equipos
             });
 
             return db.CorrerSP(sp, parametros);
+        }
+
+        public string TraerClase(int id)
+        {
+            return TraerClases().Where(c => c.id == id).First().descripcion;
+        }
+        public string TraerComentario(int id)
+        {
+            var result = TraerClases().Where(c => c.id == id).First();
+            if (result != null)
+            {
+                return result.comentario;
+            }
+            else
+            {
+                return "";
+            }
         }
     }
 }
