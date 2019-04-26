@@ -190,6 +190,7 @@
             this.grdEquipos.Name = "grdEquipos";
             this.grdEquipos.Size = new System.Drawing.Size(652, 221);
             this.grdEquipos.TabIndex = 14;
+            this.grdEquipos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquipos_CellDoubleClick);
             // 
             // txtFiltrarEquipo
             // 
@@ -199,6 +200,7 @@
             this.txtFiltrarEquipo.Name = "txtFiltrarEquipo";
             this.txtFiltrarEquipo.Size = new System.Drawing.Size(598, 20);
             this.txtFiltrarEquipo.TabIndex = 15;
+            this.txtFiltrarEquipo.TextChanged += new System.EventHandler(this.txtFiltrarEquipo_TextChanged);
             // 
             // label6
             // 

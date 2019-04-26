@@ -80,6 +80,34 @@ namespace BussManager.Inventario.Equipos
             grdEquipos.AutoResizeColumns();
         }
 
+        void LlenarGridCelulares(string filtro)
+        {
+            celular = new EquipoMovil();
+            clase = new ClaseEquipo();
+            modelo = new modeloEqupos();
+
+            var listaCelulares = celular.TraerTodos();
+            var listaMostrarCelulares = new List<CelularParaGrid>();
+
+            foreach (var cel in listaCelulares)
+            {
+                listaMostrarCelulares.Add(
+                    new CelularParaGrid
+                    {
+                        modelo = modelo.TraerModelo(cel.modelo),
+                        clase = clase.TraerClase(cel.clase),
+                        imei = cel.IMEI,
+                        costo = cel.costo.ToString(),
+                        precio = cel.precio.ToString()
+                    });
+            }
+
+            grdEquipos.DataSource = listaMostrarCelulares
+                        .Where(cels => cels.modelo.ToLower()
+                        .Contains(filtro.ToLower())).ToList();
+            grdEquipos.AutoResizeColumns();
+        }
+
         private void btnGuardarEquipo_Click(object sender, EventArgs e)
         {
             celular = new EquipoMovil();
@@ -122,6 +150,41 @@ namespace BussManager.Inventario.Equipos
         private void btnCancelarEquipo_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void grdEquipos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                celular = new EquipoMovil();
+                var imei = grdEquipos.Rows[e.RowIndex].Cells[2].Value.ToString();
+                var equipo = celular.TraerEquipo(imei);
+
+                txtImeiEquipo.Text = equipo.IMEI;
+                txtCostoEquipo.Text = equipo.costo.ToString();
+                txtPrecioEquipo.Text = equipo.precio.ToString();
+
+                cmbClaseEquipo.SelectedValue = equipo.clase;
+                cmbEquipoCelular.SelectedValue = equipo.modelo;
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
+        private void txtFiltrarEquipo_TextChanged(object sender, EventArgs e)
+        {
+            celular = new EquipoMovil();
+            var filter = txtFiltrarEquipo.Text;
+            if ( filter == "")
+            {
+                LlenarGridCelulares();
+            }
+            else
+            {
+                LlenarGridCelulares(txtFiltrarEquipo.Text);
+            }
         }
     }
 

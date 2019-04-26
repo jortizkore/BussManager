@@ -45,6 +45,16 @@ namespace BussManager.Inventario.Equipos
             };
         }
 
+        public Equipo TraerEquipo(string imei)
+        {
+            var equipo = TraerTodos().Where(e => e.IMEI == imei).FirstOrDefault();
+            if (equipo != null)
+            {
+                return equipo;
+            }
+            return new Equipo();
+        }
+
         public bool GuardarEquipo(int marca, int clase, string imei, decimal costo, decimal precio)
         {
             db = new ConnectionSettings();
@@ -80,6 +90,58 @@ namespace BussManager.Inventario.Equipos
                 nombre = "@precio",
                 tipo = System.Data.SqlDbType.Decimal,
                 valor = precio.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@responseMessage",
+                tipo = System.Data.SqlDbType.VarChar,
+                valor = ""
+            });
+
+            return db.CorrerSP(sp, parametros);
+        }
+
+        public bool venderEquipo(int marca, int clase, string imei, decimal costo, decimal precio)
+        {
+            db = new ConnectionSettings();
+            var sp = "Insertar_Venta_celular";
+            var parametros = new List<parametro>();
+
+            parametros.Add(new parametro
+            {
+                nombre = "@marca",
+                tipo = System.Data.SqlDbType.Int,
+                valor = marca.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@clase",
+                tipo = System.Data.SqlDbType.Int,
+                valor = clase.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@imei",
+                tipo = System.Data.SqlDbType.VarChar,
+                valor = imei
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@costo",
+                tipo = System.Data.SqlDbType.Decimal,
+                valor = costo.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@precio",
+                tipo = System.Data.SqlDbType.Decimal,
+                valor = precio.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@fecha_venta",
+                tipo = System.Data.SqlDbType.Date,
+                valor = DateTime.Today.ToString()
             });
             parametros.Add(new parametro
             {
