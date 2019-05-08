@@ -88,6 +88,55 @@ namespace BussManager.Inventario.Accesorios
             
         }
 
+        public bool InsertarAccesorio(string descripcion, int cantidad, decimal costo_venta, decimal precio_venta, DateTime fecha_venta)
+        {
+            db = new ConnectionSettings();
+            var sp = "sp_insertar_venta_accesorio";
+            var parametros = new List<parametro>();
+
+            parametros.Add(new parametro
+            {
+                nombre = "@articulo",
+                tipo = System.Data.SqlDbType.VarChar,
+                valor = descripcion
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@cantidad",
+                tipo = System.Data.SqlDbType.VarChar,
+                valor = cantidad
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@costo_venta",
+                tipo = System.Data.SqlDbType.Decimal,
+                valor = costo_venta.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@precio_venta",
+                tipo = System.Data.SqlDbType.Decimal,
+                valor = precio_venta.ToString()
+
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@fecha_venta",
+                tipo = System.Data.SqlDbType.Decimal,
+                valor = fecha_venta.ToString()
+
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@responseMessage",
+                tipo = System.Data.SqlDbType.VarChar,
+                valor = ""
+            });
+
+            return db.CorrerSP(sp, parametros);
+
+        }
+
     }
 
     public class Accesorio
