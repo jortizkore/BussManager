@@ -53,6 +53,13 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventario\Accesorios\Accesorio.servicio.cs" />
+    <Compile Include="Inventario\Accesorios\frmCompraAccesorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Accesorios\frmCompraAccesorio.Designer.cs">
+      <DependentUpon>frmCompraAccesorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\Equipos\Equipo.servicio.cs" />
     <Compile Include="Inventario\Equipos\frmEquipos.cs">
       <SubType>Form</SubType>
@@ -96,6 +103,9 @@
     <Compile Include="Settings\Tipo_reparaciones\TipoReparaciones.cs" />
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Accesorios\frmCompraAccesorio.resx">
+      <DependentUpon>frmCompraAccesorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\Equipos\frmEquipos.resx">
       <DependentUpon>frmEquipos.cs</DependentUpon>
@@ -147,8 +157,6 @@
   <ItemGroup>
     <None Include="Resources\userImage.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Inventario\Accesorios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

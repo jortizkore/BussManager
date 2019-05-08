@@ -39,6 +39,8 @@
             this.claseDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testGrid = new System.Windows.Forms.DataGridView();
+            this.registrarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPerdidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testGrid)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +75,9 @@
             // 
             // accesoriosToolStripMenuItem
             // 
+            this.accesoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarCompraToolStripMenuItem,
+            this.registrarPerdidaToolStripMenuItem});
             this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
             this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accesoriosToolStripMenuItem.Text = "Accesorios";
@@ -131,6 +136,18 @@
             this.testGrid.Size = new System.Drawing.Size(234, 150);
             this.testGrid.TabIndex = 1;
             // 
+            // registrarCompraToolStripMenuItem
+            // 
+            this.registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
+            this.registrarCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarCompraToolStripMenuItem.Text = "Registrar compra";
+            // 
+            // registrarPerdidaToolStripMenuItem
+            // 
+            this.registrarPerdidaToolStripMenuItem.Name = "registrarPerdidaToolStripMenuItem";
+            this.registrarPerdidaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarPerdidaToolStripMenuItem.Text = "Registrar perdida";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +180,8 @@
         private System.Windows.Forms.DataGridView testGrid;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem claseDeEquiposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarPerdidaToolStripMenuItem;
     }
 }
 
