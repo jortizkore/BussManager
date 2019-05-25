@@ -94,6 +94,13 @@
       <DependentUpon>frmModeloEquipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\modelo_equipos\modeloEqupos.servicio.cs" />
+    <Compile Include="Settings\proveedores\frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\proveedores\frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\proveedores\proveedores.servicio.cs" />
     <Compile Include="Settings\Tipo_reparaciones\frmTipoReparaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\modelo_equipos\frmModeloEquipos.resx">
       <DependentUpon>frmModeloEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\proveedores\frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\Tipo_reparaciones\frmTipoReparaciones.resx">
       <DependentUpon>frmTipoReparaciones.cs</DependentUpon>

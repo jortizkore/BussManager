@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using BussManager.Inventario.Equipos;
 using BussManager.Settings.modelo_equipos;
 using BussManager.Settings.clase_equipos;
+using BussManager.Settings.proveedores;
+using BussManager.Settings;
 using System.Windows.Forms;
 
 namespace BussManager.Inventario.Equipos
@@ -19,6 +21,7 @@ namespace BussManager.Inventario.Equipos
         EquipoMovil celular;
         ClaseEquipo clase;
         modeloEqupos modelo;
+        ServicioProveedores prov;
 
         public frmEquipos()
         {
@@ -35,6 +38,7 @@ namespace BussManager.Inventario.Equipos
         {
             LlenarComboClases();
             LlenarComboModelos();
+            LlenarComboProveedores();
         }
 
         void LlenarComboClases()
@@ -43,6 +47,14 @@ namespace BussManager.Inventario.Equipos
             cmbClaseEquipo.DataSource = clase.TraerClases();
             cmbClaseEquipo.DisplayMember = "descripcion";
             cmbClaseEquipo.ValueMember = "id";
+        }
+
+        void LlenarComboProveedores()
+        {
+            prov = new ServicioProveedores();
+            cmbProveedor.DataSource = prov.TraerProveedores();
+            cmbProveedor.DisplayMember = "descripcion";
+            cmbProveedor.ValueMember = "id";
         }
 
         void LlenarComboModelos()
@@ -59,6 +71,7 @@ namespace BussManager.Inventario.Equipos
             celular = new EquipoMovil();
             clase = new ClaseEquipo();
             modelo = new modeloEqupos();
+            prov = new ServicioProveedores();
 
             var listaCelulares = celular.TraerTodos();
             var listaMostrarCelulares = new List<CelularParaGrid>();
@@ -72,12 +85,15 @@ namespace BussManager.Inventario.Equipos
                         clase = clase.TraerClase(cel.clase),
                         imei = cel.IMEI,
                         costo = cel.costo.ToString(),
-                        precio = cel.precio.ToString()
+                        precio = cel.precio.ToString(),
+                        proveedor = prov.TraerProveedor(cel.proveedor).descripcion
                     });
             }
 
             grdEquipos.DataSource = listaMostrarCelulares;
             grdEquipos.AutoResizeColumns();
+            lblCantidadEquipos.Text = grdEquipos.RowCount.ToString("n");
+            lblTotalEnEquipos.Text = listaMostrarCelulares.Sum(x => decimal.Parse(x.precio)).ToString("c");
         }
 
         void LlenarGridCelulares(string filtro)
@@ -85,6 +101,8 @@ namespace BussManager.Inventario.Equipos
             celular = new EquipoMovil();
             clase = new ClaseEquipo();
             modelo = new modeloEqupos();
+            prov = new ServicioProveedores();
+            
 
             var listaCelulares = celular.TraerTodos();
             var listaMostrarCelulares = new List<CelularParaGrid>();
@@ -98,7 +116,8 @@ namespace BussManager.Inventario.Equipos
                         clase = clase.TraerClase(cel.clase),
                         imei = cel.IMEI,
                         costo = cel.costo.ToString(),
-                        precio = cel.precio.ToString()
+                        precio = cel.precio.ToString(),
+                        proveedor = prov.TraerProveedor(cel.proveedor).descripcion
                     });
             }
 
@@ -110,20 +129,28 @@ namespace BussManager.Inventario.Equipos
 
         private void btnGuardarEquipo_Click(object sender, EventArgs e)
         {
-            celular = new EquipoMovil();
-            var marca = int.Parse(cmbEquipoCelular.SelectedValue.ToString());
-            var clase = int.Parse(cmbClaseEquipo.SelectedValue.ToString());
-            var imei = txtImeiEquipo.Text;
-            var costo = decimal.Parse(txtCostoEquipo.Text);
-            var precio = decimal.Parse(txtPrecioEquipo.Text);
+            try
+            {
+                celular = new EquipoMovil();
+                var marca = int.Parse(cmbEquipoCelular.SelectedValue.ToString());
+                var clase = int.Parse(cmbClaseEquipo.SelectedValue.ToString());
+                var imei = txtImeiEquipo.Text;
+                var costo = decimal.Parse(txtCostoEquipo.Text);
+                var precio = decimal.Parse(txtPrecioEquipo.Text);
+                var proveedor = int.Parse(cmbProveedor.SelectedValue.ToString());
 
-            if (celular.GuardarEquipo(marca, clase, imei, costo, precio))
-            {
-                Settings.MessageManager.InfoMessage("Almacenado con éxito");
+                if (celular.GuardarEquipo(marca, clase, imei, costo, precio, proveedor))
+                {
+                    MessageManager.InfoMessage("Almacenado con éxito");
+                }
+                else
+                {
+                    MessageManager.AlerMessage("Error al intentar realizar el cambio!");
+                }
             }
-            else
+            catch (Exception)
             {
-                Settings.MessageManager.AlerMessage("Error al intentar realizar el cambio!");
+                MessageManager.AlerMessage("Llene todos los campos correctamente!");
             }
 
             Limpiar();
@@ -195,5 +222,6 @@ namespace BussManager.Inventario.Equipos
         public string imei { get; set; }
         public string costo { get; set; }
         public string precio { get; set; }
+        public string proveedor { get; set; }
     }
 }

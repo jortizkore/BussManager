@@ -42,6 +42,7 @@ namespace BussManager.Inventario.Equipos
                 IMEI = json["IMEI"].ToString(),
                 costo = decimal.Parse(json["costo"].ToString()),
                 precio = decimal.Parse(json["precio"].ToString()),
+                proveedor = int.Parse(json["proveedor"].ToString())
             };
         }
 
@@ -55,7 +56,7 @@ namespace BussManager.Inventario.Equipos
             return new Equipo();
         }
 
-        public bool GuardarEquipo(int marca, int clase, string imei, decimal costo, decimal precio)
+        public bool GuardarEquipo(int marca, int clase, string imei, decimal costo, decimal precio, int proveedor)
         {
             db = new ConnectionSettings();
             var sp = "sp_insertar_celular";
@@ -93,6 +94,12 @@ namespace BussManager.Inventario.Equipos
             });
             parametros.Add(new parametro
             {
+                nombre = "@proveedor",
+                tipo = System.Data.SqlDbType.Int,
+                valor = proveedor.ToString()
+            });
+            parametros.Add(new parametro
+            {
                 nombre = "@responseMessage",
                 tipo = System.Data.SqlDbType.VarChar,
                 valor = ""
@@ -101,7 +108,7 @@ namespace BussManager.Inventario.Equipos
             return db.CorrerSP(sp, parametros);
         }
 
-        public bool venderEquipo(int marca, int clase, string imei, decimal costo, decimal precio)
+        public bool venderEquipo(int marca, int clase, string imei, decimal costo, decimal precio, int proveedor)
         {
             db = new ConnectionSettings();
             var sp = "Insertar_Venta_celular";
@@ -142,6 +149,12 @@ namespace BussManager.Inventario.Equipos
                 nombre = "@fecha_venta",
                 tipo = System.Data.SqlDbType.Date,
                 valor = DateTime.Today.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@proveedor",
+                tipo = System.Data.SqlDbType.Int,
+                valor = proveedor.ToString()
             });
             parametros.Add(new parametro
             {
@@ -208,5 +221,6 @@ namespace BussManager.Inventario.Equipos
         public string IMEI { get; set; }
         public decimal costo { get; set; }
         public decimal precio { get; set; }
+        public int proveedor { get; set; }
     }
 }
