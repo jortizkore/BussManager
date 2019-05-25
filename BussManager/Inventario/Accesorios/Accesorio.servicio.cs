@@ -103,8 +103,8 @@ namespace BussManager.Inventario.Accesorios
             parametros.Add(new parametro
             {
                 nombre = "@cantidad",
-                tipo = System.Data.SqlDbType.VarChar,
-                valor = cantidad
+                tipo = System.Data.SqlDbType.Int,
+                valor = cantidad.ToString()
             });
             parametros.Add(new parametro
             {

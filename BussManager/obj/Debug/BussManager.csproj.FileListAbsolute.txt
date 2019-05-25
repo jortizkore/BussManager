@@ -32,3 +32,5 @@ D:\Projects\BussManager\BussManager\obj\Debug\BussManager.csproj.CoreCompileInpu
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.csproj.CopyComplete
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.exe
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.pdb
+D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Inventario.Accesorios.frmCompraAccesorio.resources
+D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Settings.proveedores.frmProveedores.resources
