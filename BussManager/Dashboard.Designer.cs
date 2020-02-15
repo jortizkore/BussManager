@@ -32,17 +32,16 @@
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPerdidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcaEqioposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoReparacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.claseDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testGrid = new System.Windows.Forms.DataGridView();
-            this.registrarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarPerdidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.testGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -77,10 +76,31 @@
             // 
             this.accesoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarCompraToolStripMenuItem,
-            this.registrarPerdidaToolStripMenuItem});
+            this.registrarPerdidaToolStripMenuItem,
+            this.inventarioToolStripMenuItem});
             this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
             this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accesoriosToolStripMenuItem.Text = "Accesorios";
+            // 
+            // registrarCompraToolStripMenuItem
+            // 
+            this.registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
+            this.registrarCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarCompraToolStripMenuItem.Text = "Registrar compra";
+            this.registrarCompraToolStripMenuItem.Click += new System.EventHandler(this.registrarCompraToolStripMenuItem_Click);
+            // 
+            // registrarPerdidaToolStripMenuItem
+            // 
+            this.registrarPerdidaToolStripMenuItem.Name = "registrarPerdidaToolStripMenuItem";
+            this.registrarPerdidaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarPerdidaToolStripMenuItem.Text = "Registrar perdida";
+            this.registrarPerdidaToolStripMenuItem.Click += new System.EventHandler(this.registrarPerdidaToolStripMenuItem_Click);
+            // 
+            // inventarioToolStripMenuItem
+            // 
+            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inventarioToolStripMenuItem.Text = "Inventario";
             // 
             // configuraciónToolStripMenuItem
             // 
@@ -97,7 +117,7 @@
             this.tipoReparacionesToolStripMenuItem,
             this.claseDeEquiposToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrosToolStripMenuItem.Text = "Registros";
             // 
             // marcaEqioposToolStripMenuItem
@@ -128,32 +148,11 @@
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
-            // testGrid
-            // 
-            this.testGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.testGrid.Location = new System.Drawing.Point(12, 95);
-            this.testGrid.Name = "testGrid";
-            this.testGrid.Size = new System.Drawing.Size(234, 150);
-            this.testGrid.TabIndex = 1;
-            // 
-            // registrarCompraToolStripMenuItem
-            // 
-            this.registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
-            this.registrarCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarCompraToolStripMenuItem.Text = "Registrar compra";
-            // 
-            // registrarPerdidaToolStripMenuItem
-            // 
-            this.registrarPerdidaToolStripMenuItem.Name = "registrarPerdidaToolStripMenuItem";
-            this.registrarPerdidaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarPerdidaToolStripMenuItem.Text = "Registrar perdida";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 450);
-            this.Controls.Add(this.testGrid);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dashboard";
@@ -161,7 +160,6 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.testGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,11 +175,11 @@
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcaEqioposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoReparacionesToolStripMenuItem;
-        private System.Windows.Forms.DataGridView testGrid;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem claseDeEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPerdidaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
     }
 }
 

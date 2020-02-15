@@ -34,3 +34,4 @@ D:\Projects\BussManager\BussManager\obj\Debug\BussManager.exe
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.pdb
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Inventario.Accesorios.frmCompraAccesorio.resources
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Settings.proveedores.frmProveedores.resources
+D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Inventario.Accesorios.frmPerdidaAccesorio.resources

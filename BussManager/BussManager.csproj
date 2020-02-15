@@ -60,6 +60,13 @@
     <Compile Include="Inventario\Accesorios\frmCompraAccesorio.Designer.cs">
       <DependentUpon>frmCompraAccesorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventario\Accesorios\frmPerdidaAccesorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Accesorios\frmPerdidaAccesorio.Designer.cs">
+      <DependentUpon>frmPerdidaAccesorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Accesorios\PerdiadAcceorio.cs" />
     <Compile Include="Inventario\Equipos\Equipo.servicio.cs" />
     <Compile Include="Inventario\Equipos\frmEquipos.cs">
       <SubType>Form</SubType>
@@ -113,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\Accesorios\frmCompraAccesorio.resx">
       <DependentUpon>frmCompraAccesorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Accesorios\frmPerdidaAccesorio.resx">
+      <DependentUpon>frmPerdidaAccesorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\Equipos\frmEquipos.resx">
       <DependentUpon>frmEquipos.cs</DependentUpon>

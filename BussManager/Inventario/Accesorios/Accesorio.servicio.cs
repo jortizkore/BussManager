@@ -27,6 +27,7 @@ namespace BussManager.Inventario.Accesorios
                 {
                     returnList.Add(new Accesorio
                     {
+                        ID = int.Parse(item["id_accesorio"].ToString()),
                         Descripcion = item["descripcion"].ToString(),
                         Costo = decimal.Parse(item["costo"].ToString()),
                         Precio = decimal.Parse(item["precio"].ToString())
@@ -38,11 +39,14 @@ namespace BussManager.Inventario.Accesorios
         }
 
 
-        Accesorio TraerAccesorio(string descripcion)
+        public Accesorio TraerAccesorio(string descripcion)
         {
             try
             {
-                var Result = TraerAccesorios().Where(ac => ac.Descripcion == descripcion).FirstOrDefault();
+                var Result = TraerAccesorios()
+                                .Where(ac => ac.Descripcion == descripcion)
+                                .FirstOrDefault();
+                    
                 return Result;
             }
             catch (Exception)
@@ -50,6 +54,48 @@ namespace BussManager.Inventario.Accesorios
             }
 
             return new Accesorio();
+        }
+
+        public Accesorio TraerAccesorio(int id)
+        {
+            try
+            {
+                var Result = TraerAccesorios()
+                                .Where(ac => ac.ID == id)
+                                .FirstOrDefault();
+
+                return Result;
+            }
+            catch (Exception)
+            {
+            }
+
+            return new Accesorio();
+        }
+
+        public List<Accesorio> FiltroAccesorios(string descripcion)
+        {
+            var returnList = new List<Accesorio>();
+            var query = $"Select * from accesorios where descripcion like '%{ descripcion }%'";
+            var result = db.bringJsonData(query);
+
+            if (result != string.Empty)
+            {
+                var JsonResult = JArray.Parse(result);
+
+                foreach (var item in JsonResult)
+                {
+                    returnList.Add(new Accesorio
+                    {
+                        ID = int.Parse(item["id_accesorio"].ToString()),
+                        Descripcion = item["descripcion"].ToString(),
+                        Costo = decimal.Parse(item["costo"].ToString()),
+                        Precio = decimal.Parse(item["precio"].ToString())
+                    });
+                }
+            }
+
+            return returnList;
         }
 
         public bool InsertarAccesorio(string descripcion, decimal costo, decimal precio)
@@ -88,17 +134,17 @@ namespace BussManager.Inventario.Accesorios
             
         }
 
-        public bool InsertarAccesorio(string descripcion, int cantidad, decimal costo_venta, decimal precio_venta, DateTime fecha_venta)
+        public bool InsertarAccesorio(Accesorio acc, int cantidad,  DateTime fecha_venta)
         {
             db = new ConnectionSettings();
-            var sp = "sp_insertar_venta_accesorio";
+            var sp = "sp_insertar_compra_accesorio";
             var parametros = new List<parametro>();
 
             parametros.Add(new parametro
             {
-                nombre = "@articulo",
+                nombre = "@accesorio",
                 tipo = System.Data.SqlDbType.VarChar,
-                valor = descripcion
+                valor = acc.Descripcion
             });
             parametros.Add(new parametro
             {
@@ -108,21 +154,21 @@ namespace BussManager.Inventario.Accesorios
             });
             parametros.Add(new parametro
             {
-                nombre = "@costo_venta",
+                nombre = "@costo_unidad",
                 tipo = System.Data.SqlDbType.Decimal,
-                valor = costo_venta.ToString()
+                valor = acc.Costo.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@precio_venta",
                 tipo = System.Data.SqlDbType.Decimal,
-                valor = precio_venta.ToString()
+                valor = acc.Precio.ToString()
 
             });
             parametros.Add(new parametro
             {
-                nombre = "@fecha_venta",
-                tipo = System.Data.SqlDbType.Decimal,
+                nombre = "@fecha_compra",
+                tipo = System.Data.SqlDbType.Date,
                 valor = fecha_venta.ToString()
 
             });
@@ -141,6 +187,7 @@ namespace BussManager.Inventario.Accesorios
 
     public class Accesorio
     {
+        public int ID { get; set; }
         public string Descripcion { get; set; }
         public decimal Costo { get; set; }
         public decimal Precio { get; set; }
