@@ -12,6 +12,8 @@ using BussManager.Settings.clase_equipos;
 using BussManager.Settings.modelo_equipos;
 using BussManager.Settings.Tipo_reparaciones;
 using BussManager.Inventario.Equipos;
+using BussManager.Venta;
+using BussManager.Inventario.Accesorios;
 
 namespace BussManager
 {
@@ -26,9 +28,9 @@ namespace BussManager
         {
             BussManager.recursos_humanos.ServicioRecursoHumano rh = new recursos_humanos.ServicioRecursoHumano();
 
-            testGrid.DataSource = rh.TraerRecursosHumanos();
-            //this.Enabled = false;
-            //loginToolStripMenuItem_Click(null, null);
+            // testGrid.DataSource = rh.TraerRecursosHumanos();
+            // this.Enabled = false;
+            // loginToolStripMenuItem_Click(null, null);
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,6 +62,24 @@ namespace BussManager
         {
             frmEquipos frmEquipo = new frmEquipos();
             frmEquipo.ShowDialog();
+        }
+
+        private void registrarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompraAccesorio frmCompraAcc = new frmCompraAccesorio();
+            frmCompraAcc.ShowDialog();
+        }
+
+        private void registrarPerdidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPerdidaAccesorio frm = new frmPerdidaAccesorio();
+            frm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Venta.Accesorios.frmVentasAcc frm = new Venta.Accesorios.frmVentasAcc();
+            frm.Show();
         }
     }
 }

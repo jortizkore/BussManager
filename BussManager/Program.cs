@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BussManager.Settings;
 using BussManager.recursos_humanos;
 
 namespace BussManager
@@ -20,7 +21,15 @@ namespace BussManager
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+            try
+            {
+
+                Application.Run(new Dashboard());
+            }
+            catch (Exception ex)
+            {
+                MessageManager.InfoMessage(ex.Message + " | " + ex.InnerException + " | " + ex.StackTrace);
+            }
         }
     }
 }

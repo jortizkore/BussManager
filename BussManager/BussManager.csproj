@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,6 +75,13 @@
     <Compile Include="Inventario\Accesorios\frmCompraAccesorio.Designer.cs">
       <DependentUpon>frmCompraAccesorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventario\Accesorios\frmPerdidaAccesorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Accesorios\frmPerdidaAccesorio.Designer.cs">
+      <DependentUpon>frmPerdidaAccesorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Accesorios\PerdiadAcceorio.cs" />
     <Compile Include="Inventario\Equipos\Equipo.servicio.cs" />
     <Compile Include="Inventario\Equipos\frmEquipos.cs">
       <SubType>Form</SubType>
@@ -108,11 +130,52 @@
       <DependentUpon>frmTipoReparaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\Tipo_reparaciones\TipoReparaciones.cs" />
+    <Compile Include="Venta\Accesorios\Factura.servicio.cs" />
+    <Compile Include="Venta\Accesorios\frmVentasAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Accesorios\frmVentasAcc.Designer.cs">
+      <DependentUpon>frmVentasAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Accesorios\FrmAccReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Accesorios\FrmAccReportes.Designer.cs">
+      <DependentUpon>FrmAccReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Accesorios\VentaAcc.servicio.cs" />
+    <Compile Include="Venta\Equipos\frmReporteVentaEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Equipos\frmReporteVentaEquipos.Designer.cs">
+      <DependentUpon>frmReporteVentaEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Equipos\frmVentaEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Equipos\frmVentaEquipos.Designer.cs">
+      <DependentUpon>frmVentaEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Reparaciones\frmReporteReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Reparaciones\frmReporteReparaciones.Designer.cs">
+      <DependentUpon>frmReporteReparaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Reparaciones\frmVentaReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Reparaciones\frmVentaReparaciones.Designer.cs">
+      <DependentUpon>frmVentaReparaciones.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\Accesorios\frmCompraAccesorio.resx">
       <DependentUpon>frmCompraAccesorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Accesorios\frmPerdidaAccesorio.resx">
+      <DependentUpon>frmPerdidaAccesorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\Equipos\frmEquipos.resx">
       <DependentUpon>frmEquipos.cs</DependentUpon>
@@ -142,6 +205,9 @@
     <EmbeddedResource Include="Settings\Tipo_reparaciones\frmTipoReparaciones.resx">
       <DependentUpon>frmTipoReparaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Venta\Accesorios\frmVentasAcc.resx">
+      <DependentUpon>frmVentasAcc.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,6 +233,17 @@
   <ItemGroup>
     <None Include="Resources\userImage.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
