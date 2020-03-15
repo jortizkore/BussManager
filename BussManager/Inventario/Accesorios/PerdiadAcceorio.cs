@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace BussManager.Inventario.Accesorios
 {
-    class PerdiadAcceorio
+    public class PerdiadAcceorio
     {
         public int ID { get; set; }
         public string Accesorio { get; set; }
@@ -108,7 +108,14 @@ namespace BussManager.Inventario.Accesorios
         public List<PerdiadAcceorio> TraerPerdidas(string accesorio)
         {
             var listaPerdiads = TraerPerdidas();
-            return listaPerdiads.Where(p => p.Accesorio == accesorio).ToList();
+            return listaPerdiads.Where(p => p.Accesorio.ToLower()
+                                .Contains(accesorio.ToLower())).ToList();
+        }
+
+        public List<PerdiadAcceorio> TraerPerdidas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            var listaPerdiads = TraerPerdidas();
+            return listaPerdiads.Where(p => p.Fecha >= fechaInicio && p.Fecha <= fechaFin).ToList();
         }
 
 
@@ -116,13 +123,13 @@ namespace BussManager.Inventario.Accesorios
         {
             var res = new PerdiadAcceorio();
 
-            res.ID = Convert.ToInt32(json["accesorio"].ToString());
+            res.ID = Convert.ToInt32(json["id_perdida"].ToString());
             res.Accesorio = json["accesorio"].ToString();
             res.Cantidad = Convert.ToInt32(json["cantidad"].ToString());
             res.Costo = Convert.ToDecimal(json["costo"].ToString());
             res.Fecha = Convert.ToDateTime(json["fecha"].ToString());
             res.TipoPerdida = json["tipo_perdida"].ToString();
-            res.Responsable = Convert.ToInt32(json["accesorio"].ToString());
+            res.Responsable = Convert.ToInt32(json["responsable"].ToString());
             return res;
         }
 

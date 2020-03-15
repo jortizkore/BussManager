@@ -37,7 +37,27 @@ namespace BussManager.Inventario.Accesorios
 
             return returnList;
         }
+        public List<Accesorio> TraerAccesoriosParaCombo()
+        {
+            var returnList = new List<Accesorio>();
+            var query = "select distinct(descripcion) from accesorios";
+            var result = db.bringJsonData(query);
 
+            if (result != string.Empty)
+            {
+                var JsonResult = JArray.Parse(result);
+
+                foreach (var item in JsonResult)
+                {
+                    returnList.Add(new Accesorio
+                    {
+                        Descripcion = item["descripcion"].ToString(),
+                     });
+                }
+            }
+
+            return returnList;
+        }
 
         public Accesorio TraerAccesorio(string descripcion)
         {
@@ -181,6 +201,11 @@ namespace BussManager.Inventario.Accesorios
 
             return db.CorrerSP(sp, parametros);
 
+        }
+
+        public int TraerCantidadAccesorio(string acc)
+        {
+            return FiltroAccesorios(acc).Count;            
         }
 
     }

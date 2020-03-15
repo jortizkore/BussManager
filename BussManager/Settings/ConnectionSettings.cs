@@ -53,6 +53,7 @@ namespace BussManager.Settings
         {
             this.command.CommandType = CommandType.Text;
             this.command.CommandText = query;
+            table = new DataTable();
             if (this.connect())
             {
                 adapter.SelectCommand = this.command;

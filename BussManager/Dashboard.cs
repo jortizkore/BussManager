@@ -12,6 +12,7 @@ using BussManager.Settings.clase_equipos;
 using BussManager.Settings.modelo_equipos;
 using BussManager.Settings.Tipo_reparaciones;
 using BussManager.Inventario.Equipos;
+using BussManager.Venta;
 using BussManager.Inventario.Accesorios;
 
 namespace BussManager
@@ -73,6 +74,12 @@ namespace BussManager
         {
             frmPerdidaAccesorio frm = new frmPerdidaAccesorio();
             frm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Venta.Accesorios.frmVentasAcc frm = new Venta.Accesorios.frmVentasAcc();
+            frm.Show();
         }
     }
 }

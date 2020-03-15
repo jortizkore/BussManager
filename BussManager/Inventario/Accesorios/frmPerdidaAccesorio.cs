@@ -27,6 +27,29 @@ namespace BussManager.Inventario.Accesorios
         {
             CargarAccesorios();
             CargarResponsables();
+            cargarGridPerdidas();
+        }
+
+        private void cargarGridPerdidas()
+        {
+            PerdiadAcceorio pa = new PerdiadAcceorio();
+            var listaPerdidas = pa.TraerPerdidas();
+            gridPerdidas.DataSource = listaPerdidas;
+            calcularCantidadCosto(listaPerdidas);
+        }
+
+        private void cargarGridPerdidas(string filtro)
+        {
+            PerdiadAcceorio pa = new PerdiadAcceorio();
+            var listaPerdidas = pa.TraerPerdidas(filtro);
+            gridPerdidas.DataSource = listaPerdidas;
+            calcularCantidadCosto(listaPerdidas);
+        }
+
+        private void calcularCantidadCosto(List<PerdiadAcceorio> lpa)
+        {
+            lblCantidadPerdiads.Text = lpa.Count.ToString();
+            lblCostoPerdidas.Text = lpa.Sum(p => p.Costo).ToString("C");
         }
 
         private void CargarAccesorios()
@@ -70,6 +93,10 @@ namespace BussManager.Inventario.Accesorios
             {
                 MessageManager.ErrorMessage(ex.Message);
             }
+            finally
+            {
+                LimpiarFormularioPerdidas();
+            }
         }
 
         private void CmbAccesorioPerdiada_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,7 +117,30 @@ namespace BussManager.Inventario.Accesorios
 
         void LimpiarFormularioPerdidas()
         {
+            CargarAccesorios();
+            CargarResponsables();
+            numCantidadPerdida.Value = 0;
+            numCostoUnidadPerdida.Value = 0;
+            txtTipoPerdida.Text = string.Empty;
+        }
 
+        private void txtFiltroPerdidas_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtFiltroPerdidas.Text.Trim() != "")
+                {
+                    cargarGridPerdidas(txtFiltroPerdidas.Text);
+                }
+                else
+                {
+                    cargarGridPerdidas();
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
         }
     }
 }
