@@ -100,7 +100,15 @@ namespace BussManager.Settings.clase_equipos
 
         public string TraerClase(int id)
         {
-            return TraerClases().Where(c => c.id == id).First().descripcion;
+            try
+            {
+                return TraerClases().Where(c => c.id == id).First().descripcion;
+            }
+            catch (Exception)
+            {
+                return "--";
+            }
+            
         }
         public string TraerComentario(int id)
         {
