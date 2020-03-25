@@ -76,10 +76,17 @@ namespace BussManager
             frm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void cmdLlamarVentaAcc_Click(object sender, EventArgs e)
         {
             Venta.Accesorios.frmVentasAcc frm = new Venta.Accesorios.frmVentasAcc();
-            frm.Show();
+            frm.ShowDialog();
+        }
+
+        private void cmdLlamarVentaEquios_Click(object sender, EventArgs e)
+        {
+            Venta.Equipos.frmVentaEquipos frm = new Venta.Equipos.frmVentaEquipos();
+            frm.ShowDialog();
+
         }
     }
 }

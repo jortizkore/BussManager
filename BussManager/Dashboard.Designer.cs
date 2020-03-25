@@ -41,7 +41,8 @@
             this.tipoReparacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.claseDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cmdLlamarVentaAcc = new System.Windows.Forms.Button();
+            this.cmdLlamarVentaEquios = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.loginToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(661, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(400, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -149,22 +150,33 @@
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
-            // button2
+            // cmdLlamarVentaAcc
             // 
-            this.button2.Location = new System.Drawing.Point(87, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "ventas acc";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cmdLlamarVentaAcc.Location = new System.Drawing.Point(23, 62);
+            this.cmdLlamarVentaAcc.Name = "cmdLlamarVentaAcc";
+            this.cmdLlamarVentaAcc.Size = new System.Drawing.Size(143, 98);
+            this.cmdLlamarVentaAcc.TabIndex = 1;
+            this.cmdLlamarVentaAcc.Text = "Venta accesorios";
+            this.cmdLlamarVentaAcc.UseVisualStyleBackColor = true;
+            this.cmdLlamarVentaAcc.Click += new System.EventHandler(this.cmdLlamarVentaAcc_Click);
+            // 
+            // cmdLlamarVentaEquios
+            // 
+            this.cmdLlamarVentaEquios.Location = new System.Drawing.Point(223, 62);
+            this.cmdLlamarVentaEquios.Name = "cmdLlamarVentaEquios";
+            this.cmdLlamarVentaEquios.Size = new System.Drawing.Size(143, 98);
+            this.cmdLlamarVentaEquios.TabIndex = 2;
+            this.cmdLlamarVentaEquios.Text = "Venta Celulares";
+            this.cmdLlamarVentaEquios.UseVisualStyleBackColor = true;
+            this.cmdLlamarVentaEquios.Click += new System.EventHandler(this.cmdLlamarVentaEquios_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 450);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(400, 204);
+            this.Controls.Add(this.cmdLlamarVentaEquios);
+            this.Controls.Add(this.cmdLlamarVentaAcc);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dashboard";
@@ -192,7 +204,8 @@
         private System.Windows.Forms.ToolStripMenuItem registrarCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPerdidaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cmdLlamarVentaAcc;
+        private System.Windows.Forms.Button cmdLlamarVentaEquios;
     }
 }
 

@@ -13,7 +13,39 @@ namespace BussManager.Venta.Accesorios
 
         private ConnectionSettings db = new ConnectionSettings();
 
+        public bool GuardarListaVenta(List<VentaAccesorio> ventas)
+        {
 
+            var trans = db.BeginTrans("VentaAcc");
+            if (db.IsConnected())
+            {
+                try
+                {
+                    foreach (var venta in ventas)
+                    {
+                        Guardar(venta);
+                    }
+                    trans.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageManager.ErrorMessage(ex.Message);
+                    trans.Rollback();
+                    return false;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
+        
         public bool Guardar(VentaAccesorio vacc)
         {
             List<parametro> parametros = new List<parametro>();
@@ -58,6 +90,13 @@ namespace BussManager.Venta.Accesorios
                     valor = vacc.FechaVenta.ToString()
                 };
                 parametros.Add(fecha);
+                parametro response = new parametro()
+                {
+                    nombre = "@responseMessage",
+                    tipo = SqlDbType.Date,
+                    valor = vacc.FechaVenta.ToString()
+                };
+                parametros.Add(response);
 
                 db.CorrerSP(sp, parametros);
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,10 +45,12 @@ namespace BussManager.Venta.Accesorios
 
         }
 
-        private void frmReporteVentasAcc_Load(object sender, EventArgs e)
+        void Limpiar()
         {
-            CargarComboAcc();
+            ListaVentas.Clear();
+            lstVentas.Items.Clear();
             refreshGridVentas();
+
         }
 
         private void CargarComboAcc()
@@ -146,18 +149,6 @@ namespace BussManager.Venta.Accesorios
 
         }
 
-        private void grdListaVentas_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                MessageManager.AlerMessage(e.RowIndex.ToString());
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
 
         private void frmVentasAcc_SizeChanged(object sender, EventArgs e)
         {
@@ -166,16 +157,42 @@ namespace BussManager.Venta.Accesorios
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
+            if (ListaVentas.Count < 1)
+                return;
+
             VentaAcc ServVenta = new VentaAcc();
-
-
-
-            foreach (var item in ListaVentas)
+            Factura Servfact = new Factura(ListaVentas);
+            try
             {
-                ServVenta.Guardar(item);
+                ServVenta.GuardarListaVenta(ListaVentas);
+                if (Servfact.CrearFactura())
+                {
+                    var verFact = MessageManager.Question("Desea ver la factura?");
+                    if (verFact == DialogResult.Yes)
+                    {
+                        Process.Start(Servfact.NombreFactura());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageManager.AlerMessage(ex.Message);
+            }
+            finally
+            {
+                Limpiar();
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
 
+        private void frmVentasAcc_Load(object sender, EventArgs e)
+        {
+            CargarComboAcc();
+            refreshGridVentas();
+        }
     }
 }

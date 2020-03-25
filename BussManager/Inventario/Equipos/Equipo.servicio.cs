@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace BussManager.Inventario.Equipos
 {
-    class EquipoMovil
+    public class EquipoMovil
     {
         ConnectionSettings db;
 
@@ -32,6 +33,17 @@ namespace BussManager.Inventario.Equipos
             return list;
         }
 
+        public DataTable TraerTodosParaCombo()
+        {
+            db = new ConnectionSettings();
+            var list = new List<Equipo>();
+            var query = "select mc.descripcion,c.IMEI from celulares c" +
+                        " join modelo_celulares mc" +
+                        " on c.marca = mc.id_marca";
+            return db.BringData(query);
+            
+        }
+
         private Equipo convertFromJson(JToken json)
         {
             return new Equipo
@@ -42,7 +54,8 @@ namespace BussManager.Inventario.Equipos
                 IMEI = json["IMEI"].ToString(),
                 costo = decimal.Parse(json["costo"].ToString()),
                 precio = decimal.Parse(json["precio"].ToString()),
-                proveedor = int.Parse(json["proveedor"].ToString())
+                proveedor = int.Parse(json["proveedor"].ToString()),
+                codigoModelo = json["Codigo_modelo"].ToString()
             };
         }
 
@@ -56,7 +69,7 @@ namespace BussManager.Inventario.Equipos
             return new Equipo();
         }
 
-        public bool GuardarEquipo(int marca, int clase, string imei, decimal costo, decimal precio, int proveedor)
+        public bool GuardarEquipo(Equipo cel)
         {
             db = new ConnectionSettings();
             var sp = "sp_insertar_celular";
@@ -66,37 +79,43 @@ namespace BussManager.Inventario.Equipos
             {
                 nombre = "@marca",
                 tipo = System.Data.SqlDbType.Int,
-                valor = marca.ToString()
+                valor = cel.modelo.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@clase",
                 tipo = System.Data.SqlDbType.Int,
-                valor = clase.ToString()
+                valor = cel.clase.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@imei",
                 tipo = System.Data.SqlDbType.VarChar,
-                valor = imei
+                valor = cel.IMEI
             });
             parametros.Add(new parametro
             {
                 nombre = "@costo",
                 tipo = System.Data.SqlDbType.Decimal,
-                valor = costo.ToString()
+                valor = cel.costo.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@precio",
                 tipo = System.Data.SqlDbType.Decimal,
-                valor = precio.ToString()
+                valor = cel.precio.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@proveedor",
                 tipo = System.Data.SqlDbType.Int,
-                valor = proveedor.ToString()
+                valor = cel.proveedor.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@codigoModelo",
+                tipo = System.Data.SqlDbType.VarChar,
+                valor = cel.codigoModelo
             });
             parametros.Add(new parametro
             {
@@ -108,41 +127,48 @@ namespace BussManager.Inventario.Equipos
             return db.CorrerSP(sp, parametros);
         }
 
-        public bool venderEquipo(int marca, int clase, string imei, decimal costo, decimal precio, int proveedor)
+        public bool venderEquipo(Equipo cel)
         {
             db = new ConnectionSettings();
-            var sp = "Insertar_Venta_celular";
+            var sp = "sp_insertar_venta_celular";
             var parametros = new List<parametro>();
 
             parametros.Add(new parametro
             {
-                nombre = "@marca",
+                nombre = "@id_celular",
                 tipo = System.Data.SqlDbType.Int,
-                valor = marca.ToString()
+                valor = cel.id_equipo.ToString()
+            });
+
+            parametros.Add(new parametro
+            {
+                nombre = "@id_modelo",
+                tipo = System.Data.SqlDbType.Int,
+                valor = cel.modelo.ToString()
             });
             parametros.Add(new parametro
             {
-                nombre = "@clase",
+                nombre = "@id_clase",
                 tipo = System.Data.SqlDbType.Int,
-                valor = clase.ToString()
+                valor = cel.clase.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@imei",
                 tipo = System.Data.SqlDbType.VarChar,
-                valor = imei
+                valor = cel.IMEI
             });
             parametros.Add(new parametro
             {
                 nombre = "@costo",
                 tipo = System.Data.SqlDbType.Decimal,
-                valor = costo.ToString()
+                valor = cel.costo.ToString()
             });
             parametros.Add(new parametro
             {
-                nombre = "@precio",
+                nombre = "@precio_venta",
                 tipo = System.Data.SqlDbType.Decimal,
-                valor = precio.ToString()
+                valor = cel.precio.ToString()
             });
             parametros.Add(new parametro
             {
@@ -154,7 +180,13 @@ namespace BussManager.Inventario.Equipos
             {
                 nombre = "@proveedor",
                 tipo = System.Data.SqlDbType.Int,
-                valor = proveedor.ToString()
+                valor = cel.proveedor.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@codigoModelo",
+                tipo = System.Data.SqlDbType.VarChar,
+                valor = cel.codigoModelo
             });
             parametros.Add(new parametro
             {
@@ -166,7 +198,36 @@ namespace BussManager.Inventario.Equipos
             return db.CorrerSP(sp, parametros);
         }
 
-        public bool ModificarEquipo(int marca, int clase, string imei, decimal costo, decimal precio)
+        public bool venderListaEquipos(List<Equipo> listaEquipos)
+        {
+            var result = true;
+            var trans = db.BeginTrans("VentaListaEquipos");
+
+            try
+            {
+                foreach (var cel in listaEquipos)
+                {
+                   var vendido = venderEquipo(cel);
+                    if (!vendido)
+                    {
+                        result = false;
+                        trans.Rollback();
+                    }
+                }
+                if(result)
+                trans.Commit();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                result = false;
+                trans.Rollback();
+                return result;
+            }
+        }
+
+        public bool ModificarEquipo(Equipo cel)
         {
             db = new ConnectionSettings();
             var sp = "sp_modificar_celular";
@@ -176,31 +237,37 @@ namespace BussManager.Inventario.Equipos
             {
                 nombre = "@marca",
                 tipo = System.Data.SqlDbType.Int,
-                valor = marca.ToString()
+                valor = cel.modelo.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@clase",
                 tipo = System.Data.SqlDbType.Int,
-                valor = clase.ToString()
+                valor = cel.clase.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@imei",
                 tipo = System.Data.SqlDbType.VarChar,
-                valor = imei
+                valor = cel.IMEI
             });
             parametros.Add(new parametro
             {
                 nombre = "@costo",
                 tipo = System.Data.SqlDbType.Decimal,
-                valor = costo.ToString()
+                valor = cel.costo.ToString()
             });
             parametros.Add(new parametro
             {
                 nombre = "@precio",
                 tipo = System.Data.SqlDbType.Decimal,
-                valor = precio.ToString()
+                valor = cel.precio.ToString()
+            });
+            parametros.Add(new parametro
+            {
+                nombre = "@codigoModelo",
+                tipo = System.Data.SqlDbType.Decimal,
+                valor = cel.codigoModelo
             });
             parametros.Add(new parametro
             {
@@ -222,5 +289,6 @@ namespace BussManager.Inventario.Equipos
         public decimal costo { get; set; }
         public decimal precio { get; set; }
         public int proveedor { get; set; }
+        public string codigoModelo { get; set; }
     }
 }

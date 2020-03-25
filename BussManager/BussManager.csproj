@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -130,7 +130,7 @@
       <DependentUpon>frmTipoReparaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\Tipo_reparaciones\TipoReparaciones.cs" />
-    <Compile Include="Venta\Accesorios\Factura.servicio.cs" />
+    <Compile Include="Venta\Factura.servicio.cs" />
     <Compile Include="Venta\Accesorios\frmVentasAcc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\Accesorios\frmVentasAcc.resx">
       <DependentUpon>frmVentasAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\Equipos\frmVentaEquipos.resx">
+      <DependentUpon>frmVentaEquipos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

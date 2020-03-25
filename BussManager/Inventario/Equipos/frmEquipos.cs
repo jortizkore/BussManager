@@ -86,7 +86,8 @@ namespace BussManager.Inventario.Equipos
                         imei = cel.IMEI,
                         costo = cel.costo.ToString(),
                         precio = cel.precio.ToString(),
-                        proveedor = prov.TraerProveedor(cel.proveedor).descripcion
+                        proveedor = prov.TraerProveedor(cel.proveedor).descripcion,
+                        CodModelo = cel.codigoModelo
                     });
             }
 
@@ -117,7 +118,8 @@ namespace BussManager.Inventario.Equipos
                         imei = cel.IMEI,
                         costo = cel.costo.ToString(),
                         precio = cel.precio.ToString(),
-                        proveedor = prov.TraerProveedor(cel.proveedor).descripcion
+                        proveedor = prov.TraerProveedor(cel.proveedor).descripcion,
+                        CodModelo = cel.codigoModelo
                     });
             }
 
@@ -132,14 +134,17 @@ namespace BussManager.Inventario.Equipos
             try
             {
                 celular = new EquipoMovil();
-                var marca = int.Parse(cmbEquipoCelular.SelectedValue.ToString());
-                var clase = int.Parse(cmbClaseEquipo.SelectedValue.ToString());
-                var imei = txtImeiEquipo.Text;
-                var costo = decimal.Parse(txtCostoEquipo.Text);
-                var precio = decimal.Parse(txtPrecioEquipo.Text);
-                var proveedor = int.Parse(cmbProveedor.SelectedValue.ToString());
+                var equipo = new Equipo();
 
-                if (celular.GuardarEquipo(marca, clase, imei, costo, precio, proveedor))
+                equipo.modelo = int.Parse(cmbEquipoCelular.SelectedValue.ToString());
+                equipo.clase = int.Parse(cmbClaseEquipo.SelectedValue.ToString());
+                equipo.IMEI = txtImeiEquipo.Text;
+                equipo.costo= decimal.Parse(txtCostoEquipo.Text);
+                equipo.precio = decimal.Parse(txtPrecioEquipo.Text);
+                equipo.proveedor = int.Parse(cmbProveedor.SelectedValue.ToString());
+                equipo.codigoModelo = txtCodigoModelo.Text;
+
+                if (celular.GuardarEquipo(equipo))
                 {
                     MessageManager.InfoMessage("Almacenado con éxito");
                 }
@@ -190,6 +195,7 @@ namespace BussManager.Inventario.Equipos
                 txtImeiEquipo.Text = equipo.IMEI;
                 txtCostoEquipo.Text = equipo.costo.ToString();
                 txtPrecioEquipo.Text = equipo.precio.ToString();
+                txtCodigoModelo.Text = equipo.codigoModelo;
 
                 cmbClaseEquipo.SelectedValue = equipo.clase;
                 cmbEquipoCelular.SelectedValue = equipo.modelo;
@@ -223,5 +229,6 @@ namespace BussManager.Inventario.Equipos
         public string costo { get; set; }
         public string precio { get; set; }
         public string proveedor { get; set; }
+        public string CodModelo { get; set; }
     }
 }

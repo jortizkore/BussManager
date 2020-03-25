@@ -41,6 +41,7 @@
             this.lblCantidadEnInventario = new System.Windows.Forms.Label();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnFacturar = new System.Windows.Forms.Button();
             this.lstVentas = new System.Windows.Forms.ListView();
             this.Accesorio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -96,7 +97,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(159, 17);
+            this.label3.Location = new System.Drawing.Point(225, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 3;
@@ -116,7 +117,7 @@
             // 
             this.dtFechaFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtFechaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFechaFactura.Location = new System.Drawing.Point(416, 12);
+            this.dtFechaFactura.Location = new System.Drawing.Point(425, 12);
             this.dtFechaFactura.Name = "dtFechaFactura";
             this.dtFechaFactura.Size = new System.Drawing.Size(260, 24);
             this.dtFechaFactura.TabIndex = 4;
@@ -187,6 +188,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblCantidadArticulos);
@@ -194,15 +196,26 @@
             this.groupBox1.Controls.Add(this.btnFacturar);
             this.groupBox1.Location = new System.Drawing.Point(12, 152);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(664, 50);
+            this.groupBox1.Size = new System.Drawing.Size(673, 50);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Totales";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(621, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 32);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "L";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnFacturar
             // 
             this.btnFacturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacturar.Location = new System.Drawing.Point(525, 11);
+            this.btnFacturar.Location = new System.Drawing.Point(483, 11);
             this.btnFacturar.Name = "btnFacturar";
             this.btnFacturar.Size = new System.Drawing.Size(132, 32);
             this.btnFacturar.TabIndex = 2;
@@ -212,8 +225,6 @@
             // 
             // lstVentas
             // 
-            this.lstVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstVentas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Accesorio,
             this.Cantidad,
@@ -250,7 +261,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(700, 380);
+            this.ClientSize = new System.Drawing.Size(709, 380);
             this.Controls.Add(this.lstVentas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.numCantidad);
@@ -264,7 +275,7 @@
             this.MinimumSize = new System.Drawing.Size(716, 419);
             this.Name = "frmVentasAcc";
             this.Text = "Accesorios";
-            this.Load += new System.EventHandler(this.frmReporteVentasAcc_Load);
+            this.Load += new System.EventHandler(this.frmVentasAcc_Load);
             this.SizeChanged += new System.EventHandler(this.frmVentasAcc_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -295,5 +306,6 @@
         private System.Windows.Forms.ColumnHeader Precio;
         private System.Windows.Forms.ColumnHeader Total;
         private System.Windows.Forms.Button btnFacturar;
+        private System.Windows.Forms.Button button1;
     }
 }

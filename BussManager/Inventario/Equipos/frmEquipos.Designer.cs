@@ -50,6 +50,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblCantidadEquipos = new System.Windows.Forms.Label();
             this.lblTotalEnEquipos = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCodigoModelo = new System.Windows.Forms.TextBox();
             this.grpEquipos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquipos)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +60,8 @@
             // 
             this.grpEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpEquipos.Controls.Add(this.txtCodigoModelo);
+            this.grpEquipos.Controls.Add(this.label10);
             this.grpEquipos.Controls.Add(this.label7);
             this.grpEquipos.Controls.Add(this.cmbProveedor);
             this.grpEquipos.Controls.Add(this.btnCancelarEquipo);
@@ -82,7 +86,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(263, 121);
+            this.label7.Location = new System.Drawing.Point(263, 92);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 8;
@@ -91,7 +95,7 @@
             // cmbProveedor
             // 
             this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(325, 118);
+            this.cmbProveedor.Location = new System.Drawing.Point(325, 89);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(141, 21);
             this.cmbProveedor.TabIndex = 7;
@@ -144,7 +148,7 @@
             // txtPrecioEquipo
             // 
             this.txtPrecioEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecioEquipo.Location = new System.Drawing.Point(306, 70);
+            this.txtPrecioEquipo.Location = new System.Drawing.Point(306, 54);
             this.txtPrecioEquipo.Name = "txtPrecioEquipo";
             this.txtPrecioEquipo.Size = new System.Drawing.Size(160, 20);
             this.txtPrecioEquipo.TabIndex = 4;
@@ -177,7 +181,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(263, 74);
+            this.label3.Location = new System.Drawing.Point(263, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 3;
@@ -282,6 +286,22 @@
             this.lblTotalEnEquipos.TabIndex = 19;
             this.lblTotalEnEquipos.Text = "0";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(263, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Cod. Modelo:";
+            // 
+            // txtCodigoModelo
+            // 
+            this.txtCodigoModelo.Location = new System.Drawing.Point(339, 119);
+            this.txtCodigoModelo.Name = "txtCodigoModelo";
+            this.txtCodigoModelo.Size = new System.Drawing.Size(127, 20);
+            this.txtCodigoModelo.TabIndex = 10;
+            // 
             // frmEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,5 +352,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblCantidadEquipos;
         private System.Windows.Forms.Label lblTotalEnEquipos;
+        private System.Windows.Forms.TextBox txtCodigoModelo;
+        private System.Windows.Forms.Label label10;
     }
 }

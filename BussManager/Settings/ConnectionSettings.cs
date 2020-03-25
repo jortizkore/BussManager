@@ -49,6 +49,13 @@ namespace BussManager.Settings
             return result;
         }
 
+        public SqlTransaction BeginTrans(string TransactionName)
+        {
+            connect();
+            return connection.BeginTransaction(TransactionName);
+        }
+        
+
         public string bringJsonData(string query)
         {
             this.command.CommandType = CommandType.Text;
