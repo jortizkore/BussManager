@@ -1,0 +1,13 @@
+
+windows azure jasmairy multiservices
+
+server: bussmanagerserver
+Login: User: jasmairyadmin Pass:Jasmairy123
+
+
+Google cloud jasmairy multiservices
+
+instancia: bussmanagerserver
+Login: sqlserver: jasmairyadmin Pass:Jasmairy123
+
+

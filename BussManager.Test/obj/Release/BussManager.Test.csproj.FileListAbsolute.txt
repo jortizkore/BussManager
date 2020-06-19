@@ -19,5 +19,3 @@ D:\Projects\BussManager\BussManager.Test\obj\Release\BussManager.Test.csproj.Cor
 D:\Projects\BussManager\BussManager.Test\obj\Release\BussManager.Test.csproj.CopyComplete
 D:\Projects\BussManager\BussManager.Test\obj\Release\BussManager.Test.dll
 D:\Projects\BussManager\BussManager.Test\obj\Release\BussManager.Test.pdb
-D:\Projects\BussManager\BussManager.Test\bin\Release\BussManager.Test.dll.CodeAnalysisLog.xml
-D:\Projects\BussManager\BussManager.Test\bin\Release\BussManager.Test.dll.lastcodeanalysissucceeded

@@ -47,7 +47,7 @@ namespace BussManager.Venta.Equipos
         {
             numPrecio.Maximum = 9999999;
             CargarCmbEquipos();
-        }
+        }   
 
         private void CargarCmbEquipos()
         {
@@ -69,20 +69,38 @@ namespace BussManager.Venta.Equipos
 
         void calcuarGananciaMinima()
         {
-            var gananciaMinima = Convert.ToDecimal(movilSeleccionado.costo * Convert.ToDecimal("0.05"));
-            gananciaMinima = gananciaMinima < 500 ? 500 : gananciaMinima;
+            try
+            {
+                var gananciaMinima = Convert.ToDecimal(movilSeleccionado.costo * Convert.ToDecimal("0.05"));
+                gananciaMinima = gananciaMinima < 500 ? 500 : gananciaMinima;
 
-            numPrecio.Minimum = (movilSeleccionado.costo + gananciaMinima);
+                numPrecio.Minimum = movilSeleccionado.costo;// + gananciaMinima;
+
+            }
+            catch (Exception ex)
+            {
+                MessageManager.AlerMessage("Problemas al cargar los datos: " + ex.Message);
+            }
+            
         }
 
         void refreshLabels()
         {
-            Settings.clase_equipos.ClaseEquipo servClase = new Settings.clase_equipos.ClaseEquipo();
+            try
+            {
+                Settings.clase_equipos.ClaseEquipo servClase = new Settings.clase_equipos.ClaseEquipo();
 
-            lblClase.Text = servClase.TraerClase(movilSeleccionado.clase);
-            lblClaseModelo.Text = movilSeleccionado.codigoModelo;
-            lblIMEI.Text = movilSeleccionado.IMEI;
-            numPrecio.Value = movilSeleccionado.precio;
+                lblClase.Text = servClase.TraerClase(movilSeleccionado.clase);
+                lblClaseModelo.Text = movilSeleccionado.codigoModelo;
+                lblIMEI.Text = movilSeleccionado.IMEI;
+                numPrecio.Value = movilSeleccionado.precio;
+            }
+            catch (Exception ex)
+            {
+                MessageManager.AlerMessage("Problemas al cargar los datos: " + ex.Message);
+
+            }
+
         }
 
         private void addMovil_Click(object sender, EventArgs e)
@@ -165,14 +183,19 @@ namespace BussManager.Venta.Equipos
 
             if (servEquipoMovil.venderListaEquipos(listaVentaEquipos))
             {
-                Factura fac = new Factura(listaVentaEquipos);
-                fac.CrearFactura();
-                var verFactura =
-                    MessageManager.Question("Quieres ver la factura?") == DialogResult.Yes ? true : false;
+                Factura fac = new Factura(listaVentaEquipos);   
+                servEquipoMovil = new Inventario.Equipos.EquipoMovil();
 
-                if (verFactura)
-                    Process.Start(fac.NombreFactura());
+                var ventaCompleta = servEquipoMovil.venderListaEquipos(listaVentaEquipos);
+                if (ventaCompleta)
+                {
+                    fac.CrearFactura();
+                    var verFactura =
+                        MessageManager.Question("Quieres ver la factura?") == DialogResult.Yes ? true : false;
 
+                    if (verFactura)
+                        Process.Start(fac.NombreFactura());
+                }
             }
 
             LimpiarFrmVentaEquipos();

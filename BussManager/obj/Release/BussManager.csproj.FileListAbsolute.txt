@@ -19,5 +19,7 @@ D:\Projects\BussManager\BussManager\obj\Release\BussManager.csproj.CopyComplete
 D:\Projects\BussManager\BussManager\obj\Release\BussManager.exe
 D:\Projects\BussManager\BussManager\obj\Release\BussManager.pdb
 D:\Projects\BussManager\BussManager\obj\Release\BussManager.Venta.Accesorios.frmVentasAcc.resources
-D:\Projects\BussManager\BussManager\bin\Release\BussManager.exe.CodeAnalysisLog.xml
-D:\Projects\BussManager\BussManager\bin\Release\BussManager.exe.lastcodeanalysissucceeded
+D:\Projects\BussManager\BussManager\obj\Release\BussManager.Reparaciones.frmReparaciones.resources
+D:\Projects\BussManager\BussManager\obj\Release\BussManager.Venta.Accesorios.FrmAccReportes.resources
+D:\Projects\BussManager\BussManager\obj\Release\BussManager.Venta.Equipos.frmReporteVentaEquipos.resources
+D:\Projects\BussManager\BussManager\obj\Release\BussManager.csprojAssemblyReference.cache

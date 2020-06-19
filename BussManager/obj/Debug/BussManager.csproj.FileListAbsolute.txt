@@ -37,3 +37,7 @@ D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Settings.proveedores.f
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Inventario.Accesorios.frmPerdidaAccesorio.resources
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Venta.Accesorios.frmVentasAcc.resources
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Venta.Equipos.frmVentaEquipos.resources
+D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Venta.Accesorios.FrmAccReportes.resources
+D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Venta.Equipos.frmReporteVentaEquipos.resources
+D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Reparaciones.frmReparaciones.resources
+D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Reparaciones.frmReporteReparaciones.resources

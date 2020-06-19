@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpEquipos = new System.Windows.Forms.GroupBox();
+            this.txtCodigoModelo = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.btnCancelarEquipo = new System.Windows.Forms.Button();
@@ -50,16 +52,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblCantidadEquipos = new System.Windows.Forms.Label();
             this.lblTotalEnEquipos = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtCodigoModelo = new System.Windows.Forms.TextBox();
             this.grpEquipos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquipos)).BeginInit();
             this.SuspendLayout();
             // 
             // grpEquipos
             // 
-            this.grpEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpEquipos.Controls.Add(this.txtCodigoModelo);
             this.grpEquipos.Controls.Add(this.label10);
             this.grpEquipos.Controls.Add(this.label7);
@@ -78,15 +76,34 @@
             this.grpEquipos.Controls.Add(this.label1);
             this.grpEquipos.Location = new System.Drawing.Point(4, 12);
             this.grpEquipos.Name = "grpEquipos";
-            this.grpEquipos.Size = new System.Drawing.Size(654, 148);
+            this.grpEquipos.Size = new System.Drawing.Size(736, 148);
             this.grpEquipos.TabIndex = 0;
             this.grpEquipos.TabStop = false;
             this.grpEquipos.Text = "Datos";
             // 
+            // txtCodigoModelo
+            // 
+            this.txtCodigoModelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCodigoModelo.Location = new System.Drawing.Point(421, 119);
+            this.txtCodigoModelo.Name = "txtCodigoModelo";
+            this.txtCodigoModelo.Size = new System.Drawing.Size(127, 20);
+            this.txtCodigoModelo.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(345, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Cod. Modelo:";
+            // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(263, 92);
+            this.label7.Location = new System.Drawing.Point(345, 92);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 8;
@@ -94,8 +111,9 @@
             // 
             // cmbProveedor
             // 
+            this.cmbProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(325, 89);
+            this.cmbProveedor.Location = new System.Drawing.Point(407, 89);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(141, 21);
             this.cmbProveedor.TabIndex = 7;
@@ -106,7 +124,7 @@
             this.btnCancelarEquipo.BackColor = System.Drawing.Color.Red;
             this.btnCancelarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarEquipo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelarEquipo.Location = new System.Drawing.Point(560, 10);
+            this.btnCancelarEquipo.Location = new System.Drawing.Point(642, 10);
             this.btnCancelarEquipo.Name = "btnCancelarEquipo";
             this.btnCancelarEquipo.Size = new System.Drawing.Size(84, 30);
             this.btnCancelarEquipo.TabIndex = 6;
@@ -120,7 +138,7 @@
             this.btnGuardarEquipo.BackColor = System.Drawing.Color.Blue;
             this.btnGuardarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEquipo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardarEquipo.Location = new System.Drawing.Point(512, 71);
+            this.btnGuardarEquipo.Location = new System.Drawing.Point(594, 71);
             this.btnGuardarEquipo.Name = "btnGuardarEquipo";
             this.btnGuardarEquipo.Size = new System.Drawing.Size(132, 68);
             this.btnGuardarEquipo.TabIndex = 5;
@@ -148,7 +166,7 @@
             // txtPrecioEquipo
             // 
             this.txtPrecioEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecioEquipo.Location = new System.Drawing.Point(306, 54);
+            this.txtPrecioEquipo.Location = new System.Drawing.Point(388, 54);
             this.txtPrecioEquipo.Name = "txtPrecioEquipo";
             this.txtPrecioEquipo.Size = new System.Drawing.Size(160, 20);
             this.txtPrecioEquipo.TabIndex = 4;
@@ -156,7 +174,7 @@
             // txtCostoEquipo
             // 
             this.txtCostoEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCostoEquipo.Location = new System.Drawing.Point(306, 24);
+            this.txtCostoEquipo.Location = new System.Drawing.Point(388, 24);
             this.txtCostoEquipo.Name = "txtCostoEquipo";
             this.txtCostoEquipo.Size = new System.Drawing.Size(160, 20);
             this.txtCostoEquipo.TabIndex = 3;
@@ -181,7 +199,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(263, 58);
+            this.label3.Location = new System.Drawing.Point(345, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 3;
@@ -191,7 +209,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(263, 27);
+            this.label4.Location = new System.Drawing.Point(345, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 2;
@@ -217,15 +235,17 @@
             // 
             // grdEquipos
             // 
-            this.grdEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grdEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdEquipos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grdEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdEquipos.Location = new System.Drawing.Point(4, 226);
             this.grdEquipos.Name = "grdEquipos";
-            this.grdEquipos.Size = new System.Drawing.Size(652, 221);
+            this.grdEquipos.Size = new System.Drawing.Size(734, 221);
             this.grdEquipos.TabIndex = 14;
             this.grdEquipos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquipos_CellDoubleClick);
+            this.grdEquipos.Resize += new System.EventHandler(this.grdEquipos_Resize);
             // 
             // txtFiltrarEquipo
             // 
@@ -233,7 +253,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFiltrarEquipo.Location = new System.Drawing.Point(58, 200);
             this.txtFiltrarEquipo.Name = "txtFiltrarEquipo";
-            this.txtFiltrarEquipo.Size = new System.Drawing.Size(598, 20);
+            this.txtFiltrarEquipo.Size = new System.Drawing.Size(680, 20);
             this.txtFiltrarEquipo.TabIndex = 15;
             this.txtFiltrarEquipo.TextChanged += new System.EventHandler(this.txtFiltrarEquipo_TextChanged);
             // 
@@ -286,28 +306,12 @@
             this.lblTotalEnEquipos.TabIndex = 19;
             this.lblTotalEnEquipos.Text = "0";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(263, 121);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Cod. Modelo:";
-            // 
-            // txtCodigoModelo
-            // 
-            this.txtCodigoModelo.Location = new System.Drawing.Point(339, 119);
-            this.txtCodigoModelo.Name = "txtCodigoModelo";
-            this.txtCodigoModelo.Size = new System.Drawing.Size(127, 20);
-            this.txtCodigoModelo.TabIndex = 10;
-            // 
             // frmEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(660, 450);
+            this.ClientSize = new System.Drawing.Size(742, 450);
             this.Controls.Add(this.lblTotalEnEquipos);
             this.Controls.Add(this.lblCantidadEquipos);
             this.Controls.Add(this.label9);

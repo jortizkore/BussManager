@@ -28,6 +28,14 @@ namespace BussManager.Inventario.Equipos
             InitializeComponent();
         }
 
+        void fijarColumnsSize()
+        {
+            for (int i = 0; i < grdEquipos.Columns.Count; i++)
+            {
+                grdEquipos.Columns[i].Width = grdEquipos.Width / grdEquipos.Columns.Count;
+            }
+        }
+
         private void frmEquipos_Load(object sender, EventArgs e)
         {
             LlenarGridCelulares();
@@ -167,6 +175,7 @@ namespace BussManager.Inventario.Equipos
             txtPrecioEquipo.Text = string.Empty;
             txtImeiEquipo.Text = string.Empty;
             txtFiltrarEquipo.Text = string.Empty;
+            txtCodigoModelo.Text = string.Empty;
 
             cmbClaseEquipo.SelectedIndex = 0;
             cmbEquipoCelular.SelectedIndex = 0;
@@ -218,6 +227,11 @@ namespace BussManager.Inventario.Equipos
             {
                 LlenarGridCelulares(txtFiltrarEquipo.Text);
             }
+        }
+
+        private void grdEquipos_Resize(object sender, EventArgs e)
+        {
+            fijarColumnsSize();
         }
     }
 

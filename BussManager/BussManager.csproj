@@ -100,6 +100,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="recursos_humanos\recurso_humano.modelo.cs" />
     <Compile Include="recursos_humanos\recurso_humano.servicio.cs" />
+    <Compile Include="Reparaciones\frmReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reparaciones\frmReparaciones.Designer.cs">
+      <DependentUpon>frmReparaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reparaciones\frmReporteReparaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reparaciones\frmReporteReparaciones.Designer.cs">
+      <DependentUpon>frmReporteReparaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reparaciones\Reparaciones.servicio.cs" />
     <Compile Include="Settings\clase_equipos\ClaseEquipo.servicio.cs" />
     <Compile Include="Settings\clase_equipos\frmClases.cs">
       <SubType>Form</SubType>
@@ -156,18 +169,6 @@
     <Compile Include="Venta\Equipos\frmVentaEquipos.Designer.cs">
       <DependentUpon>frmVentaEquipos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Venta\Reparaciones\frmReporteReparaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venta\Reparaciones\frmReporteReparaciones.Designer.cs">
-      <DependentUpon>frmReporteReparaciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Venta\Reparaciones\frmVentaReparaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venta\Reparaciones\frmVentaReparaciones.Designer.cs">
-      <DependentUpon>frmVentaReparaciones.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +194,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reparaciones\frmReparaciones.resx">
+      <DependentUpon>frmReparaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reparaciones\frmReporteReparaciones.resx">
+      <DependentUpon>frmReporteReparaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings\clase_equipos\frmClases.resx">
       <DependentUpon>frmClases.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,8 +212,14 @@
     <EmbeddedResource Include="Settings\Tipo_reparaciones\frmTipoReparaciones.resx">
       <DependentUpon>frmTipoReparaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Venta\Accesorios\FrmAccReportes.resx">
+      <DependentUpon>FrmAccReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Venta\Accesorios\frmVentasAcc.resx">
       <DependentUpon>frmVentasAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\Equipos\frmReporteVentaEquipos.resx">
+      <DependentUpon>frmReporteVentaEquipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\Equipos\frmVentaEquipos.resx">
       <DependentUpon>frmVentaEquipos.cs</DependentUpon>
