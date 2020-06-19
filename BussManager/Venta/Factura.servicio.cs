@@ -86,6 +86,8 @@ namespace BussManager.Venta
 
             Body += ajustarTexto("Cant", 4)
                  + ajustarTexto("|Artiulo", 20)
+                 + ajustarTexto("|IMEI", 20)
+                 + ajustarTexto("|Modelo", 10)
                  + ajustarTexto("|Precio unidad", 20)
                  + ajustarTexto("|Total", 20)
                  + Environment.NewLine;
@@ -98,6 +100,8 @@ namespace BussManager.Venta
 
                 Body += ajustarTexto("1", 4)
                  + ajustarTexto(servModelo.TraerModelo(item.modelo), 20)
+                 + ajustarTexto(item.IMEI, 20)
+                 + ajustarTexto(item.codigoModelo, 10)
                  + ajustarTexto(item.precio.ToString("c"), 20)
                  + ajustarTexto(item.precio.ToString("c"), 20)
                  + Environment.NewLine;

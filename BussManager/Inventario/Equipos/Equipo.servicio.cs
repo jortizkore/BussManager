@@ -33,6 +33,34 @@ namespace BussManager.Inventario.Equipos
             return list;
         }
 
+        public List<EquipoVendido> TraerEquiposVendidos()
+        {
+            db = new ConnectionSettings();
+            var list = new List<EquipoVendido>();
+            var query = "select cv.id_celular, mc.descripcion as 'marca'"
+                + ", c.clase as 'clase', cv.IMEI, cv.costo, cv.precio_venta"
+                + ", cv.fecha_venta, pr.descripcion as 'proveedor', cv.codigo_modelo"
+                + " from celulares_vendidos cv"
+                + " join modelo_celulares mc on cv.marca = mc.id_marca"
+                + " join clase c on c.id_clase = cv.clase"
+                + " join proveedores pr on pr.id_proveedor = cv.proveedor";
+
+            var jsonResult = db.bringJsonData(query);
+
+            if (jsonResult != string.Empty)
+            {
+                var result = JArray.Parse(jsonResult);
+                foreach (var item in result)
+                {
+                    var cel = convertFromJson_EquipoVendido(item);
+                    list.Add(cel);
+                }
+            }
+
+            return list;
+        }
+
+
         public DataTable TraerTodosParaCombo()
         {
             db = new ConnectionSettings();
@@ -41,7 +69,7 @@ namespace BussManager.Inventario.Equipos
                         " join modelo_celulares mc" +
                         " on c.marca = mc.id_marca";
             return db.BringData(query);
-            
+
         }
 
         private Equipo convertFromJson(JToken json)
@@ -55,8 +83,37 @@ namespace BussManager.Inventario.Equipos
                 costo = decimal.Parse(json["costo"].ToString()),
                 precio = decimal.Parse(json["precio"].ToString()),
                 proveedor = int.Parse(json["proveedor"].ToString()),
-                codigoModelo = json["Codigo_modelo"].ToString()
+                codigoModelo = json["codigo_modelo"].ToString()
             };
+        }
+
+        private EquipoVendido convertFromJson_EquipoVendido(JToken json)
+        {
+            try
+            {
+
+                var result = new EquipoVendido
+                {
+                    id_equipo = int.Parse(json["id_celular"].ToString()),
+                    modelo = json["marca"].ToString(),
+                    clase = json["clase"].ToString(),
+                    IMEI = json["IMEI"].ToString(),
+                    costo = decimal.Parse(json["costo"].ToString()),
+                    precio = decimal.Parse(json["precio_venta"].ToString()),
+                    FechaVenta = DateTime.Parse(json["fecha_venta"].ToString()),
+                    proveedor = json["proveedor"].ToString(),
+                    codigoModelo = json["codigo_modelo"].ToString()
+                };
+
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                MessageManager.AlerMessage(ex.Message);
+            }
+            return new EquipoVendido();
+
         }
 
         public Equipo TraerEquipo(string imei)
@@ -201,28 +258,24 @@ namespace BussManager.Inventario.Equipos
         public bool venderListaEquipos(List<Equipo> listaEquipos)
         {
             var result = true;
-            var trans = db.BeginTrans("VentaListaEquipos");
+            db = new ConnectionSettings();
 
             try
             {
                 foreach (var cel in listaEquipos)
                 {
-                   var vendido = venderEquipo(cel);
+                    var vendido = venderEquipo(cel);
                     if (!vendido)
                     {
                         result = false;
-                        trans.Rollback();
                     }
                 }
-                if(result)
-                trans.Commit();
-
+                
                 return result;
             }
             catch (Exception)
             {
                 result = false;
-                trans.Rollback();
                 return result;
             }
         }
@@ -289,6 +342,18 @@ namespace BussManager.Inventario.Equipos
         public decimal costo { get; set; }
         public decimal precio { get; set; }
         public int proveedor { get; set; }
+        public string codigoModelo { get; set; }
+    }
+    public class EquipoVendido
+    {
+        public int id_equipo { get; set; }
+        public string modelo { get; set; }
+        public string clase { get; set; }
+        public string IMEI { get; set; }
+        public decimal costo { get; set; }
+        public decimal precio { get; set; }
+        public DateTime FechaVenta { get; set; }
+        public string proveedor { get; set; }
         public string codigoModelo { get; set; }
     }
 }

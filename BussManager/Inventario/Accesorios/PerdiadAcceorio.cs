@@ -94,6 +94,9 @@ namespace BussManager.Inventario.Accesorios
             var query = "Select * from reporte_perdida_accesorio";
             var result = db.bringJsonData(query);
 
+            if (result == string.Empty)
+                return listaPerdiads;
+
             var jsonResult = JArray.Parse(result);
 
             foreach (var item in jsonResult)

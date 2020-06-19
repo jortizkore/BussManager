@@ -36,10 +36,10 @@ namespace BussManager.recursos_humanos
                 Id = int.Parse(token["id"].ToString()),
                 Nombre = token["nombre"].ToString(),
                 Apellido = token["apellido"].ToString(),
-                Cargo = int.Parse(token["cargo"].ToString()),
+                Cargo = token["cargo"].ToString(),
                 Usuario = token["usuario"].ToString(),
                 Contrasenia = token["contrasenia"].ToString(),
-                Estado = Int32.Parse(token["estado"].ToString())
+                Estado = token["estado"].ToString()
             };
         }
 
@@ -59,6 +59,26 @@ namespace BussManager.recursos_humanos
             return rh;
 
         }
+
+        public List<RecursoHumano> TraerTecnicos()
+        {
+            List<RecursoHumano> rh = new List<RecursoHumano>();
+
+            var query = $"select * from {view} where cargo like '%Reparador%'";
+            var dbAnswer = db.bringJsonData(query);
+            var resultado = dbAnswer == string.Empty ? null : JArray.Parse(dbAnswer);
+
+            if (resultado != null)
+            {
+                foreach (var item in resultado)
+                {
+                    rh.Add(DeJsonArh(item));
+                }
+                
+            }
+            return rh;
+        }
+
     }
 }
 

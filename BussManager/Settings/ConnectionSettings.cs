@@ -35,6 +35,7 @@ namespace BussManager.Settings
 
         public DataTable BringData(string query)
         {
+            table = new DataTable();
             this.command.CommandType = CommandType.Text;
             this.command.CommandText = query;
 

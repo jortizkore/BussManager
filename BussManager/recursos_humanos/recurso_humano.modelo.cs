@@ -11,9 +11,9 @@ namespace BussManager.recursos_humanos
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public int Cargo { get; set; }
+        public string Cargo { get; set; }
         public string Usuario { get; set; }
         public string Contrasenia { get; set; }
-        public Int32 Estado { get; set; }
+        public string Estado { get; set; }
     }
 }

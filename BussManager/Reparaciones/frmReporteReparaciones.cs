@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BussManager.Venta.Reparaciones
+namespace BussManager.Reparaciones
 {
-    public partial class frmVentaReparaciones : Form
+    public partial class frmReporteReparaciones : Form
     {
-        public frmVentaReparaciones()
+        public frmReporteReparaciones()
         {
             InitializeComponent();
+        }
+
+        private void frmReporteReparaciones_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
