@@ -1,0 +1,17 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |IMEI               |Modelo   |Precio unidad      |Total              
+1   Google Chromecast GeSN:Vecino           Vecino    $2,000.00           $2,000.00           
+1   Google Chromecast GeSN:VentaSabado      sabado    $2,000.00           $2,000.00           
+1   Google Chromecast GeSN:VentaDomingo     Domingo   $2,500.00           $2,500.00           
+1   Samsung Gaaxy A30s  IMEI:Vecino         Vecino    $10,000.00          $10,000.00          
+
+----------------------------------------------------------------
+Articulos vendidos: 4.00
+Total a pagar: 16500
+               Gracias por su compra

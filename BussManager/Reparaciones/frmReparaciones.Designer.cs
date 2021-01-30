@@ -144,6 +144,11 @@
             // 
             this.numCostoReparacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numCostoReparacion.Location = new System.Drawing.Point(24, 214);
+            this.numCostoReparacion.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.numCostoReparacion.Name = "numCostoReparacion";
             this.numCostoReparacion.Size = new System.Drawing.Size(120, 24);
             this.numCostoReparacion.TabIndex = 9;
@@ -152,6 +157,11 @@
             // 
             this.numPrecioReparacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numPrecioReparacion.Location = new System.Drawing.Point(23, 295);
+            this.numPrecioReparacion.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.numPrecioReparacion.Name = "numPrecioReparacion";
             this.numPrecioReparacion.Size = new System.Drawing.Size(120, 24);
             this.numPrecioReparacion.TabIndex = 10;

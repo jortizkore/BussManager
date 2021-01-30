@@ -1,0 +1,19 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |IMEI               |Modelo   |Precio unidad      |Total              
+1   Amazon Fire 7pl     G0W0X8089444FU2G    G944      $2,200.00           $2,200.00           
+1   Amazon Fire 7pl     G0W0X8089453F0P5    G945      $2,200.00           $2,200.00           
+1   Amazon Fire 7pl     G0W0X8089453F1UK    G945      $2,200.00           $2,200.00           
+1   Amazon Fire 7pl     G0W0X8089427FL19    G942      $2,200.00           $2,200.00           
+1   Amazon Fire 7pl     G0W0X8089435F6PP    G943      $2,200.00           $2,200.00           
+1   Amazon Fire 7pl     G0W0X8089436FJFE    G943      $2,200.00           $2,200.00           
+
+----------------------------------------------------------------
+Articulos vendidos: 6.00
+Total a pagar: 13200
+               Gracias por su compra
