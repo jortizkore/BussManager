@@ -1,0 +1,14 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |IMEI               |Modelo   |Precio unidad      |Total              
+1   Tablet Android MatriX002E0NLIN          MP-Z1     $2,700.00           $2,700.00           
+
+----------------------------------------------------------------
+Articulos vendidos: 1.00
+Total a pagar: 2700
+               Gracias por su compra

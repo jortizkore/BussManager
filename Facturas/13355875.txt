@@ -1,0 +1,15 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |Precio unidad      |Total              
+1   cable usb 200       $200.00             $200.00             
+1   Forro Iphone X      $250.00             $250.00             
+
+----------------------------------------------------------------
+Articulos vendidos: 2
+Total a pagar: 450
+               Gracias por su compra

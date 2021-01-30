@@ -1,0 +1,14 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |IMEI               |Modelo   |Precio unidad      |Total              
+1   Samsung Gaaxy A30s  355048110733120/01  SM-A307G  $11,000.00          $11,000.00          
+
+----------------------------------------------------------------
+Articulos vendidos: 1.00
+Total a pagar: 11000
+               Gracias por su compra

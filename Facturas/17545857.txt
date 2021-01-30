@@ -1,0 +1,16 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |IMEI               |Modelo   |Precio unidad      |Total              
+1   Google Chromecast GeChromeCast1Antes    NA        $2,200.00           $2,200.00           
+1   Google Chromecast GeChromeCast2Antes    NA        $2,100.00           $2,100.00           
+1   Google Chromecast GeChromecast3Antes    NA        $2,100.00           $2,100.00           
+
+----------------------------------------------------------------
+Articulos vendidos: 3.00
+Total a pagar: 6400
+               Gracias por su compra

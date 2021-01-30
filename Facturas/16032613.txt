@@ -1,0 +1,15 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |Precio unidad      |Total              
+1   Samsung Galaxy J3 Pr$4,700.00           $4,700.00           
+1   ZTE Z981            $4,500.00           $4,500.00           
+
+----------------------------------------------------------------
+Articulos vendidos: 2.00
+Total a pagar: 9200
+               Gracias por su compra

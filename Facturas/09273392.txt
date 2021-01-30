@@ -1,0 +1,14 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |IMEI               |Modelo   |Precio unidad      |Total              
+1   LG K40              359962104469067     K40       $4,800.00           $4,800.00           
+
+----------------------------------------------------------------
+Articulos vendidos: 1.00
+Total a pagar: 4800
+               Gracias por su compra

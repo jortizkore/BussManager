@@ -1,0 +1,14 @@
+**********Jasmayri Multiservice**********
+ Avenida los Restauradores #14
+ Sabana Perdida
+ Santo Domingo Norte
+               RNC: N/A
+
+----------------------------------------------------------------
+Cant|Artiulo            |IMEI               |Modelo   |Precio unidad      |Total              
+1   Samsung Galaxy a10e 356274106718712     AM-A102U  $5,300.00           $5,300.00           
+
+----------------------------------------------------------------
+Articulos vendidos: 1.00
+Total a pagar: 5300
+               Gracias por su compra
