@@ -246,6 +246,11 @@ namespace BussManager.Reparaciones
             {
             }
         }
+
+        private void TabReparacionesEntregadas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
