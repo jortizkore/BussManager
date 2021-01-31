@@ -19,6 +19,7 @@ namespace BussManager.Reparaciones
     {
 
         Reparaciones servReparaciones = new Reparaciones();
+        int selectedID = 0;
 
         public frmReparaciones()
         {
@@ -30,6 +31,13 @@ namespace BussManager.Reparaciones
             LlenarComboMarca();
             LlenarComboTecnicos();
             LlenarComboTipoReparaciones();
+            LlenarGridReparacionesPend();
+        }
+
+        private void LlenarGridReparacionesPend()
+        {
+            servReparaciones = new Reparaciones();
+            gridReparacionesPendientes.DataSource = servReparaciones.TraerReparacionesParaGrid();
         }
 
         void LimpiarFrmReparaciones()
@@ -102,5 +110,44 @@ namespace BussManager.Reparaciones
             }
         }
 
+        private void gridReparacionesPendientes_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            var completado = gridReparacionesPendientes.Rows[e.RowIndex].Cells[9].Value.ToString();
+            if (completado == "No")
+            {
+                gridReparacionesPendientes.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightPink;
+            }
+            else
+            {
+                gridReparacionesPendientes.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+            }
+        }
+
+        private void cmdCompletar_Click(object sender, EventArgs e)
+        {
+            if (selectedID != 0)
+            {
+                servReparaciones = new Reparaciones();
+                servReparaciones.MarcarCompletado(selectedID);
+                LlenarGridReparacionesPend();
+            }
+        }
+
+        private void gridReparacionesPendientes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                selectedID = int.Parse(gridReparacionesPendientes.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
+
+public class ReparacionParaMostrar
+{
+
+}
+

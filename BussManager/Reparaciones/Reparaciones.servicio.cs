@@ -35,6 +35,30 @@ namespace BussManager.Reparaciones
             return reparaciones;
         }
 
+        public bool MarcarCompletado(int id)
+        {
+            try
+            {
+                var db = new Settings.ConnectionSettings();
+                var sp = "sp_completar_reparacion";
+                List<parametro> parametros = new List<parametro>();
+                parametros.Add(new parametro
+                {
+                    nombre = "@id_reparacion",
+                    tipo = System.Data.SqlDbType.Int,
+                    valor = id.ToString()
+                });
+
+                db.CorrerSP(sp, parametros);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<ReparacionGrid> TraerReparacionesParaGrid()
         {
             var db = new Settings.ConnectionSettings();
@@ -76,16 +100,16 @@ namespace BussManager.Reparaciones
         {
             ReparacionGrid result = new ReparacionGrid();
             result.id = int.Parse(item["id_reparacion"].ToString());
-            result.Marca = item["marca"].ToString();
-            result.Tipo = item["tipo"].ToString();
-            result.Tecnico = item["tecnico"].ToString();
-            result.Compra = item["compra"].ToString();
-            result.Costo = decimal.Parse(item["costo"].ToString());
-            result.Precio = decimal.Parse(item["precio"].ToString());
+            result.Marca = item["Marca"].ToString();
+            result.Tipo = item["Tipo reparacion"].ToString();
+            result.Tecnico = item["Tecnico"].ToString();
+            //result.Compra = item["compra"].ToString();
+            result.Costo = decimal.Parse(item["Costo"].ToString());
+            result.Precio = decimal.Parse(item["Precio"].ToString());
             result.IMEI = item["IMEI"].ToString();
-            result.Comentario = item["comentario"].ToString();
-            result.Fecha = DateTime.Parse(item["fecha_reparacion"].ToString());
-
+            result.Comentario = item["Comentario"].ToString();
+            result.Fecha = DateTime.Parse(item["Fecha"].ToString());
+            result.Completado = item["Completado"].ToString();
             return result;
 
         }
@@ -187,11 +211,12 @@ namespace BussManager.Reparaciones
         public string Tipo { get; set; }
         public decimal Costo { get; set; }
         public decimal Precio { get; set; }
-        public string Compra { get; set; }
+        // public string Compra { get; set; }
         public DateTime Fecha { get; set; }
         public string Tecnico { get; set; }
         public string IMEI { get; set; }
         public string Comentario { get; set; }
+        public string Completado { get; set; }
 
     }
 }
