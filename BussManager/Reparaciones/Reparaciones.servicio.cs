@@ -10,6 +10,7 @@ namespace BussManager.Reparaciones
     public class Reparaciones
     {
         string insertStoreProcedure = "sp_insertar_reparacion";
+        string entregarStoreProcedure = "sp_insertar_reparacion_entregada";
 
         public Reparaciones()
         {
@@ -33,6 +34,17 @@ namespace BussManager.Reparaciones
                 }
             }
             return reparaciones;
+        }
+
+        public Reparacion TraerReparacion(int id)
+        {
+            var db = new Settings.ConnectionSettings();
+            var query = "Select * from reparaciones where id_reparacion = " + id.ToString();
+            var dbAnswer = db.bringJsonData(query);
+
+            var JsonList = dbAnswer == string.Empty ? null : Newtonsoft.Json.Linq.JArray.Parse(dbAnswer)[0];
+
+            return deJsonAobjeto(JsonList);
         }
 
         public bool MarcarCompletado(int id)
@@ -90,6 +102,8 @@ namespace BussManager.Reparaciones
             result.Precio = decimal.Parse(item["precio"].ToString());
             result.IMEI = item["IMEI"].ToString();
             result.Comentario = item["comentario"].ToString();
+            result.Completado = bool.Parse(item["completado"].ToString());
+
             result.Fecha = DateTime.Parse(item["fecha_reparacion"].ToString());
 
             return result;
@@ -186,6 +200,91 @@ namespace BussManager.Reparaciones
                 throw;
             }
         }
+        public bool GuardarReparacionEntregada(Reparacion reparacion)
+        {
+            try
+            {
+                #region Crear parametros
+                List<parametro> parametros = new List<parametro>();
+                parametros.Add(new parametro
+                {
+                    nombre = "@idMarca",
+                    tipo = System.Data.SqlDbType.Int,
+                    valor = reparacion.Marca.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@idTipo",
+                    tipo = System.Data.SqlDbType.Int,
+                    valor = reparacion.Tipo.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@costo",
+                    tipo = System.Data.SqlDbType.Decimal,
+                    valor = reparacion.Costo.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@precio",
+                    tipo = System.Data.SqlDbType.Decimal,
+                    valor = reparacion.Precio.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@idCompra",
+                    tipo = System.Data.SqlDbType.Int,
+                    valor = reparacion.Compra.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@IMEI",
+                    tipo = System.Data.SqlDbType.VarChar,
+                    valor = reparacion.IMEI.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@fecha_reparacion",
+                    tipo = System.Data.SqlDbType.Date,
+                    valor = reparacion.Fecha.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@idTecnico",
+                    tipo = System.Data.SqlDbType.Int,
+                    valor = reparacion.Tecnico.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@comentario",
+                    tipo = System.Data.SqlDbType.VarChar,
+                    valor = reparacion.Comentario.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@completado",
+                    tipo = System.Data.SqlDbType.VarChar,
+                    valor = reparacion.Completado ? 1.ToString() : 0.ToString()
+                });
+                parametros.Add(new parametro
+                {
+                    nombre = "@id",
+                    tipo = System.Data.SqlDbType.VarChar,
+                    valor = reparacion.id.ToString()
+                });
+
+                #endregion
+
+                var db = new Settings.ConnectionSettings();
+                return db.CorrerSP(entregarStoreProcedure, parametros);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
 
     }
@@ -202,6 +301,7 @@ namespace BussManager.Reparaciones
         public int Tecnico { get; set; }
         public string IMEI { get; set; }
         public string Comentario { get; set; }
+        public bool Completado { get; set; }
 
     }
     public class ReparacionGrid

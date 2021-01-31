@@ -133,6 +133,7 @@
             this.btnGuardarReparacion.TabIndex = 32;
             this.btnGuardarReparacion.Text = "Guardar";
             this.btnGuardarReparacion.UseVisualStyleBackColor = true;
+            this.btnGuardarReparacion.Click += new System.EventHandler(this.btnGuardarReparacion_Click);
             // 
             // nunmIdCompraReparacion
             // 
@@ -313,6 +314,7 @@
             this.txtFiltroReparaciones.Name = "txtFiltroReparaciones";
             this.txtFiltroReparaciones.Size = new System.Drawing.Size(517, 29);
             this.txtFiltroReparaciones.TabIndex = 2;
+            this.txtFiltroReparaciones.TextChanged += new System.EventHandler(this.txtFiltroReparaciones_TextChanged);
             // 
             // gridReparacionesPendientes
             // 
@@ -339,6 +341,7 @@
             this.cmdEntregar.TabIndex = 0;
             this.cmdEntregar.Text = "Entregar";
             this.cmdEntregar.UseVisualStyleBackColor = true;
+            this.cmdEntregar.Click += new System.EventHandler(this.cmdEntregar_Click);
             // 
             // cmdCompletar
             // 

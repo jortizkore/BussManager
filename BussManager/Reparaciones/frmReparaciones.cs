@@ -19,6 +19,9 @@ namespace BussManager.Reparaciones
     {
 
         Reparaciones servReparaciones = new Reparaciones();
+        List<ReparacionGrid> filtroReparaciones = new List<ReparacionGrid>();
+        List<ReparacionGrid> todasLasReparaciones = new List<ReparacionGrid>();
+        
         int selectedID = 0;
 
         public frmReparaciones()
@@ -37,7 +40,8 @@ namespace BussManager.Reparaciones
         private void LlenarGridReparacionesPend()
         {
             servReparaciones = new Reparaciones();
-            gridReparacionesPendientes.DataSource = servReparaciones.TraerReparacionesParaGrid();
+            todasLasReparaciones = servReparaciones.TraerReparacionesParaGrid();
+            gridReparacionesPendientes.DataSource = todasLasReparaciones;
         }
 
         void LimpiarFrmReparaciones()
@@ -107,6 +111,7 @@ namespace BussManager.Reparaciones
             finally
             {
                 LimpiarFrmReparaciones();
+                LlenarGridReparacionesPend();
             }
         }
 
@@ -129,7 +134,7 @@ namespace BussManager.Reparaciones
             {
                 servReparaciones = new Reparaciones();
                 servReparaciones.MarcarCompletado(selectedID);
-                LlenarGridReparacionesPend();
+                LlenarGridReparacionesPend();   
             }
         }
 
@@ -141,6 +146,53 @@ namespace BussManager.Reparaciones
             }
             catch (Exception)
             {
+            }
+        }
+
+        private void cmdEntregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                servReparaciones = new Reparaciones();
+                var reparacion = servReparaciones.TraerReparacion(selectedID);
+                servReparaciones.GuardarReparacionEntregada(reparacion);
+                LlenarGridReparacionesPend();
+                selectedID = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageManager.ErrorMessage(ex.Message);
+            }
+            
+        }
+
+        private void txtFiltroReparaciones_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                filtroReparaciones = new List<ReparacionGrid>();
+                var textoFiltro = txtFiltroReparaciones.Text;
+
+                filtroReparaciones = todasLasReparaciones.Where(x => 
+                        x.Comentario.ToLower().Contains(textoFiltro.ToLower()) ||
+                        x.IMEI.ToLower().Contains(textoFiltro.ToLower()) ||
+                        x.Marca.ToLower().Contains(textoFiltro.ToLower()) ||
+                        x.Tecnico.ToLower().Contains(textoFiltro.ToLower()) ||
+                        x.Tipo.ToLower().Contains(textoFiltro.ToLower())).ToList();
+
+                if(filtroReparaciones.Count > 0)
+                {
+                    gridReparacionesPendientes.DataSource = filtroReparaciones;
+                }
+                else
+                {
+                    gridReparacionesPendientes.DataSource = todasLasReparaciones;
+                }
+
+            }
+            catch (Exception)
+            {
+                
             }
         }
     }
