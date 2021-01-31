@@ -35,6 +35,7 @@ namespace BussManager.Reparaciones
             LlenarComboTecnicos();
             LlenarComboTipoReparaciones();
             LlenarGridReparacionesPend();
+            LlenarGridReparacionesEntregadas();
         }
 
         private void LlenarGridReparacionesPend()
@@ -42,6 +43,13 @@ namespace BussManager.Reparaciones
             servReparaciones = new Reparaciones();
             todasLasReparaciones = servReparaciones.TraerReparacionesParaGrid();
             gridReparacionesPendientes.DataSource = todasLasReparaciones;
+        }
+
+        private void LlenarGridReparacionesEntregadas()
+        {
+
+            servReparaciones = new Reparaciones();
+            gridReparacionesCompletadas.DataSource = servReparaciones.TraerReparacionesEntregadasParaGrid();   
         }
 
         void LimpiarFrmReparaciones()
@@ -157,6 +165,7 @@ namespace BussManager.Reparaciones
                 var reparacion = servReparaciones.TraerReparacion(selectedID);
                 servReparaciones.GuardarReparacionEntregada(reparacion);
                 LlenarGridReparacionesPend();
+                LlenarGridReparacionesEntregadas();
                 selectedID = 0;
             }
             catch (Exception ex)
@@ -193,6 +202,48 @@ namespace BussManager.Reparaciones
             catch (Exception)
             {
                 
+            }
+        }
+
+        private void gridReparacionesCompletadas_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            var completado = gridReparacionesCompletadas.Rows[e.RowIndex].Cells[9].Value.ToString();
+            if (completado == "No")
+            {
+                gridReparacionesCompletadas.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightPink;
+            }
+            else
+            {
+                gridReparacionesCompletadas.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightSeaGreen;
+            }
+        }
+
+        private void txtFiltroGridCompletadas_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var todasLasReparacionesEntregadas = 
+                    servReparaciones.TraerReparacionesEntregadasParaGrid();
+                var textoFiltro = txtFiltroGridCompletadas.Text;
+
+                filtroReparaciones = todasLasReparacionesEntregadas.Where(x =>
+                        x.Comentario.ToLower().Contains(textoFiltro.ToLower()) ||
+                        x.IMEI.ToLower().Contains(textoFiltro.ToLower()) ||
+                        x.Marca.ToLower().Contains(textoFiltro.ToLower()) ||
+                        x.Tecnico.ToLower().Contains(textoFiltro.ToLower()) ||
+                        x.Tipo.ToLower().Contains(textoFiltro.ToLower())).ToList();
+
+                if (filtroReparaciones.Count > 0)
+                {
+                    gridReparacionesCompletadas.DataSource = filtroReparaciones;
+                }
+                else
+                {
+                    gridReparacionesCompletadas.DataSource = todasLasReparacionesEntregadas;
+                }
+            }
+            catch (Exception)
+            {
             }
         }
     }

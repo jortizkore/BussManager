@@ -89,6 +89,24 @@ namespace BussManager.Reparaciones
             }
             return reparaciones;
         }
+        public List<ReparacionGrid> TraerReparacionesEntregadasParaGrid()
+        {
+            var db = new Settings.ConnectionSettings();
+            var query = "Select * from vw_Traer_Reparaciones_entregadas_Grid";
+            List<ReparacionGrid> reparaciones = new List<ReparacionGrid>();
+            var dbAnswer = db.bringJsonData(query);
+
+            var JsonList = dbAnswer == string.Empty ? null : Newtonsoft.Json.Linq.JArray.Parse(dbAnswer);
+
+            if (JsonList != null)
+            {
+                foreach (var item in JsonList)
+                {
+                    reparaciones.Add(deJsonAobjetoGrid(item));
+                }
+            }
+            return reparaciones;
+        }
 
         Reparacion deJsonAobjeto(Newtonsoft.Json.Linq.JToken item)
         {

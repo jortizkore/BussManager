@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.TabRegistroReparaciones = new System.Windows.Forms.TabPage();
             this.txtIMEIReparacion = new System.Windows.Forms.TextBox();
             this.txtComentarioReparacion = new System.Windows.Forms.TextBox();
             this.btnGuardarReparacion = new System.Windows.Forms.Button();
@@ -50,18 +50,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TabReparacionesPendientes = new System.Windows.Forms.TabPage();
             this.txtFiltroReparaciones = new System.Windows.Forms.TextBox();
             this.gridReparacionesPendientes = new System.Windows.Forms.DataGridView();
             this.cmdEntregar = new System.Windows.Forms.Button();
             this.cmdCompletar = new System.Windows.Forms.Button();
+            this.TabReparacionesEntregadas = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.gridReparacionesCompletadas = new System.Windows.Forms.DataGridView();
+            this.txtFiltroGridCompletadas = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.TabRegistroReparaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nunmIdCompraReparacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioReparacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoReparacion)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.TabReparacionesPendientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReparacionesPendientes)).BeginInit();
+            this.TabReparacionesEntregadas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridReparacionesCompletadas)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -69,8 +75,9 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.TabRegistroReparaciones);
+            this.tabControl1.Controls.Add(this.TabReparacionesPendientes);
+            this.tabControl1.Controls.Add(this.TabReparacionesEntregadas);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(1, 12);
             this.tabControl1.Name = "tabControl1";
@@ -78,34 +85,34 @@
             this.tabControl1.Size = new System.Drawing.Size(894, 469);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // TabRegistroReparaciones
             // 
-            this.tabPage1.Controls.Add(this.txtIMEIReparacion);
-            this.tabPage1.Controls.Add(this.txtComentarioReparacion);
-            this.tabPage1.Controls.Add(this.btnGuardarReparacion);
-            this.tabPage1.Controls.Add(this.nunmIdCompraReparacion);
-            this.tabPage1.Controls.Add(this.cmbTecnicoReparacion);
-            this.tabPage1.Controls.Add(this.dtFechaReparacion);
-            this.tabPage1.Controls.Add(this.numPrecioReparacion);
-            this.tabPage1.Controls.Add(this.numCostoReparacion);
-            this.tabPage1.Controls.Add(this.cmbTipoReparacion);
-            this.tabPage1.Controls.Add(this.cmbReparacionMarcaEquipo);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 33);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(886, 432);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Registro";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.TabRegistroReparaciones.Controls.Add(this.txtIMEIReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.txtComentarioReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.btnGuardarReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.nunmIdCompraReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.cmbTecnicoReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.dtFechaReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.numPrecioReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.numCostoReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.cmbTipoReparacion);
+            this.TabRegistroReparaciones.Controls.Add(this.cmbReparacionMarcaEquipo);
+            this.TabRegistroReparaciones.Controls.Add(this.label7);
+            this.TabRegistroReparaciones.Controls.Add(this.label6);
+            this.TabRegistroReparaciones.Controls.Add(this.label5);
+            this.TabRegistroReparaciones.Controls.Add(this.label8);
+            this.TabRegistroReparaciones.Controls.Add(this.label9);
+            this.TabRegistroReparaciones.Controls.Add(this.label4);
+            this.TabRegistroReparaciones.Controls.Add(this.label3);
+            this.TabRegistroReparaciones.Controls.Add(this.label2);
+            this.TabRegistroReparaciones.Controls.Add(this.label1);
+            this.TabRegistroReparaciones.Location = new System.Drawing.Point(4, 33);
+            this.TabRegistroReparaciones.Name = "TabRegistroReparaciones";
+            this.TabRegistroReparaciones.Padding = new System.Windows.Forms.Padding(3);
+            this.TabRegistroReparaciones.Size = new System.Drawing.Size(886, 432);
+            this.TabRegistroReparaciones.TabIndex = 0;
+            this.TabRegistroReparaciones.Text = "Registro";
+            this.TabRegistroReparaciones.UseVisualStyleBackColor = true;
             // 
             // txtIMEIReparacion
             // 
@@ -294,19 +301,19 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Marca - Modelo";
             // 
-            // tabPage2
+            // TabReparacionesPendientes
             // 
-            this.tabPage2.Controls.Add(this.txtFiltroReparaciones);
-            this.tabPage2.Controls.Add(this.gridReparacionesPendientes);
-            this.tabPage2.Controls.Add(this.cmdEntregar);
-            this.tabPage2.Controls.Add(this.cmdCompletar);
-            this.tabPage2.Location = new System.Drawing.Point(4, 33);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(886, 432);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Reparaciones pendientes";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.TabReparacionesPendientes.Controls.Add(this.txtFiltroReparaciones);
+            this.TabReparacionesPendientes.Controls.Add(this.gridReparacionesPendientes);
+            this.TabReparacionesPendientes.Controls.Add(this.cmdEntregar);
+            this.TabReparacionesPendientes.Controls.Add(this.cmdCompletar);
+            this.TabReparacionesPendientes.Location = new System.Drawing.Point(4, 33);
+            this.TabReparacionesPendientes.Name = "TabReparacionesPendientes";
+            this.TabReparacionesPendientes.Padding = new System.Windows.Forms.Padding(3);
+            this.TabReparacionesPendientes.Size = new System.Drawing.Size(886, 432);
+            this.TabReparacionesPendientes.TabIndex = 1;
+            this.TabReparacionesPendientes.Text = "Pendientes";
+            this.TabReparacionesPendientes.UseVisualStyleBackColor = true;
             // 
             // txtFiltroReparaciones
             // 
@@ -353,6 +360,47 @@
             this.cmdCompletar.UseVisualStyleBackColor = true;
             this.cmdCompletar.Click += new System.EventHandler(this.cmdCompletar_Click);
             // 
+            // TabReparacionesEntregadas
+            // 
+            this.TabReparacionesEntregadas.Controls.Add(this.txtFiltroGridCompletadas);
+            this.TabReparacionesEntregadas.Controls.Add(this.label10);
+            this.TabReparacionesEntregadas.Controls.Add(this.gridReparacionesCompletadas);
+            this.TabReparacionesEntregadas.Location = new System.Drawing.Point(4, 33);
+            this.TabReparacionesEntregadas.Name = "TabReparacionesEntregadas";
+            this.TabReparacionesEntregadas.Size = new System.Drawing.Size(886, 432);
+            this.TabReparacionesEntregadas.TabIndex = 2;
+            this.TabReparacionesEntregadas.Text = "Entregadas";
+            this.TabReparacionesEntregadas.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 31);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 24);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Filtro";
+            // 
+            // gridReparacionesCompletadas
+            // 
+            this.gridReparacionesCompletadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridReparacionesCompletadas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gridReparacionesCompletadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridReparacionesCompletadas.Location = new System.Drawing.Point(3, 58);
+            this.gridReparacionesCompletadas.Name = "gridReparacionesCompletadas";
+            this.gridReparacionesCompletadas.Size = new System.Drawing.Size(874, 217);
+            this.gridReparacionesCompletadas.TabIndex = 0;
+            this.gridReparacionesCompletadas.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridReparacionesCompletadas_RowPrePaint);
+            // 
+            // txtFiltroGridCompletadas
+            // 
+            this.txtFiltroGridCompletadas.Location = new System.Drawing.Point(64, 28);
+            this.txtFiltroGridCompletadas.Name = "txtFiltroGridCompletadas";
+            this.txtFiltroGridCompletadas.Size = new System.Drawing.Size(436, 29);
+            this.txtFiltroGridCompletadas.TabIndex = 2;
+            this.txtFiltroGridCompletadas.TextChanged += new System.EventHandler(this.txtFiltroGridCompletadas_TextChanged);
+            // 
             // frmReparaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,14 +412,17 @@
             this.Text = "Registro reparaciones";
             this.Load += new System.EventHandler(this.frmReparaciones_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.TabRegistroReparaciones.ResumeLayout(false);
+            this.TabRegistroReparaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nunmIdCompraReparacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioReparacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoReparacion)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.TabReparacionesPendientes.ResumeLayout(false);
+            this.TabReparacionesPendientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReparacionesPendientes)).EndInit();
+            this.TabReparacionesEntregadas.ResumeLayout(false);
+            this.TabReparacionesEntregadas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridReparacionesCompletadas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,7 +430,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage TabRegistroReparaciones;
         private System.Windows.Forms.TextBox txtIMEIReparacion;
         private System.Windows.Forms.TextBox txtComentarioReparacion;
         private System.Windows.Forms.Button btnGuardarReparacion;
@@ -399,10 +450,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage TabReparacionesPendientes;
         private System.Windows.Forms.TextBox txtFiltroReparaciones;
         private System.Windows.Forms.DataGridView gridReparacionesPendientes;
         private System.Windows.Forms.Button cmdEntregar;
         private System.Windows.Forms.Button cmdCompletar;
+        private System.Windows.Forms.TabPage TabReparacionesEntregadas;
+        private System.Windows.Forms.DataGridView gridReparacionesCompletadas;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtFiltroGridCompletadas;
     }
 }
