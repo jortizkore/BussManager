@@ -93,8 +93,8 @@ namespace BussManager.Venta.Accesorios
                 parametro response = new parametro()
                 {
                     nombre = "@responseMessage",
-                    tipo = SqlDbType.Date,
-                    valor = vacc.FechaVenta.ToString()
+                    tipo = SqlDbType.VarChar,
+                    valor = ""
                 };
                 parametros.Add(response);
 

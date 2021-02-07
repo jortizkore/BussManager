@@ -21,7 +21,8 @@ namespace BussManager.Reparaciones
         Reparaciones servReparaciones = new Reparaciones();
         List<ReparacionGrid> filtroReparaciones = new List<ReparacionGrid>();
         List<ReparacionGrid> todasLasReparaciones = new List<ReparacionGrid>();
-        
+        List<ReparacionGrid> todasLasReparacionesEnregadas = new List<ReparacionGrid>();
+
         int selectedID = 0;
 
         public frmReparaciones()

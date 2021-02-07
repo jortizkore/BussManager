@@ -43,13 +43,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gridPerdidas = new System.Windows.Forms.DataGridView();
-            this.txtFiltroPerdidas = new System.Windows.Forms.TextBox();
-            this.lll = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblCantidadPerdiads = new System.Windows.Forms.Label();
             this.lblCostoPerdidas = new System.Windows.Forms.Label();
+            this.lblCantidadPerdiads = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lll = new System.Windows.Forms.Label();
+            this.txtFiltroPerdidas = new System.Windows.Forms.TextBox();
+            this.gridPerdidas = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoUnidadPerdida)).BeginInit();
@@ -88,7 +88,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(530, 306);
+            this.tabPage1.Size = new System.Drawing.Size(550, 314);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Reporte";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -223,43 +223,25 @@
             this.tabPage2.Text = "Registros";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // gridPerdidas
+            // lblCostoPerdidas
             // 
-            this.gridPerdidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblCostoPerdidas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridPerdidas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gridPerdidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPerdidas.Location = new System.Drawing.Point(7, 74);
-            this.gridPerdidas.Name = "gridPerdidas";
-            this.gridPerdidas.Size = new System.Drawing.Size(537, 233);
-            this.gridPerdidas.TabIndex = 0;
+            this.lblCostoPerdidas.AutoSize = true;
+            this.lblCostoPerdidas.Location = new System.Drawing.Point(382, 51);
+            this.lblCostoPerdidas.Name = "lblCostoPerdidas";
+            this.lblCostoPerdidas.Size = new System.Drawing.Size(13, 13);
+            this.lblCostoPerdidas.TabIndex = 4;
+            this.lblCostoPerdidas.Text = "0";
             // 
-            // txtFiltroPerdidas
+            // lblCantidadPerdiads
             // 
-            this.txtFiltroPerdidas.Location = new System.Drawing.Point(7, 48);
-            this.txtFiltroPerdidas.Name = "txtFiltroPerdidas";
-            this.txtFiltroPerdidas.Size = new System.Drawing.Size(236, 20);
-            this.txtFiltroPerdidas.TabIndex = 1;
-            this.txtFiltroPerdidas.TextChanged += new System.EventHandler(this.txtFiltroPerdidas_TextChanged);
-            // 
-            // lll
-            // 
-            this.lll.AutoSize = true;
-            this.lll.Location = new System.Drawing.Point(4, 32);
-            this.lll.Name = "lll";
-            this.lll.Size = new System.Drawing.Size(29, 13);
-            this.lll.TabIndex = 2;
-            this.lll.Text = "Filtro";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(255, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Candidad";
+            this.lblCantidadPerdiads.AutoSize = true;
+            this.lblCantidadPerdiads.Location = new System.Drawing.Point(255, 51);
+            this.lblCantidadPerdiads.Name = "lblCantidadPerdiads";
+            this.lblCantidadPerdiads.Size = new System.Drawing.Size(13, 13);
+            this.lblCantidadPerdiads.TabIndex = 4;
+            this.lblCantidadPerdiads.Text = "0";
             // 
             // label7
             // 
@@ -272,25 +254,43 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Costo";
             // 
-            // lblCantidadPerdiads
+            // label1
             // 
-            this.lblCantidadPerdiads.AutoSize = true;
-            this.lblCantidadPerdiads.Location = new System.Drawing.Point(255, 51);
-            this.lblCantidadPerdiads.Name = "lblCantidadPerdiads";
-            this.lblCantidadPerdiads.Size = new System.Drawing.Size(13, 13);
-            this.lblCantidadPerdiads.TabIndex = 4;
-            this.lblCantidadPerdiads.Text = "0";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(255, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Candidad";
             // 
-            // lblCostoPerdidas
+            // lll
             // 
-            this.lblCostoPerdidas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lll.AutoSize = true;
+            this.lll.Location = new System.Drawing.Point(4, 32);
+            this.lll.Name = "lll";
+            this.lll.Size = new System.Drawing.Size(29, 13);
+            this.lll.TabIndex = 2;
+            this.lll.Text = "Filtro";
+            // 
+            // txtFiltroPerdidas
+            // 
+            this.txtFiltroPerdidas.Location = new System.Drawing.Point(7, 48);
+            this.txtFiltroPerdidas.Name = "txtFiltroPerdidas";
+            this.txtFiltroPerdidas.Size = new System.Drawing.Size(236, 20);
+            this.txtFiltroPerdidas.TabIndex = 1;
+            this.txtFiltroPerdidas.TextChanged += new System.EventHandler(this.txtFiltroPerdidas_TextChanged);
+            // 
+            // gridPerdidas
+            // 
+            this.gridPerdidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCostoPerdidas.AutoSize = true;
-            this.lblCostoPerdidas.Location = new System.Drawing.Point(382, 51);
-            this.lblCostoPerdidas.Name = "lblCostoPerdidas";
-            this.lblCostoPerdidas.Size = new System.Drawing.Size(13, 13);
-            this.lblCostoPerdidas.TabIndex = 4;
-            this.lblCostoPerdidas.Text = "0";
+            this.gridPerdidas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gridPerdidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPerdidas.Location = new System.Drawing.Point(7, 74);
+            this.gridPerdidas.Name = "gridPerdidas";
+            this.gridPerdidas.Size = new System.Drawing.Size(537, 233);
+            this.gridPerdidas.TabIndex = 0;
             // 
             // frmPerdidaAccesorio
             // 
@@ -300,6 +300,7 @@
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(576, 392);
             this.Name = "frmPerdidaAccesorio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perdidas";
             this.Load += new System.EventHandler(this.frmPerdidaAccesorio_Load);
             this.tabControl1.ResumeLayout(false);

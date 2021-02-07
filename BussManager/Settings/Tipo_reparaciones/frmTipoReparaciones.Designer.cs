@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupTipoReparaciones = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblIdModificarTipoReparacion = new System.Windows.Forms.Label();
-            this.sd = new System.Windows.Forms.Label();
-            this.txtTipoReparacion = new System.Windows.Forms.TextBox();
             this.cmdInsertarTipoReparacion = new System.Windows.Forms.Button();
+            this.txtTipoReparacion = new System.Windows.Forms.TextBox();
+            this.sd = new System.Windows.Forms.Label();
+            this.lblIdModificarTipoReparacion = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gridTipoReparaciones = new System.Windows.Forms.DataGridView();
             this.groupTipoReparaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipoReparaciones)).BeginInit();
@@ -55,40 +55,6 @@
             this.groupTipoReparaciones.TabStop = false;
             this.groupTipoReparaciones.Text = "Campos";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID: ";
-            // 
-            // lblIdModificarTipoReparacion
-            // 
-            this.lblIdModificarTipoReparacion.AutoSize = true;
-            this.lblIdModificarTipoReparacion.Location = new System.Drawing.Point(40, 28);
-            this.lblIdModificarTipoReparacion.Name = "lblIdModificarTipoReparacion";
-            this.lblIdModificarTipoReparacion.Size = new System.Drawing.Size(13, 13);
-            this.lblIdModificarTipoReparacion.TabIndex = 1;
-            this.lblIdModificarTipoReparacion.Text = "0";
-            // 
-            // sd
-            // 
-            this.sd.AutoSize = true;
-            this.sd.Location = new System.Drawing.Point(10, 54);
-            this.sd.Name = "sd";
-            this.sd.Size = new System.Drawing.Size(81, 13);
-            this.sd.TabIndex = 2;
-            this.sd.Text = "Tipo reparación";
-            // 
-            // txtTipoReparacion
-            // 
-            this.txtTipoReparacion.Location = new System.Drawing.Point(97, 51);
-            this.txtTipoReparacion.Name = "txtTipoReparacion";
-            this.txtTipoReparacion.Size = new System.Drawing.Size(159, 20);
-            this.txtTipoReparacion.TabIndex = 3;
-            // 
             // cmdInsertarTipoReparacion
             // 
             this.cmdInsertarTipoReparacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -99,6 +65,40 @@
             this.cmdInsertarTipoReparacion.Text = "Insertar";
             this.cmdInsertarTipoReparacion.UseVisualStyleBackColor = true;
             this.cmdInsertarTipoReparacion.Click += new System.EventHandler(this.cmdInsertarTipoReparacion_Click);
+            // 
+            // txtTipoReparacion
+            // 
+            this.txtTipoReparacion.Location = new System.Drawing.Point(97, 51);
+            this.txtTipoReparacion.Name = "txtTipoReparacion";
+            this.txtTipoReparacion.Size = new System.Drawing.Size(159, 20);
+            this.txtTipoReparacion.TabIndex = 3;
+            // 
+            // sd
+            // 
+            this.sd.AutoSize = true;
+            this.sd.Location = new System.Drawing.Point(10, 54);
+            this.sd.Name = "sd";
+            this.sd.Size = new System.Drawing.Size(81, 13);
+            this.sd.TabIndex = 2;
+            this.sd.Text = "Tipo reparación";
+            // 
+            // lblIdModificarTipoReparacion
+            // 
+            this.lblIdModificarTipoReparacion.AutoSize = true;
+            this.lblIdModificarTipoReparacion.Location = new System.Drawing.Point(40, 28);
+            this.lblIdModificarTipoReparacion.Name = "lblIdModificarTipoReparacion";
+            this.lblIdModificarTipoReparacion.Size = new System.Drawing.Size(13, 13);
+            this.lblIdModificarTipoReparacion.TabIndex = 1;
+            this.lblIdModificarTipoReparacion.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID: ";
             // 
             // gridTipoReparaciones
             // 
@@ -123,6 +123,7 @@
             this.Controls.Add(this.groupTipoReparaciones);
             this.MinimumSize = new System.Drawing.Size(362, 350);
             this.Name = "frmTipoReparaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipo reparaciones";
             this.Load += new System.EventHandler(this.frmTipoReparaciones_Load);
             this.groupTipoReparaciones.ResumeLayout(false);

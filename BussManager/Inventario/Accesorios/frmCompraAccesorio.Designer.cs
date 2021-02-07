@@ -242,6 +242,7 @@
             this.Controls.Add(this.grdCompraAccesorios);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCompraAccesorio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario Accesorios";
             this.Load += new System.EventHandler(this.frmCompraAccesorio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCostoAccesorio)).EndInit();

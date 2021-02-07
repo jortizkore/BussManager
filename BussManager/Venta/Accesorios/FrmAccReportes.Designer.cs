@@ -257,6 +257,7 @@
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(1045, 533);
             this.Name = "FrmAccReportes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de ventas de accesorios";
             this.Load += new System.EventHandler(this.FrmAccReportes_Load);
             this.groupBox1.ResumeLayout(false);

@@ -293,6 +293,7 @@
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(671, 382);
             this.Name = "frmVentaEquipos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta Equipos celulares";
             this.Load += new System.EventHandler(this.frmVentaEquipos_Load);
             this.Resize += new System.EventHandler(this.frmVentaEquipos_Resize);

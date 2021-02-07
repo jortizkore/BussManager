@@ -274,6 +274,7 @@
             this.Controls.Add(this.cmbArticuloSeleccionado);
             this.MinimumSize = new System.Drawing.Size(716, 419);
             this.Name = "frmVentasAcc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accesorios";
             this.Load += new System.EventHandler(this.frmVentasAcc_Load);
             this.SizeChanged += new System.EventHandler(this.frmVentasAcc_SizeChanged);

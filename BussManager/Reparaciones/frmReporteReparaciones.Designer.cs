@@ -30,10 +30,10 @@
         {
             this.grdReporteReparaciones = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdReporteReparaciones)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros y parametros";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(503, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Fecha fin";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -88,15 +97,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(274, 26);
             this.dateTimePicker1.TabIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(503, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Fecha fin";
-            // 
             // frmReporteReparaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +105,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grdReporteReparaciones);
             this.Name = "frmReporteReparaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReporteReparaciones";
             this.Load += new System.EventHandler(this.frmReporteReparaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdReporteReparaciones)).EndInit();

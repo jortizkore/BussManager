@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabRegistroReparaciones = new System.Windows.Forms.TabPage();
             this.txtIMEIReparacion = new System.Windows.Forms.TextBox();
@@ -333,8 +333,8 @@
             this.gridReparacionesPendientes.Location = new System.Drawing.Point(6, 138);
             this.gridReparacionesPendientes.MultiSelect = false;
             this.gridReparacionesPendientes.Name = "gridReparacionesPendientes";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridReparacionesPendientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridReparacionesPendientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridReparacionesPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridReparacionesPendientes.Size = new System.Drawing.Size(873, 288);
             this.gridReparacionesPendientes.TabIndex = 1;
@@ -411,6 +411,7 @@
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(705, 523);
             this.Name = "frmReparaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro reparaciones";
             this.Load += new System.EventHandler(this.frmReparaciones_Load);
             this.tabControl1.ResumeLayout(false);

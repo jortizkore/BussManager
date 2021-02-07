@@ -297,6 +297,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grdReporteVentasEquipos);
             this.Name = "frmReporteVentaEquipos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte venta celulares";
             this.Load += new System.EventHandler(this.frmReporteVentaEquipos_Load);
             this.Resize += new System.EventHandler(this.frmReporteVentaEquipos_Resize);
