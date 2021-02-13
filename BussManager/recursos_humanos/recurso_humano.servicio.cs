@@ -18,12 +18,17 @@ namespace BussManager.recursos_humanos
             List<RecursoHumano> list = new List<RecursoHumano>();
 
             var query = $"select * from {view}";
-            var resultado = JArray.Parse(db.bringJsonData(query));
-
-            foreach (var item in resultado)
+            var json_response = db.bringJsonData(query);
+            if (json_response != string.Empty)
             {
-                var rh = DeJsonArh(item);
-                list.Add(rh);
+                var resultado = JArray.Parse(json_response);
+
+
+                foreach (var item in resultado)
+                {
+                    var rh = DeJsonArh(item);
+                    list.Add(rh);
+                }
             }
 
             return list;
@@ -49,7 +54,7 @@ namespace BussManager.recursos_humanos
 
             var query = $"select * from {view} where usuario = '{usuario}'";
             var dbAnswer = db.bringJsonData(query);
-            var resultado =  dbAnswer != string.Empty? JArray.Parse(dbAnswer).First():null;
+            var resultado = dbAnswer != string.Empty ? JArray.Parse(dbAnswer).First() : null;
 
             if (resultado != null)
             {
@@ -74,7 +79,7 @@ namespace BussManager.recursos_humanos
                 {
                     rh.Add(DeJsonArh(item));
                 }
-                
+
             }
             return rh;
         }

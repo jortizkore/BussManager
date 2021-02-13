@@ -36,9 +36,7 @@ namespace BussManager
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-            this.Enabled = true;
+            this.Close();
         }
 
         private void tipoReparacionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,6 +155,12 @@ namespace BussManager
         {
             frmClases frmClaseEquipos = new frmClases();
             frmClaseEquipos.ShowDialog();
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            frmCompraAccesorio frm = new frmCompraAccesorio();
+            frm.ShowDialog();
         }
     }
 }

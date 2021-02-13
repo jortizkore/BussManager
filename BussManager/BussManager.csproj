@@ -47,6 +47,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>coinflat.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -260,6 +264,65 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up_high_sales_business_finance_icon-icons.com_76287.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_cash_coin_dollar_finance_money_payment_icon_123244.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_finance_business_coin_dollar_icon_175930.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol %283%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trade_report_reports_documents_2351.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_finance_business_coin_dollar_icon_175930.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-pointing-down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wastebasket.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-pointing-down %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signal-bars.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="coin1.ico" />
+    <Content Include="coin2.ico" />
+    <Content Include="coinflat.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
