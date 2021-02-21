@@ -24,3 +24,4 @@ D:\Projects\BussManager\BussManager\obj\Release\BussManager.Venta.Accesorios.Frm
 D:\Projects\BussManager\BussManager\obj\Release\BussManager.Venta.Equipos.frmReporteVentaEquipos.resources
 D:\Projects\BussManager\BussManager\obj\Release\BussManager.csprojAssemblyReference.cache
 D:\Projects\BussManager\BussManager\obj\Release\BussManager.Reparaciones.frmReporteReparaciones.resources
+D:\Projects\BussManager\BussManager\obj\Release\BussManager.Reportes.frmReporteGeneralMensual.resources

@@ -54,6 +54,8 @@
             this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(331, 26);
             this.txtContrasenia.TabIndex = 1;
+            this.txtContrasenia.TextChanged += new System.EventHandler(this.txtContrasenia_TextChanged);
+            this.txtContrasenia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasenia_KeyDown);
             // 
             // label1
             // 

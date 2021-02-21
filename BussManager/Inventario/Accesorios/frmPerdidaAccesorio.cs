@@ -31,6 +31,7 @@ namespace BussManager.Inventario.Accesorios
             CargarResponsables();
             CargarGridPerdidas();
             ConfigurarFechasFiltros();
+            ManejadorDePermisos.ComprobarPermisos(this);
             chUsarFechas.Checked = usarFechas;
         }
 
@@ -46,9 +47,9 @@ namespace BussManager.Inventario.Accesorios
 
             gridPerdidas.DataSource = usarFechas?
                                         listaPerdidas = listaPerdidas
-                                            .Where(x => x.Fecha >=
+                                            .Where(x => (x.Fecha >=
                                             dtFechaInicio.Value &&
-                                            x.Fecha >= dtFechaFin.Value)
+                                            x.Fecha <= dtFechaFin.Value) || x.Fecha == dtFechaInicio.Value.Date)
                                             .ToList()
                                         :   listaPerdidas;
             calcularCantidadCosto(listaPerdidas);
@@ -60,9 +61,9 @@ namespace BussManager.Inventario.Accesorios
             var listaPerdidas = pa.TraerPerdidas(filtro);
             gridPerdidas.DataSource = usarFechas ?
                                         listaPerdidas = listaPerdidas
-                                            .Where(x => x.Fecha >=
+                                            .Where(x => (x.Fecha >=
                                             dtFechaInicio.Value &&
-                                            x.Fecha >= dtFechaFin.Value)
+                                            x.Fecha <= dtFechaFin.Value) || x.Fecha == dtFechaInicio.Value.Date)
                                             .ToList()
                                         : listaPerdidas;
             calcularCantidadCosto(listaPerdidas);
@@ -77,15 +78,15 @@ namespace BussManager.Inventario.Accesorios
         private void CargarAccesorios()
         {
             servicioAcc = new ServicioAccesorio();
-            CmbAccesorioPerdiada.DataSource = servicioAcc.TraerAccesorios();
-            CmbAccesorioPerdiada.ValueMember = "ID";
+            CmbAccesorioPerdiada.DataSource = servicioAcc.TraerAccesoriosParaCombo();
+            CmbAccesorioPerdiada.ValueMember = "Descripcion";
             CmbAccesorioPerdiada.DisplayMember = "Descripcion";
         }
 
         private void CargarResponsables()
         {
             ServicioRecursoHumano rh = new ServicioRecursoHumano();
-            cmbResponsable.DataSource = rh.TraerRecursosHumanos();
+            cmbResponsable.DataSource = rh.TraerVendedores();
             cmbResponsable.ValueMember = "Id";
             cmbResponsable.DisplayMember = "Nombre";
         }
@@ -133,7 +134,7 @@ namespace BussManager.Inventario.Accesorios
             try
             {
                 var accID = CmbAccesorioPerdiada.SelectedValue.ToString();
-                accesocioSeleccionado = servicioAcc.TraerAccesorio(Convert.ToInt32(accID));
+                accesocioSeleccionado = servicioAcc.TraerAccesorio(accID);
                 numCostoUnidadPerdida.Value = accesocioSeleccionado.Costo;
                 maxCantidadPerdida = servicioAcc.TraerCantidadAccesorio(accesocioSeleccionado.Descripcion);
                 numCantidadPerdida.Maximum = maxCantidadPerdida;
@@ -178,6 +179,18 @@ namespace BussManager.Inventario.Accesorios
             usarFechas = chUsarFechas.Checked;
             txtFiltroPerdidas.Text = string.Empty;
             CargarGridPerdidas();
+        }
+
+        private void dtFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+            if(txtFiltroPerdidas.Text.Trim().Length != 0)
+            {
+                CargarGridPerdidas(txtFiltroPerdidas.Text);
+            }
+            else
+            {
+                CargarGridPerdidas();
+            }
         }
     }
 }

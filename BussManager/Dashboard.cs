@@ -15,6 +15,8 @@ using BussManager.Inventario.Equipos;
 using BussManager.Venta;
 using BussManager.Reparaciones;
 using BussManager.Inventario.Accesorios;
+using BussManager.Reportes;
+using BussManager.Settings;
 
 namespace BussManager
 {
@@ -27,16 +29,14 @@ namespace BussManager
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            BussManager.recursos_humanos.ServicioRecursoHumano rh = new recursos_humanos.ServicioRecursoHumano();
-
-            // testGrid.DataSource = rh.TraerRecursosHumanos();
-            // this.Enabled = false;
-            // loginToolStripMenuItem_Click(null, null);
+            ManejadorDePermisos.ComprobarPermisos(this);
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            UsuarioLogueado.CerrarSession();
+            UsuarioLogueado.frm.Show();
         }
 
         private void tipoReparacionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -161,6 +161,28 @@ namespace BussManager
         {
             frmCompraAccesorio frm = new frmCompraAccesorio();
             frm.ShowDialog();
+        }
+
+        private void btnVerReporteGeneralMensual_Click(object sender, EventArgs e)
+        {
+            frmReporteGeneralMensual frm = new frmReporteGeneralMensual();
+            frm.ShowDialog();
+        }
+
+        private void btnVerReportePerdida_Click(object sender, EventArgs e)
+        {
+            frmPerdidaAccesorio frm = new frmPerdidaAccesorio();
+            frm.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            UsuarioLogueado.frm.Show();
         }
     }
 }

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BussManager.recursos_humanos;
+using BussManager.Settings;
+
+
 namespace BussManager.Login
 {
     class Login
     {
         ServicioRecursoHumano rh = new ServicioRecursoHumano();
-
         public Login()
         {
 
@@ -22,12 +24,13 @@ namespace BussManager.Login
             {
                 if(user.Contrasenia == credenciales.contrasenia)
                 {
-                    // messageService should return a successfull login message
+                    UsuarioLogueado.Loguear(user);
+                    MessageManager.InfoMessage("Hola " + UsuarioLogueado.TraerNombreUsuarioLogueado());
                     return true;
                 }
-                // messageService should return a missmatch password message
+                MessageManager.AlerMessage("Contraseña inválida, por favor, intente de nuevo");
             }
-            // not existen user message should be thrown by the messageService
+            MessageManager.AlerMessage("Usuario no encontrado!");
             return false;
         }
     }

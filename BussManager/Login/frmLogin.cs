@@ -1,5 +1,6 @@
 ﻿using System;
 using BussManager.Login;
+using BussManager.Settings;
 using System.Windows.Forms;
 
 namespace BussManager.Login
@@ -21,6 +22,11 @@ namespace BussManager.Login
 
         private void cmdLogin_Click(object sender, EventArgs e)
         {
+            Loguear();
+        }
+
+        private void Loguear()
+        {
             Credenciales credentiales = new Credenciales
             {
                 usuario = txtUsuario.Text,
@@ -28,8 +34,19 @@ namespace BussManager.Login
             };
             if (servicioDeLogin.DoLogin(credentiales))
             {
-                this.Close();
+                Dashboard frm = new Dashboard();
+                frm.Show();
+                UsuarioLogueado.frm = this;
+                this.Hide();
+                LimpiparControles();
             }
+        }
+
+        void LimpiparControles()
+        {
+            txtContrasenia.Text = string.Empty;
+            txtUsuario.Text = string.Empty;
+            txtUsuario.Focus();
         }
 
         private void cmdCancel_Click(object sender, EventArgs e)
@@ -38,6 +55,19 @@ namespace BussManager.Login
         }
 
         private void loginImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContrasenia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyValue == 13)
+            {
+                Loguear();
+            }
+        }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -15,5 +15,6 @@ namespace BussManager.recursos_humanos
         public string Usuario { get; set; }
         public string Contrasenia { get; set; }
         public string Estado { get; set; }
+        public int Nivel { get; set; }
     }
 }

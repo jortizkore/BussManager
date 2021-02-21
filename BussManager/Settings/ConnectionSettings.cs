@@ -27,8 +27,8 @@ namespace BussManager.Settings
 
         private void setConnectionSettings()
         {
-            // this.conStr = $"Server={server};Database={database};Trusted_Connection=True;";
-            this.conStr = "Data Source=SQL5078.site4now.net;Initial Catalog=DB_A6F393_bussmanager;User Id=DB_A6F393_bussmanager_admin;Password=Sincontrasena01";
+            this.conStr = $"Server={server};Database={database};Trusted_Connection=True;";
+            //this.conStr = "Data Source=SQL5078.site4now.net;Initial Catalog=DB_A6F393_bussmanager;User Id=DB_A6F393_bussmanager_admin;Password=Sincontrasena01";
             this.connection = new SqlConnection(this.conStr);
             this.command = new SqlCommand();
             this.command.Connection = this.connection;
@@ -118,14 +118,24 @@ namespace BussManager.Settings
 
         public bool CorrerSP(string sp)
         {
-            this.command.CommandType = CommandType.StoredProcedure;
-            this.command.CommandText = sp;
-            if (this.connect())
+            try
             {
-                this.command.ExecuteNonQuery();
-                return true;
+                this.command.CommandType = CommandType.StoredProcedure;
+                this.command.CommandText = sp;
+                if (this.connect())
+                {
+                    this.command.ExecuteNonQuery();
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception)
+            {
+                return false;
+            }finally
+            {
+                Disconnect();
+            }
         }
 
         public bool CorrerSP(string sp, List<parametro> parametros)

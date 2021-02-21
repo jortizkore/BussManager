@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using BussManager.Settings;
 using Newtonsoft.Json.Linq;
+using System.Data;
+
 
 namespace BussManager.Inventario.Accesorios
 {
@@ -37,10 +39,29 @@ namespace BussManager.Inventario.Accesorios
 
             return returnList;
         }
+        public DataTable TraerAccesoriosInventario()
+        {
+            var query = "select distinct(descripcion), count(*) as 'cantidad', costo"
+                            + " from "
+                            + " accesorios " 
+                        + " group by descripcion, costo";
+            
+            return db.BringData(query);
+        }
+        public DataTable TraerAccesoriosInventario(string filtro)
+        {
+            var query = "select distinct(descripcion), count(*) as 'cantidad', costo"
+                            + " from "
+                            + " accesorios "
+                            + " WHERE descripcion like '%" + filtro + "%'"
+                        + " group by descripcion, costo";
+
+            return db.BringData(query);
+        }
         public List<Accesorio> TraerAccesoriosParaCombo()
         {
             var returnList = new List<Accesorio>();
-            var query = "select distinct(descripcion) from accesorios";
+            var query = "select distinct(descripcion), costo from accesorios";
             var result = db.bringJsonData(query);
 
             if (result != string.Empty)

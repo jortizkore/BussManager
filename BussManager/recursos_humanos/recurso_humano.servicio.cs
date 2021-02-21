@@ -44,7 +44,8 @@ namespace BussManager.recursos_humanos
                 Cargo = token["cargo"].ToString(),
                 Usuario = token["usuario"].ToString(),
                 Contrasenia = token["contrasenia"].ToString(),
-                Estado = token["estado"].ToString()
+                Estado = token["estado"].ToString(),
+                Nivel = int.Parse(token["nivel"].ToString())
             };
         }
 
@@ -70,6 +71,25 @@ namespace BussManager.recursos_humanos
             List<RecursoHumano> rh = new List<RecursoHumano>();
 
             var query = $"select * from {view} where cargo like '%Reparador%'";
+            var dbAnswer = db.bringJsonData(query);
+            var resultado = dbAnswer == string.Empty ? null : JArray.Parse(dbAnswer);
+
+            if (resultado != null)
+            {
+                foreach (var item in resultado)
+                {
+                    rh.Add(DeJsonArh(item));
+                }
+
+            }
+            return rh;
+        }
+
+        public List<RecursoHumano> TraerVendedores()
+        {
+            List<RecursoHumano> rh = new List<RecursoHumano>();
+
+            var query = $"select * from {view} where cargo like '%Vendedor%'";
             var dbAnswer = db.bringJsonData(query);
             var resultado = dbAnswer == string.Empty ? null : JArray.Parse(dbAnswer);
 

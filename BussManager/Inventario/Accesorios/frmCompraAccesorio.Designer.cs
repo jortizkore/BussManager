@@ -37,7 +37,7 @@
             this.numPrecioAccesorio = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCapitalInventario = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbltxt = new System.Windows.Forms.Label();
             this.lbCantidadInventario = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuscarComprasAccesorios = new System.Windows.Forms.Button();
@@ -116,7 +116,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lblCapitalInventario);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lbltxt);
             this.groupBox1.Controls.Add(this.lbCantidadInventario);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnInsertarAccesorios);
@@ -133,7 +133,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(2, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(822, 195);
+            this.groupBox1.Size = new System.Drawing.Size(879, 195);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de la compra";
@@ -141,47 +141,47 @@
             // 
             // lblCapitalInventario
             // 
-            this.lblCapitalInventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCapitalInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCapitalInventario.AutoSize = true;
             this.lblCapitalInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapitalInventario.Location = new System.Drawing.Point(627, 32);
+            this.lblCapitalInventario.Location = new System.Drawing.Point(768, 32);
             this.lblCapitalInventario.Name = "lblCapitalInventario";
             this.lblCapitalInventario.Size = new System.Drawing.Size(19, 20);
             this.lblCapitalInventario.TabIndex = 8;
+            this.lblCapitalInventario.Tag = "5";
             this.lblCapitalInventario.Text = "0";
             // 
-            // label6
+            // lbltxt
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(442, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 22);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Capital en inventario:";
+            this.lbltxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbltxt.AutoSize = true;
+            this.lbltxt.Location = new System.Drawing.Point(583, 29);
+            this.lbltxt.Name = "lbltxt";
+            this.lbltxt.Size = new System.Drawing.Size(179, 22);
+            this.lbltxt.TabIndex = 8;
+            this.lbltxt.Tag = "5";
+            this.lbltxt.Text = "Capital en inventario:";
             // 
             // lbCantidadInventario
             // 
-            this.lbCantidadInventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCantidadInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCantidadInventario.AutoSize = true;
-            this.lbCantidadInventario.Location = new System.Drawing.Point(614, 68);
+            this.lbCantidadInventario.Location = new System.Drawing.Point(768, 87);
             this.lbCantidadInventario.Name = "lbCantidadInventario";
             this.lbCantidadInventario.Size = new System.Drawing.Size(20, 22);
             this.lbCantidadInventario.TabIndex = 8;
+            this.lbCantidadInventario.Tag = "1";
             this.lbCantidadInventario.Text = "0";
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(442, 68);
+            this.label5.Location = new System.Drawing.Point(596, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 22);
             this.label5.TabIndex = 8;
+            this.label5.Tag = "1";
             this.label5.Text = "Cant. en inventario:";
             // 
             // btnBuscarComprasAccesorios
@@ -200,7 +200,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscarComprasAccesorios.Location = new System.Drawing.Point(100, 159);
             this.txtBuscarComprasAccesorios.Name = "txtBuscarComprasAccesorios";
-            this.txtBuscarComprasAccesorios.Size = new System.Drawing.Size(710, 27);
+            this.txtBuscarComprasAccesorios.Size = new System.Drawing.Size(767, 27);
             this.txtBuscarComprasAccesorios.TabIndex = 5;
             this.txtBuscarComprasAccesorios.TextChanged += new System.EventHandler(this.txtBuscarComprasAccesorios_TextChanged);
             // 
@@ -231,7 +231,7 @@
             this.grdCompraAccesorios.Name = "grdCompraAccesorios";
             this.grdCompraAccesorios.ReadOnly = true;
             this.grdCompraAccesorios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdCompraAccesorios.Size = new System.Drawing.Size(822, 269);
+            this.grdCompraAccesorios.Size = new System.Drawing.Size(879, 269);
             this.grdCompraAccesorios.TabIndex = 5;
             this.grdCompraAccesorios.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdCompraAccesorios_CellMouseDoubleClick);
             // 
@@ -253,14 +253,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(829, 477);
+            this.ClientSize = new System.Drawing.Size(886, 477);
             this.Controls.Add(this.grdCompraAccesorios);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(845, 516);
+            this.MinimumSize = new System.Drawing.Size(902, 516);
             this.Name = "frmCompraAccesorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inventario Accesorios";
+            this.Text = "Inventario Productos";
             this.Load += new System.EventHandler(this.frmCompraAccesorio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCostoAccesorio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioAccesorio)).EndInit();
@@ -288,7 +288,7 @@
         private System.Windows.Forms.TextBox txtBuscarComprasAccesorios;
         private System.Windows.Forms.Button btnInsertarAccesorios;
         private System.Windows.Forms.Label lblCapitalInventario;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbltxt;
         private System.Windows.Forms.Label lbCantidadInventario;
         private System.Windows.Forms.Label label5;
     }

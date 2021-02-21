@@ -75,6 +75,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(558, 340);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Tag = "1";
             // 
             // tabPage1
             // 
@@ -96,6 +97,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(550, 309);
             this.tabPage1.TabIndex = 0;
+            this.tabPage1.Tag = "1";
             this.tabPage1.Text = "Reporte";
             // 
             // CmdReportarPerdida
@@ -106,7 +108,7 @@
             this.CmdReportarPerdida.Location = new System.Drawing.Point(396, 237);
             this.CmdReportarPerdida.Name = "CmdReportarPerdida";
             this.CmdReportarPerdida.Size = new System.Drawing.Size(141, 45);
-            this.CmdReportarPerdida.TabIndex = 6;
+            this.CmdReportarPerdida.TabIndex = 5;
             this.CmdReportarPerdida.Text = "Reportar";
             this.CmdReportarPerdida.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CmdReportarPerdida.UseVisualStyleBackColor = true;
@@ -123,7 +125,7 @@
             0});
             this.numCostoUnidadPerdida.Name = "numCostoUnidadPerdida";
             this.numCostoUnidadPerdida.Size = new System.Drawing.Size(120, 24);
-            this.numCostoUnidadPerdida.TabIndex = 5;
+            this.numCostoUnidadPerdida.TabIndex = 2;
             // 
             // numCantidadPerdida
             // 
@@ -135,7 +137,7 @@
             0});
             this.numCantidadPerdida.Name = "numCantidadPerdida";
             this.numCantidadPerdida.Size = new System.Drawing.Size(120, 24);
-            this.numCantidadPerdida.TabIndex = 5;
+            this.numCantidadPerdida.TabIndex = 1;
             // 
             // txtTipoPerdida
             // 
@@ -143,7 +145,7 @@
             this.txtTipoPerdida.Multiline = true;
             this.txtTipoPerdida.Name = "txtTipoPerdida";
             this.txtTipoPerdida.Size = new System.Drawing.Size(257, 77);
-            this.txtTipoPerdida.TabIndex = 4;
+            this.txtTipoPerdida.TabIndex = 3;
             // 
             // cmbResponsable
             // 
@@ -151,7 +153,7 @@
             this.cmbResponsable.Location = new System.Drawing.Point(384, 205);
             this.cmbResponsable.Name = "cmbResponsable";
             this.cmbResponsable.Size = new System.Drawing.Size(153, 26);
-            this.cmbResponsable.TabIndex = 3;
+            this.cmbResponsable.TabIndex = 4;
             // 
             // CmbAccesorioPerdiada
             // 
@@ -159,7 +161,7 @@
             this.CmbAccesorioPerdiada.Location = new System.Drawing.Point(87, 55);
             this.CmbAccesorioPerdiada.Name = "CmbAccesorioPerdiada";
             this.CmbAccesorioPerdiada.Size = new System.Drawing.Size(307, 26);
-            this.CmbAccesorioPerdiada.TabIndex = 3;
+            this.CmbAccesorioPerdiada.TabIndex = 0;
             this.CmbAccesorioPerdiada.SelectedIndexChanged += new System.EventHandler(this.CmbAccesorioPerdiada_SelectedIndexChanged);
             // 
             // label6
@@ -177,7 +179,7 @@
             this.dtFechaPerdida.Location = new System.Drawing.Point(263, 6);
             this.dtFechaPerdida.Name = "dtFechaPerdida";
             this.dtFechaPerdida.Size = new System.Drawing.Size(274, 24);
-            this.dtFechaPerdida.TabIndex = 1;
+            this.dtFechaPerdida.TabIndex = 6;
             // 
             // label5
             // 
@@ -233,6 +235,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(550, 309);
             this.tabPage2.TabIndex = 1;
+            this.tabPage2.Tag = "1";
             this.tabPage2.Text = "Registros";
             // 
             // chUsarFechas
@@ -241,7 +244,7 @@
             this.chUsarFechas.Location = new System.Drawing.Point(226, 17);
             this.chUsarFechas.Name = "chUsarFechas";
             this.chUsarFechas.Size = new System.Drawing.Size(107, 22);
-            this.chUsarFechas.TabIndex = 7;
+            this.chUsarFechas.TabIndex = 3;
             this.chUsarFechas.Text = "Usar fechas";
             this.chUsarFechas.UseVisualStyleBackColor = true;
             this.chUsarFechas.CheckedChanged += new System.EventHandler(this.chsarFechas_CheckedChanged);
@@ -251,14 +254,16 @@
             this.dtFechaFin.Location = new System.Drawing.Point(277, 107);
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Size = new System.Drawing.Size(266, 24);
-            this.dtFechaFin.TabIndex = 6;
+            this.dtFechaFin.TabIndex = 2;
+            this.dtFechaFin.Tag = "1";
             // 
             // dtFechaInicio
             // 
             this.dtFechaInicio.Location = new System.Drawing.Point(10, 107);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(261, 24);
-            this.dtFechaInicio.TabIndex = 5;
+            this.dtFechaInicio.TabIndex = 1;
+            this.dtFechaInicio.ValueChanged += new System.EventHandler(this.dtFechaInicio_ValueChanged);
             // 
             // lblCostoPerdidas
             // 
@@ -268,6 +273,7 @@
             this.lblCostoPerdidas.Name = "lblCostoPerdidas";
             this.lblCostoPerdidas.Size = new System.Drawing.Size(16, 18);
             this.lblCostoPerdidas.TabIndex = 4;
+            this.lblCostoPerdidas.Tag = "5";
             this.lblCostoPerdidas.Text = "0";
             // 
             // lblCantidadPerdiads
@@ -278,6 +284,7 @@
             this.lblCantidadPerdiads.Name = "lblCantidadPerdiads";
             this.lblCantidadPerdiads.Size = new System.Drawing.Size(16, 18);
             this.lblCantidadPerdiads.TabIndex = 4;
+            this.lblCantidadPerdiads.Tag = "5";
             this.lblCantidadPerdiads.Text = "0";
             // 
             // label7
@@ -288,6 +295,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 18);
             this.label7.TabIndex = 3;
+            this.label7.Tag = "5";
             this.label7.Text = "Costo";
             // 
             // label1
@@ -298,6 +306,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 3;
+            this.label1.Tag = "5";
             this.label1.Text = "Candidad";
             // 
             // lll
@@ -315,7 +324,8 @@
             this.txtFiltroPerdidas.Location = new System.Drawing.Point(7, 48);
             this.txtFiltroPerdidas.Name = "txtFiltroPerdidas";
             this.txtFiltroPerdidas.Size = new System.Drawing.Size(326, 26);
-            this.txtFiltroPerdidas.TabIndex = 1;
+            this.txtFiltroPerdidas.TabIndex = 0;
+            this.txtFiltroPerdidas.Tag = "1";
             this.txtFiltroPerdidas.TextChanged += new System.EventHandler(this.txtFiltroPerdidas_TextChanged);
             // 
             // gridPerdidas
@@ -328,7 +338,7 @@
             this.gridPerdidas.Location = new System.Drawing.Point(7, 143);
             this.gridPerdidas.Name = "gridPerdidas";
             this.gridPerdidas.Size = new System.Drawing.Size(537, 159);
-            this.gridPerdidas.TabIndex = 0;
+            this.gridPerdidas.TabIndex = 4;
             // 
             // frmPerdidaAccesorio
             // 

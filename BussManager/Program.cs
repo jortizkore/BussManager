@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussManager.Settings;
 using BussManager.recursos_humanos;
+using BussManager.Login;
 
 namespace BussManager
 {
@@ -24,7 +25,7 @@ namespace BussManager
             try
             {
 
-                Application.Run(new Dashboard());
+                Application.Run(new frmLogin());
             }
             catch (Exception ex)
             {

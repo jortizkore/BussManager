@@ -117,6 +117,13 @@
       <DependentUpon>frmReporteReparaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Reparaciones\Reparaciones.servicio.cs" />
+    <Compile Include="Reportes\frmReporteGeneralMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteGeneralMensual.Designer.cs">
+      <DependentUpon>frmReporteGeneralMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteGeneralMensual.servicio.cs" />
     <Compile Include="Settings\clase_equipos\ClaseEquipo.servicio.cs" />
     <Compile Include="Settings\clase_equipos\frmClases.cs">
       <SubType>Form</SubType>
@@ -125,6 +132,7 @@
       <DependentUpon>frmClases.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\ConnectionSettings.cs" />
+    <Compile Include="Settings\ManejadorDePermisos.cs" />
     <Compile Include="Settings\MessageManager.cs" />
     <Compile Include="Settings\modelo_equipos\frmModeloEquipos.cs">
       <SubType>Form</SubType>
@@ -147,6 +155,7 @@
       <DependentUpon>frmTipoReparaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\Tipo_reparaciones\TipoReparaciones.cs" />
+    <Compile Include="Settings\UsuarioLogueado.cs" />
     <Compile Include="Venta\Factura.servicio.cs" />
     <Compile Include="Venta\Accesorios\frmVentasAcc.cs">
       <SubType>Form</SubType>
@@ -203,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reparaciones\frmReporteReparaciones.resx">
       <DependentUpon>frmReporteReparaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteGeneralMensual.resx">
+      <DependentUpon>frmReporteGeneralMensual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\clase_equipos\frmClases.resx">
       <DependentUpon>frmClases.cs</DependentUpon>
