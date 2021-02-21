@@ -19,11 +19,11 @@ namespace BussManager.Venta
         private string ArchivoFactura = "";
 
         private string NombreEmpresa = "FRANK Super Fria";
-        private string Direccion = "Calle 1ra Edif. Villa blanda 2da, Sabana Perdiad";
+        private string Direccion = "Calle 1ra Edif. Villa blanda 2da, Sabana Perdida";
         private string RNC = "N/A";
         private string NumeroTelefono = "809-901-9132 <-- WhatsApp";
         private string textoFooter = "Gracias por su compra";
-        private string rutaFactura = "c:\\temp\\";
+        private string rutaFactura = ".\\facturas\\";
 
         public Factura()
         {
@@ -150,6 +150,10 @@ namespace BussManager.Venta
         {
             try
             {
+                if (!Directory.Exists(rutaFactura))
+                {
+                    Directory.CreateDirectory(rutaFactura);
+                }
                 var archivo = File.Create(rutaFactura + ArchivoFactura);
                 StreamWriter escritor = new StreamWriter(archivo);
                 escritor.Write(Header + Environment.NewLine
