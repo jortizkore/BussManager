@@ -1,5 +1,4 @@
 .vs
-BussManager
-BussManager.test
+BussManager.Test
 Facturas
 *.log

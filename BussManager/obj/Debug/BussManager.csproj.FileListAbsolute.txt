@@ -41,3 +41,4 @@ D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Venta.Accesorios.FrmAc
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Venta.Equipos.frmReporteVentaEquipos.resources
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Reparaciones.frmReparaciones.resources
 D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Reparaciones.frmReporteReparaciones.resources
+D:\Projects\BussManager\BussManager\obj\Debug\BussManager.Reportes.frmReporteGeneralMensual.resources

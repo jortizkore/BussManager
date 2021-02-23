@@ -49,8 +49,8 @@
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.lblCostoPerdidas = new System.Windows.Forms.Label();
             this.lblCantidadPerdiads = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.lll = new System.Windows.Forms.Label();
             this.txtFiltroPerdidas = new System.Windows.Forms.TextBox();
             this.gridPerdidas = new System.Windows.Forms.DataGridView();
@@ -225,8 +225,8 @@
             this.tabPage2.Controls.Add(this.dtFechaInicio);
             this.tabPage2.Controls.Add(this.lblCostoPerdidas);
             this.tabPage2.Controls.Add(this.lblCantidadPerdiads);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.lbl2);
+            this.tabPage2.Controls.Add(this.lbl1);
             this.tabPage2.Controls.Add(this.lll);
             this.tabPage2.Controls.Add(this.txtFiltroPerdidas);
             this.tabPage2.Controls.Add(this.gridPerdidas);
@@ -287,27 +287,27 @@
             this.lblCantidadPerdiads.Tag = "5";
             this.lblCantidadPerdiads.Text = "0";
             // 
-            // label7
+            // lbl2
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(481, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 18);
-            this.label7.TabIndex = 3;
-            this.label7.Tag = "5";
-            this.label7.Text = "Costo";
+            this.lbl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(481, 27);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(49, 18);
+            this.lbl2.TabIndex = 3;
+            this.lbl2.Tag = "5";
+            this.lbl2.Text = "Costo";
             // 
-            // label1
+            // lbl1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(354, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Tag = "5";
-            this.label1.Text = "Candidad";
+            this.lbl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(354, 27);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(70, 18);
+            this.lbl1.TabIndex = 3;
+            this.lbl1.Tag = "5";
+            this.lbl1.Text = "Candidad";
             // 
             // lll
             // 
@@ -385,8 +385,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label lblCostoPerdidas;
         private System.Windows.Forms.Label lblCantidadPerdiads;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lll;
         private System.Windows.Forms.TextBox txtFiltroPerdidas;
         private System.Windows.Forms.DataGridView gridPerdidas;

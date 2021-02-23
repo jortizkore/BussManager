@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnVerReporteGeneralMensual = new System.Windows.Forms.Button();
-            this.btnVerReportePerdida = new System.Windows.Forms.Button();
-            this.btnInventario = new System.Windows.Forms.Button();
-            this.btnReporteAcc = new System.Windows.Forms.Button();
-            this.cmdLlamarVentaAcc = new System.Windows.Forms.Button();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +38,6 @@
             this.accesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPerdidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeVentasAccToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +45,11 @@
             this.tipoReparacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.claseDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVerReporteGeneralMensual = new System.Windows.Forms.Button();
+            this.btnVerReportePerdida = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnReporteAcc = new System.Windows.Forms.Button();
+            this.cmdLlamarVentaAcc = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +66,133 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // inventoryToolStripMenuItem
+            // 
+            this.inventoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.equiposToolStripMenuItem,
+            this.accesoriosToolStripMenuItem});
+            this.inventoryToolStripMenuItem.Image = global::BussManager.Properties.Resources.box1;
+            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(119, 29);
+            this.inventoryToolStripMenuItem.Text = "Inventario";
+            // 
+            // equiposToolStripMenuItem
+            // 
+            this.equiposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ventaEquiposToolStripMenuItem,
+            this.reporteVentaEquiposToolStripMenuItem,
+            this.reporteVentaEquiposToolStripMenuItem1});
+            this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.equiposToolStripMenuItem.Text = "Equipos";
+            this.equiposToolStripMenuItem.Visible = false;
+            this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
+            // 
+            // ventaEquiposToolStripMenuItem
+            // 
+            this.ventaEquiposToolStripMenuItem.Name = "ventaEquiposToolStripMenuItem";
+            this.ventaEquiposToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
+            this.ventaEquiposToolStripMenuItem.Text = "Inventario equipos";
+            this.ventaEquiposToolStripMenuItem.Click += new System.EventHandler(this.ventaEquiposToolStripMenuItem_Click);
+            // 
+            // reporteVentaEquiposToolStripMenuItem
+            // 
+            this.reporteVentaEquiposToolStripMenuItem.Name = "reporteVentaEquiposToolStripMenuItem";
+            this.reporteVentaEquiposToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
+            this.reporteVentaEquiposToolStripMenuItem.Text = "Venta equipos";
+            this.reporteVentaEquiposToolStripMenuItem.Click += new System.EventHandler(this.reporteVentaEquiposToolStripMenuItem_Click);
+            // 
+            // reporteVentaEquiposToolStripMenuItem1
+            // 
+            this.reporteVentaEquiposToolStripMenuItem1.Name = "reporteVentaEquiposToolStripMenuItem1";
+            this.reporteVentaEquiposToolStripMenuItem1.Size = new System.Drawing.Size(263, 30);
+            this.reporteVentaEquiposToolStripMenuItem1.Text = "Reporte venta equipos";
+            this.reporteVentaEquiposToolStripMenuItem1.Click += new System.EventHandler(this.reporteVentaEquiposToolStripMenuItem1_Click);
+            // 
+            // accesoriosToolStripMenuItem
+            // 
+            this.accesoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarCompraToolStripMenuItem,
+            this.registrarPerdidaToolStripMenuItem,
+            this.reporteDeVentasAccToolStripMenuItem});
+            this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
+            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.accesoriosToolStripMenuItem.Text = "Accesorios";
+            // 
+            // registrarCompraToolStripMenuItem
+            // 
+            this.registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
+            this.registrarCompraToolStripMenuItem.Size = new System.Drawing.Size(260, 30);
+            this.registrarCompraToolStripMenuItem.Tag = "1";
+            this.registrarCompraToolStripMenuItem.Text = "Registrar compra";
+            this.registrarCompraToolStripMenuItem.Click += new System.EventHandler(this.registrarCompraToolStripMenuItem_Click);
+            // 
+            // registrarPerdidaToolStripMenuItem
+            // 
+            this.registrarPerdidaToolStripMenuItem.Name = "registrarPerdidaToolStripMenuItem";
+            this.registrarPerdidaToolStripMenuItem.Size = new System.Drawing.Size(260, 30);
+            this.registrarPerdidaToolStripMenuItem.Tag = "1";
+            this.registrarPerdidaToolStripMenuItem.Text = "Registrar perdida";
+            this.registrarPerdidaToolStripMenuItem.Click += new System.EventHandler(this.registrarPerdidaToolStripMenuItem_Click);
+            // 
+            // reporteDeVentasAccToolStripMenuItem
+            // 
+            this.reporteDeVentasAccToolStripMenuItem.Name = "reporteDeVentasAccToolStripMenuItem";
+            this.reporteDeVentasAccToolStripMenuItem.Size = new System.Drawing.Size(260, 30);
+            this.reporteDeVentasAccToolStripMenuItem.Tag = "5";
+            this.reporteDeVentasAccToolStripMenuItem.Text = "Reporte de ventas Acc";
+            this.reporteDeVentasAccToolStripMenuItem.Visible = false;
+            this.reporteDeVentasAccToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVentasAccToolStripMenuItem_Click);
+            // 
+            // configuraciónToolStripMenuItem
+            // 
+            this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrosToolStripMenuItem});
+            this.configuraciónToolStripMenuItem.Image = global::BussManager.Properties.Resources.settings;
+            this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(151, 29);
+            this.configuraciónToolStripMenuItem.Text = "Configuración";
+            this.configuraciónToolStripMenuItem.Visible = false;
+            // 
+            // registrosToolStripMenuItem
+            // 
+            this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.marcaEqioposToolStripMenuItem,
+            this.tipoReparacionesToolStripMenuItem,
+            this.claseDeEquiposToolStripMenuItem});
+            this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
+            this.registrosToolStripMenuItem.Text = "Registros";
+            // 
+            // marcaEqioposToolStripMenuItem
+            // 
+            this.marcaEqioposToolStripMenuItem.Name = "marcaEqioposToolStripMenuItem";
+            this.marcaEqioposToolStripMenuItem.Size = new System.Drawing.Size(248, 30);
+            this.marcaEqioposToolStripMenuItem.Text = "Modelos de equipos";
+            this.marcaEqioposToolStripMenuItem.Click += new System.EventHandler(this.marcaEqioposToolStripMenuItem_Click);
+            // 
+            // tipoReparacionesToolStripMenuItem
+            // 
+            this.tipoReparacionesToolStripMenuItem.Name = "tipoReparacionesToolStripMenuItem";
+            this.tipoReparacionesToolStripMenuItem.Size = new System.Drawing.Size(248, 30);
+            this.tipoReparacionesToolStripMenuItem.Text = "Tipo reparaciones";
+            this.tipoReparacionesToolStripMenuItem.Click += new System.EventHandler(this.tipoReparacionesToolStripMenuItem_Click);
+            // 
+            // claseDeEquiposToolStripMenuItem
+            // 
+            this.claseDeEquiposToolStripMenuItem.Name = "claseDeEquiposToolStripMenuItem";
+            this.claseDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(248, 30);
+            this.claseDeEquiposToolStripMenuItem.Text = "Clase de Equipos";
+            this.claseDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.claseDeEquiposToolStripMenuItem_Click);
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Image = global::BussManager.Properties.Resources.userImage;
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(150, 29);
+            this.loginToolStripMenuItem.Text = "Cerrar session";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // btnVerReporteGeneralMensual
             // 
@@ -135,141 +261,6 @@
             this.cmdLlamarVentaAcc.UseVisualStyleBackColor = true;
             this.cmdLlamarVentaAcc.Click += new System.EventHandler(this.cmdLlamarVentaAcc_Click);
             // 
-            // inventoryToolStripMenuItem
-            // 
-            this.inventoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.equiposToolStripMenuItem,
-            this.accesoriosToolStripMenuItem});
-            this.inventoryToolStripMenuItem.Image = global::BussManager.Properties.Resources.box1;
-            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(119, 29);
-            this.inventoryToolStripMenuItem.Text = "Inventario";
-            // 
-            // equiposToolStripMenuItem
-            // 
-            this.equiposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ventaEquiposToolStripMenuItem,
-            this.reporteVentaEquiposToolStripMenuItem,
-            this.reporteVentaEquiposToolStripMenuItem1});
-            this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.equiposToolStripMenuItem.Text = "Equipos";
-            this.equiposToolStripMenuItem.Visible = false;
-            this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
-            // 
-            // ventaEquiposToolStripMenuItem
-            // 
-            this.ventaEquiposToolStripMenuItem.Name = "ventaEquiposToolStripMenuItem";
-            this.ventaEquiposToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
-            this.ventaEquiposToolStripMenuItem.Text = "Inventario equipos";
-            this.ventaEquiposToolStripMenuItem.Click += new System.EventHandler(this.ventaEquiposToolStripMenuItem_Click);
-            // 
-            // reporteVentaEquiposToolStripMenuItem
-            // 
-            this.reporteVentaEquiposToolStripMenuItem.Name = "reporteVentaEquiposToolStripMenuItem";
-            this.reporteVentaEquiposToolStripMenuItem.Size = new System.Drawing.Size(263, 30);
-            this.reporteVentaEquiposToolStripMenuItem.Text = "Venta equipos";
-            this.reporteVentaEquiposToolStripMenuItem.Click += new System.EventHandler(this.reporteVentaEquiposToolStripMenuItem_Click);
-            // 
-            // reporteVentaEquiposToolStripMenuItem1
-            // 
-            this.reporteVentaEquiposToolStripMenuItem1.Name = "reporteVentaEquiposToolStripMenuItem1";
-            this.reporteVentaEquiposToolStripMenuItem1.Size = new System.Drawing.Size(263, 30);
-            this.reporteVentaEquiposToolStripMenuItem1.Text = "Reporte venta equipos";
-            this.reporteVentaEquiposToolStripMenuItem1.Click += new System.EventHandler(this.reporteVentaEquiposToolStripMenuItem1_Click);
-            // 
-            // accesoriosToolStripMenuItem
-            // 
-            this.accesoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarCompraToolStripMenuItem,
-            this.registrarPerdidaToolStripMenuItem,
-            this.inventarioToolStripMenuItem,
-            this.reporteDeVentasAccToolStripMenuItem});
-            this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
-            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.accesoriosToolStripMenuItem.Text = "Accesorios";
-            // 
-            // registrarCompraToolStripMenuItem
-            // 
-            this.registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
-            this.registrarCompraToolStripMenuItem.Size = new System.Drawing.Size(260, 30);
-            this.registrarCompraToolStripMenuItem.Tag = "1";
-            this.registrarCompraToolStripMenuItem.Text = "Registrar compra";
-            this.registrarCompraToolStripMenuItem.Click += new System.EventHandler(this.registrarCompraToolStripMenuItem_Click);
-            // 
-            // registrarPerdidaToolStripMenuItem
-            // 
-            this.registrarPerdidaToolStripMenuItem.Name = "registrarPerdidaToolStripMenuItem";
-            this.registrarPerdidaToolStripMenuItem.Size = new System.Drawing.Size(260, 30);
-            this.registrarPerdidaToolStripMenuItem.Tag = "1";
-            this.registrarPerdidaToolStripMenuItem.Text = "Registrar perdida";
-            this.registrarPerdidaToolStripMenuItem.Click += new System.EventHandler(this.registrarPerdidaToolStripMenuItem_Click);
-            // 
-            // inventarioToolStripMenuItem
-            // 
-            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(260, 30);
-            this.inventarioToolStripMenuItem.Tag = "1";
-            this.inventarioToolStripMenuItem.Text = "Inventario";
-            // 
-            // reporteDeVentasAccToolStripMenuItem
-            // 
-            this.reporteDeVentasAccToolStripMenuItem.Name = "reporteDeVentasAccToolStripMenuItem";
-            this.reporteDeVentasAccToolStripMenuItem.Size = new System.Drawing.Size(260, 30);
-            this.reporteDeVentasAccToolStripMenuItem.Tag = "5";
-            this.reporteDeVentasAccToolStripMenuItem.Text = "Reporte de ventas Acc";
-            this.reporteDeVentasAccToolStripMenuItem.Visible = false;
-            this.reporteDeVentasAccToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVentasAccToolStripMenuItem_Click);
-            // 
-            // configuraciónToolStripMenuItem
-            // 
-            this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrosToolStripMenuItem});
-            this.configuraciónToolStripMenuItem.Image = global::BussManager.Properties.Resources.settings;
-            this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(151, 29);
-            this.configuraciónToolStripMenuItem.Text = "Configuración";
-            this.configuraciónToolStripMenuItem.Visible = false;
-            // 
-            // registrosToolStripMenuItem
-            // 
-            this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.marcaEqioposToolStripMenuItem,
-            this.tipoReparacionesToolStripMenuItem,
-            this.claseDeEquiposToolStripMenuItem});
-            this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
-            this.registrosToolStripMenuItem.Text = "Registros";
-            // 
-            // marcaEqioposToolStripMenuItem
-            // 
-            this.marcaEqioposToolStripMenuItem.Name = "marcaEqioposToolStripMenuItem";
-            this.marcaEqioposToolStripMenuItem.Size = new System.Drawing.Size(248, 30);
-            this.marcaEqioposToolStripMenuItem.Text = "Modelos de equipos";
-            this.marcaEqioposToolStripMenuItem.Click += new System.EventHandler(this.marcaEqioposToolStripMenuItem_Click);
-            // 
-            // tipoReparacionesToolStripMenuItem
-            // 
-            this.tipoReparacionesToolStripMenuItem.Name = "tipoReparacionesToolStripMenuItem";
-            this.tipoReparacionesToolStripMenuItem.Size = new System.Drawing.Size(248, 30);
-            this.tipoReparacionesToolStripMenuItem.Text = "Tipo reparaciones";
-            this.tipoReparacionesToolStripMenuItem.Click += new System.EventHandler(this.tipoReparacionesToolStripMenuItem_Click);
-            // 
-            // claseDeEquiposToolStripMenuItem
-            // 
-            this.claseDeEquiposToolStripMenuItem.Name = "claseDeEquiposToolStripMenuItem";
-            this.claseDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(248, 30);
-            this.claseDeEquiposToolStripMenuItem.Text = "Clase de Equipos";
-            this.claseDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.claseDeEquiposToolStripMenuItem_Click);
-            // 
-            // loginToolStripMenuItem
-            // 
-            this.loginToolStripMenuItem.Image = global::BussManager.Properties.Resources.userImage;
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(150, 29);
-            this.loginToolStripMenuItem.Text = "Cerrar session";
-            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,7 +301,6 @@
         private System.Windows.Forms.ToolStripMenuItem claseDeEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPerdidaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.Button cmdLlamarVentaAcc;
         private System.Windows.Forms.ToolStripMenuItem reporteDeVentasAccToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventaEquiposToolStripMenuItem;
