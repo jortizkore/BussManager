@@ -44,13 +44,15 @@ namespace BussManager.Reparaciones
             servReparaciones = new Reparaciones();
             todasLasReparaciones = servReparaciones.TraerReparacionesParaGrid();
             gridReparacionesPendientes.DataSource = todasLasReparaciones;
+            gridReparacionesPendientes.AutoResizeColumns();
         }
 
         private void LlenarGridReparacionesEntregadas()
         {
 
             servReparaciones = new Reparaciones();
-            gridReparacionesCompletadas.DataSource = servReparaciones.TraerReparacionesEntregadasParaGrid();   
+            gridReparacionesCompletadas.DataSource = servReparaciones.TraerReparacionesEntregadasParaGrid();
+            gridReparacionesCompletadas.AutoResizeColumns();
         }
 
         void LimpiarFrmReparaciones()

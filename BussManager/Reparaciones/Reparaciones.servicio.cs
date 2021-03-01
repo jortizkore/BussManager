@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace BussManager.Reparaciones
     {
         string insertStoreProcedure = "sp_insertar_reparacion";
         string entregarStoreProcedure = "sp_insertar_reparacion_entregada";
+        string view_reporte = "vw_reparaciones_entregadas_reporte";
 
         public Reparaciones()
         {
@@ -304,6 +306,23 @@ namespace BussManager.Reparaciones
             }
         }
 
+        public DataTable TraerReporteReparaciones()
+        {
+            DataTable info = new DataTable();
+            try
+            {
+                var db = new Settings.ConnectionSettings();
+
+                info = db.BringData("select * from vw_reparaciones_entregadas_reporte");
+                return info;
+
+            }
+            catch (Exception ex)
+            {
+                MessageManager.ErrorMessage(ex.Message);
+            }
+            return info;
+        }
 
     }
 

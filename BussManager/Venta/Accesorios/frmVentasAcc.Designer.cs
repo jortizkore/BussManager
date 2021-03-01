@@ -41,14 +41,14 @@
             this.lblCantidadEnInventario = new System.Windows.Forms.Label();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnFacturar = new System.Windows.Forms.Button();
             this.lstVentas = new System.Windows.Forms.ListView();
             this.Accesorio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Precio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnFacturar = new System.Windows.Forms.Button();
             this.btnAgregarALaLista = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -192,8 +192,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Totales";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::BussManager.Properties.Resources.wastebasket;
+            this.button1.Location = new System.Drawing.Point(621, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(46, 49);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnFacturar
+            // 
+            this.btnFacturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturar.Image = global::BussManager.Properties.Resources.money_finance_business_coin_dollar_icon_1759301;
+            this.btnFacturar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturar.Location = new System.Drawing.Point(483, 11);
+            this.btnFacturar.Name = "btnFacturar";
+            this.btnFacturar.Size = new System.Drawing.Size(132, 49);
+            this.btnFacturar.TabIndex = 2;
+            this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFacturar.UseVisualStyleBackColor = true;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
+            // 
             // lstVentas
             // 
+            this.lstVentas.BackColor = System.Drawing.Color.PeachPuff;
             this.lstVentas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Accesorio,
             this.Cantidad,
@@ -234,31 +260,6 @@
             this.label5.Size = new System.Drawing.Size(87, 22);
             this.label5.TabIndex = 9;
             this.label5.Text = "Cantidad:";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::BussManager.Properties.Resources.wastebasket;
-            this.button1.Location = new System.Drawing.Point(621, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 49);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnFacturar
-            // 
-            this.btnFacturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacturar.Image = global::BussManager.Properties.Resources.money_finance_business_coin_dollar_icon_1759301;
-            this.btnFacturar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturar.Location = new System.Drawing.Point(483, 11);
-            this.btnFacturar.Name = "btnFacturar";
-            this.btnFacturar.Size = new System.Drawing.Size(132, 49);
-            this.btnFacturar.TabIndex = 2;
-            this.btnFacturar.Text = "Facturar";
-            this.btnFacturar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFacturar.UseVisualStyleBackColor = true;
-            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // btnAgregarALaLista
             // 

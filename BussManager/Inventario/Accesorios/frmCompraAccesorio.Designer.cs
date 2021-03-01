@@ -40,12 +40,12 @@
             this.lbltxt = new System.Windows.Forms.Label();
             this.lbCantidadInventario = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnInsertarAccesorios = new System.Windows.Forms.Button();
             this.btnBuscarComprasAccesorios = new System.Windows.Forms.Button();
             this.txtBuscarComprasAccesorios = new System.Windows.Forms.TextBox();
             this.numCantidadAccesorio = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.grdCompraAccesorios = new System.Windows.Forms.DataGridView();
-            this.btnInsertarAccesorios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoAccesorio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioAccesorio)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -184,6 +184,19 @@
             this.label5.Tag = "1";
             this.label5.Text = "Cant. en inventario:";
             // 
+            // btnInsertarAccesorios
+            // 
+            this.btnInsertarAccesorios.Image = global::BussManager.Properties.Resources.arrow_pointing_down;
+            this.btnInsertarAccesorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInsertarAccesorios.Location = new System.Drawing.Point(283, 87);
+            this.btnInsertarAccesorios.Name = "btnInsertarAccesorios";
+            this.btnInsertarAccesorios.Size = new System.Drawing.Size(120, 49);
+            this.btnInsertarAccesorios.TabIndex = 7;
+            this.btnInsertarAccesorios.Text = "Insertar";
+            this.btnInsertarAccesorios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInsertarAccesorios.UseVisualStyleBackColor = true;
+            this.btnInsertarAccesorios.Click += new System.EventHandler(this.btnInsertarAccesorios_Click);
+            // 
             // btnBuscarComprasAccesorios
             // 
             this.btnBuscarComprasAccesorios.Location = new System.Drawing.Point(9, 159);
@@ -225,7 +238,7 @@
             this.grdCompraAccesorios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdCompraAccesorios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grdCompraAccesorios.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.grdCompraAccesorios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCompraAccesorios.Location = new System.Drawing.Point(2, 204);
             this.grdCompraAccesorios.Name = "grdCompraAccesorios";
@@ -234,19 +247,6 @@
             this.grdCompraAccesorios.Size = new System.Drawing.Size(879, 269);
             this.grdCompraAccesorios.TabIndex = 5;
             this.grdCompraAccesorios.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdCompraAccesorios_CellMouseDoubleClick);
-            // 
-            // btnInsertarAccesorios
-            // 
-            this.btnInsertarAccesorios.Image = global::BussManager.Properties.Resources.arrow_pointing_down;
-            this.btnInsertarAccesorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertarAccesorios.Location = new System.Drawing.Point(283, 87);
-            this.btnInsertarAccesorios.Name = "btnInsertarAccesorios";
-            this.btnInsertarAccesorios.Size = new System.Drawing.Size(120, 49);
-            this.btnInsertarAccesorios.TabIndex = 7;
-            this.btnInsertarAccesorios.Text = "Insertar";
-            this.btnInsertarAccesorios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInsertarAccesorios.UseVisualStyleBackColor = true;
-            this.btnInsertarAccesorios.Click += new System.EventHandler(this.btnInsertarAccesorios_Click);
             // 
             // frmCompraAccesorio
             // 

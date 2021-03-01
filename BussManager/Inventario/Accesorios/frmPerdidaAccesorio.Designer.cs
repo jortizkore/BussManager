@@ -333,7 +333,7 @@
             this.gridPerdidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridPerdidas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gridPerdidas.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.gridPerdidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridPerdidas.Location = new System.Drawing.Point(7, 143);
             this.gridPerdidas.Name = "gridPerdidas";

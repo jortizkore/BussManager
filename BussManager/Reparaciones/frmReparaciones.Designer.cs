@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReparaciones));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabRegistroReparaciones = new System.Windows.Forms.TabPage();
             this.txtIMEIReparacion = new System.Windows.Forms.TextBox();
@@ -328,13 +329,13 @@
             // 
             this.gridReparacionesPendientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridReparacionesPendientes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gridReparacionesPendientes.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.gridReparacionesPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridReparacionesPendientes.Location = new System.Drawing.Point(6, 138);
             this.gridReparacionesPendientes.MultiSelect = false;
             this.gridReparacionesPendientes.Name = "gridReparacionesPendientes";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridReparacionesPendientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridReparacionesPendientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridReparacionesPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridReparacionesPendientes.Size = new System.Drawing.Size(873, 288);
             this.gridReparacionesPendientes.TabIndex = 1;
@@ -376,7 +377,7 @@
             // 
             // txtFiltroGridCompletadas
             // 
-            this.txtFiltroGridCompletadas.Location = new System.Drawing.Point(64, 28);
+            this.txtFiltroGridCompletadas.Location = new System.Drawing.Point(65, 42);
             this.txtFiltroGridCompletadas.Name = "txtFiltroGridCompletadas";
             this.txtFiltroGridCompletadas.Size = new System.Drawing.Size(436, 29);
             this.txtFiltroGridCompletadas.TabIndex = 2;
@@ -385,7 +386,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 31);
+            this.label10.Location = new System.Drawing.Point(8, 45);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 24);
             this.label10.TabIndex = 1;
@@ -395,11 +396,11 @@
             // 
             this.gridReparacionesCompletadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridReparacionesCompletadas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gridReparacionesCompletadas.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.gridReparacionesCompletadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridReparacionesCompletadas.Location = new System.Drawing.Point(3, 58);
+            this.gridReparacionesCompletadas.Location = new System.Drawing.Point(3, 77);
             this.gridReparacionesCompletadas.Name = "gridReparacionesCompletadas";
-            this.gridReparacionesCompletadas.Size = new System.Drawing.Size(874, 217);
+            this.gridReparacionesCompletadas.Size = new System.Drawing.Size(874, 347);
             this.gridReparacionesCompletadas.TabIndex = 0;
             this.gridReparacionesCompletadas.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridReparacionesCompletadas_RowPrePaint);
             // 
@@ -409,10 +410,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(898, 484);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(705, 523);
             this.Name = "frmReparaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro reparaciones";
+            this.Text = "Registro Reparaciones";
             this.Load += new System.EventHandler(this.frmReparaciones_Load);
             this.tabControl1.ResumeLayout(false);
             this.TabRegistroReparaciones.ResumeLayout(false);

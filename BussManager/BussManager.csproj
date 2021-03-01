@@ -156,6 +156,7 @@
     </Compile>
     <Compile Include="Settings\Tipo_reparaciones\TipoReparaciones.cs" />
     <Compile Include="Settings\UsuarioLogueado.cs" />
+    <Compile Include="Settings\Utilidades.cs" />
     <Compile Include="Venta\Factura.servicio.cs" />
     <Compile Include="Venta\Accesorios\frmVentasAcc.cs">
       <SubType>Form</SubType>
@@ -335,6 +336,11 @@
     <Content Include="coin1.ico" />
     <Content Include="coin2.ico" />
     <Content Include="coinflat.ico" />
+    <None Include="Resources\reparaciones_KP5_icon.ico" />
+    <None Include="Resources\cellphone_URH_icon1.ico" />
+    <None Include="Resources\ventaCell.png" />
+    <None Include="Resources\cellphone_URH_icon.ico" />
+    <None Include="Resources\cellphone_MPe_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

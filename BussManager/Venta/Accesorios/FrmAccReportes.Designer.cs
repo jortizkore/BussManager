@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccReportes));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmdCargarReporteVentasAcc = new System.Windows.Forms.Button();
             this.lblPorcentajeGanancias = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.chUsarFiltro = new System.Windows.Forms.CheckBox();
@@ -46,7 +47,6 @@
             this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.grdReporteDeVentasAcc = new System.Windows.Forms.DataGridView();
-            this.cmdCargarReporteVentasAcc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdReporteDeVentasAcc)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +78,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información y filtros";
+            // 
+            // cmdCargarReporteVentasAcc
+            // 
+            this.cmdCargarReporteVentasAcc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdCargarReporteVentasAcc.Image = global::BussManager.Properties.Resources.signal_bars;
+            this.cmdCargarReporteVentasAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmdCargarReporteVentasAcc.Location = new System.Drawing.Point(824, 107);
+            this.cmdCargarReporteVentasAcc.Name = "cmdCargarReporteVentasAcc";
+            this.cmdCargarReporteVentasAcc.Size = new System.Drawing.Size(175, 69);
+            this.cmdCargarReporteVentasAcc.TabIndex = 16;
+            this.cmdCargarReporteVentasAcc.Text = "Cargar Reporte";
+            this.cmdCargarReporteVentasAcc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmdCargarReporteVentasAcc.UseVisualStyleBackColor = true;
+            this.cmdCargarReporteVentasAcc.Click += new System.EventHandler(this.cmdCargarReporteVentasAcc_Click);
             // 
             // lblPorcentajeGanancias
             // 
@@ -217,27 +231,13 @@
             this.grdReporteDeVentasAcc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdReporteDeVentasAcc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grdReporteDeVentasAcc.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.grdReporteDeVentasAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdReporteDeVentasAcc.Location = new System.Drawing.Point(12, 216);
             this.grdReporteDeVentasAcc.Name = "grdReporteDeVentasAcc";
             this.grdReporteDeVentasAcc.Size = new System.Drawing.Size(1005, 266);
             this.grdReporteDeVentasAcc.TabIndex = 1;
             this.grdReporteDeVentasAcc.Resize += new System.EventHandler(this.grdReporteDeVentasAcc_Resize);
-            // 
-            // cmdCargarReporteVentasAcc
-            // 
-            this.cmdCargarReporteVentasAcc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdCargarReporteVentasAcc.Image = global::BussManager.Properties.Resources.signal_bars;
-            this.cmdCargarReporteVentasAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdCargarReporteVentasAcc.Location = new System.Drawing.Point(824, 107);
-            this.cmdCargarReporteVentasAcc.Name = "cmdCargarReporteVentasAcc";
-            this.cmdCargarReporteVentasAcc.Size = new System.Drawing.Size(175, 69);
-            this.cmdCargarReporteVentasAcc.TabIndex = 16;
-            this.cmdCargarReporteVentasAcc.Text = "Cargar Reporte";
-            this.cmdCargarReporteVentasAcc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cmdCargarReporteVentasAcc.UseVisualStyleBackColor = true;
-            this.cmdCargarReporteVentasAcc.Click += new System.EventHandler(this.cmdCargarReporteVentasAcc_Click);
             // 
             // FrmAccReportes
             // 

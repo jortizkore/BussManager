@@ -12,7 +12,8 @@ using BussManager.Settings.clase_equipos;
 using BussManager.Settings.modelo_equipos;
 using BussManager.Settings.Tipo_reparaciones;
 using BussManager.Inventario.Equipos;
-using BussManager.Venta;
+using BussManager.Venta.Equipos;
+using BussManager.Venta.Accesorios;
 using BussManager.Reparaciones;
 using BussManager.Inventario.Accesorios;
 using BussManager.Reportes;
@@ -76,13 +77,13 @@ namespace BussManager
 
         private void cmdLlamarVentaAcc_Click(object sender, EventArgs e)
         {
-            Venta.Accesorios.frmVentasAcc frm = new Venta.Accesorios.frmVentasAcc();
+            frmVentasAcc frm = new Venta.Accesorios.frmVentasAcc();
             frm.ShowDialog();
         }
 
         private void cmdLlamarVentaEquios_Click(object sender, EventArgs e)
         {
-            Venta.Equipos.frmVentaEquipos frm = new Venta.Equipos.frmVentaEquipos();
+            frmVentaEquipos frm = new Venta.Equipos.frmVentaEquipos();
             frm.ShowDialog();
 
         }
@@ -183,6 +184,37 @@ namespace BussManager
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             UsuarioLogueado.frm.Show();
+        }
+
+        private void cmdInventarioCelulares_Click(object sender, EventArgs e)
+        {
+            frmEquipos frm = new frmEquipos();
+            frm.ShowDialog();
+        }
+
+        private void cmdVentaCelulares_Click(object sender, EventArgs e)
+        {
+            frmVentaEquipos frm = new Venta.Equipos.frmVentaEquipos();
+            frm.ShowDialog();
+
+        }
+
+        private void cmdVerReporteCelulares_Click(object sender, EventArgs e)
+        {
+            frmReporteVentaEquipos frm = new frmReporteVentaEquipos();
+            frm.ShowDialog();
+        }
+
+        private void cmdVerReparaciones_Click(object sender, EventArgs e)
+        {
+            frmReparaciones frm = new frmReparaciones();
+            frm.ShowDialog();
+        }
+
+        private void cmdReporteReparaciones_Click(object sender, EventArgs e)
+        {
+            frmReporteReparaciones frm = new frmReporteReparaciones();
+            frm.ShowDialog();
         }
     }
 }

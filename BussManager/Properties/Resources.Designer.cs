@@ -123,6 +123,36 @@ namespace BussManager.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cellphone_MPe_icon {
+            get {
+                object obj = ResourceManager.GetObject("cellphone_MPe_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cellphone_URH_icon {
+            get {
+                object obj = ResourceManager.GetObject("cellphone_URH_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cellphone_URH_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("cellphone_URH_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dollar_symbol {
             get {
                 object obj = ResourceManager.GetObject("dollar-symbol", resourceCulture);
@@ -193,6 +223,16 @@ namespace BussManager.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap reparaciones_KP5_icon {
+            get {
+                object obj = ResourceManager.GetObject("reparaciones_KP5_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
@@ -256,6 +296,16 @@ namespace BussManager.Properties {
         internal static System.Drawing.Bitmap userImage1 {
             get {
                 object obj = ResourceManager.GetObject("userImage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ventaCell {
+            get {
+                object obj = ResourceManager.GetObject("ventaCell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
