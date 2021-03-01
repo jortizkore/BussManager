@@ -42,7 +42,7 @@ namespace BussManager.Venta.Equipos
 
             grdReporteVentasEquipos.DataSource = listaEquiposVendiods;
             grdReporteVentasEquipos.Refresh();
-
+            grdReporteVentasEquipos.AutoResizeColumns();
             RefrescarTotales(listaEquiposVendiods);
             
         }
@@ -126,6 +126,11 @@ namespace BussManager.Venta.Equipos
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -18,12 +18,12 @@ namespace BussManager.Venta
 
         private string ArchivoFactura = "";
 
-        private string NombreEmpresa = "Jasmayri Multiservice";
-        private string Direccion = "Av. Los restauradores #56 Sabana Perdida Santo Domingo Norte";
+        private string NombreEmpresa = "FRANK Super Fria";
+        private string Direccion = "Calle 1ra Edif. Villa blanda 2da, Sabana Perdida";
         private string RNC = "N/A";
-        private string NumeroTelefono = "829-592-8225";
+        private string NumeroTelefono = "809-901-9132 <-- WhatsApp";
         private string textoFooter = "Gracias por su compra";
-        private string rutaFactura = "c:\\temp\\";
+        private string rutaFactura = ".\\facturas\\";
 
         public Factura()
         {
@@ -54,17 +54,17 @@ namespace BussManager.Venta
                 + Environment.NewLine;
 
             Body += ajustarTexto("Cant", 4)
-                 + ajustarTexto("|Artiulo", 20)
-                 + ajustarTexto("|Precio unidad", 20)
-                 + ajustarTexto("|Total", 20)
+                 + ajustarTexto("|Artiulo", 27)
+                 + ajustarTexto("|Precio unidad", 12)
+                 + ajustarTexto("|Total", 12)
                  + Environment.NewLine;
 
             foreach (var item in ventas)
             {
                 Body += ajustarTexto(item.Cantidad.ToString(), 4)
-                 + ajustarTexto(item.Accesorio, 20)
-                 + ajustarTexto(item.Preciounidad.ToString("c"), 20)
-                 + ajustarTexto((item.Preciounidad * item.Cantidad).ToString("c"), 20)
+                 + ajustarTexto(item.Accesorio, 27)
+                 + ajustarTexto(item.Preciounidad.ToString("c"), 12)
+                 + ajustarTexto((item.Preciounidad * item.Cantidad).ToString("c"), 12)
                  + Environment.NewLine;
             }
 
@@ -72,7 +72,7 @@ namespace BussManager.Venta
             Body += Environment.NewLine;
             Body += "Articulos vendidos: " + ventas.Sum(x => x.Cantidad).ToString();
             Body += Environment.NewLine;
-            Body += "Total a pagar: " + ventas.Sum(x => x.Preciounidad * x.Cantidad).ToString();
+            Body += "Total a pagar: " + ventas.Sum(x => x.Preciounidad * x.Cantidad).ToString("c");
 
         }
 
@@ -135,10 +135,10 @@ namespace BussManager.Venta
         private void LlenarHeader()
         {  
             Header = "".PadRight(10, '*') + NombreEmpresa + "".PadRight(10, '*') + Environment.NewLine;
-            Header += "Avenida los Restauradores #14".PadLeft(30, ' ') + Environment.NewLine;
-            Header += "Sabana Perdida".PadLeft(15, ' ') + Environment.NewLine;
+            Header += Direccion + Environment.NewLine;
             Header += "Santo Domingo Norte".PadLeft(20, ' ') + Environment.NewLine;
-            Header += "".PadRight(15, ' ') + "RNC: " + RNC + Environment.NewLine;
+            Header += NumeroTelefono + Environment.NewLine;
+
         }
 
         public string NombreFactura()
@@ -150,6 +150,10 @@ namespace BussManager.Venta
         {
             try
             {
+                if (!Directory.Exists(rutaFactura))
+                {
+                    Directory.CreateDirectory(rutaFactura);
+                }
                 var archivo = File.Create(rutaFactura + ArchivoFactura);
                 StreamWriter escritor = new StreamWriter(archivo);
                 escritor.Write(Header + Environment.NewLine

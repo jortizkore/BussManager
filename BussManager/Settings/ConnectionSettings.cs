@@ -12,7 +12,7 @@ namespace BussManager.Settings
     public class ConnectionSettings
     {
         private const string server = @"(LocalDB)\MSSQLLocalDB";
-        private const string database = "JasmairyMultiservices";
+        private const string database = "JasmairyMultiservices_prueba";
         private string conStr = "";
 
         private SqlConnection connection = new SqlConnection();
@@ -27,7 +27,10 @@ namespace BussManager.Settings
 
         private void setConnectionSettings()
         {
+            // Esta coneccion es la local
             this.conStr = $"Server={server};Database={database};Trusted_Connection=True;";
+            // Esta coneccion es de francis
+            //this.conStr = "Data Source=SQL5078.site4now.net;Initial Catalog=DB_A6F393_bussmanager;User Id=DB_A6F393_bussmanager_admin;Password=Sincontrasena01";
             this.connection = new SqlConnection(this.conStr);
             this.command = new SqlCommand();
             this.command.Connection = this.connection;
@@ -59,17 +62,25 @@ namespace BussManager.Settings
 
         public string bringJsonData(string query)
         {
-            this.command.CommandType = CommandType.Text;
-            this.command.CommandText = query;
-            table = new DataTable();
-            if (this.connect())
+            try
             {
-                adapter.SelectCommand = this.command;
-                adapter.Fill(table);
+                this.command.CommandType = CommandType.Text;
+                this.command.CommandText = query;
+                table = new DataTable();
+                if (this.connect())
+                {
+                    adapter.SelectCommand = this.command;
+                    adapter.Fill(table);
+                }
+                Disconnect();
+                var response = table.Rows.Count > 0;
+                return response ? JsonConvert.SerializeObject(this.table) : string.Empty;
             }
-            Disconnect();
-            var response = table.Rows.Count > 0;
-            return response ? JsonConvert.SerializeObject(this.table) : string.Empty;
+            catch (Exception)
+            {
+                return string.Empty;
+
+            }
         }
 
         public bool IsConnected()
@@ -87,7 +98,8 @@ namespace BussManager.Settings
             }
             catch (Exception es)
             {
-                throw es;
+                MessageManager.ErrorMessage(es.Message);
+                return false;
             };
         }
 
@@ -108,14 +120,24 @@ namespace BussManager.Settings
 
         public bool CorrerSP(string sp)
         {
-            this.command.CommandType = CommandType.StoredProcedure;
-            this.command.CommandText = sp;
-            if (this.connect())
+            try
             {
-                this.command.ExecuteNonQuery();
-                return true;
+                this.command.CommandType = CommandType.StoredProcedure;
+                this.command.CommandText = sp;
+                if (this.connect())
+                {
+                    this.command.ExecuteNonQuery();
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception)
+            {
+                return false;
+            }finally
+            {
+                Disconnect();
+            }
         }
 
         public bool CorrerSP(string sp, List<parametro> parametros)

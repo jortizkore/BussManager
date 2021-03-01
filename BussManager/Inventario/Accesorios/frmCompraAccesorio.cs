@@ -26,6 +26,7 @@ namespace BussManager.Inventario.Accesorios
         private void frmCompraAccesorio_Load(object sender, EventArgs e)
         {
             LlenarGridInventarioAccesorio();
+            ManejadorDePermisos.ComprobarPermisos(this);
         }
 
         void LlenarGridInventarioAccesorio()
@@ -33,7 +34,7 @@ namespace BussManager.Inventario.Accesorios
             servicioAccesorio = new ServicioAccesorio();
             var resultado = servicioAccesorio.TraerAccesorios();
             CalcularTotales(resultado);
-            grdCompraAccesorios.DataSource = resultado;
+            grdCompraAccesorios.DataSource = servicioAccesorio.TraerAccesoriosInventario();
             grdCompraAccesorios.AutoResizeColumns();
         }
 
@@ -85,7 +86,7 @@ namespace BussManager.Inventario.Accesorios
                 servicioAccesorio = new ServicioAccesorio();
                 var resultado = servicioAccesorio.FiltroAccesorios(filtro);
                 CalcularTotales(resultado);
-                grdCompraAccesorios.DataSource = resultado; 
+                grdCompraAccesorios.DataSource = servicioAccesorio.TraerAccesoriosInventario(txtBuscarComprasAccesorios.Text); 
                 grdCompraAccesorios.AutoResizeColumns();
             }
             else

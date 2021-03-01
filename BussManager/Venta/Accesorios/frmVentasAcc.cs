@@ -181,6 +181,9 @@ namespace BussManager.Venta.Accesorios
             finally
             {
                 Limpiar();
+                CargarComboAcc();
+                AccSeleccionado = null;
+                refreshTotals();
             }
         }
 

@@ -18,12 +18,17 @@ namespace BussManager.recursos_humanos
             List<RecursoHumano> list = new List<RecursoHumano>();
 
             var query = $"select * from {view}";
-            var resultado = JArray.Parse(db.bringJsonData(query));
-
-            foreach (var item in resultado)
+            var json_response = db.bringJsonData(query);
+            if (json_response != string.Empty)
             {
-                var rh = DeJsonArh(item);
-                list.Add(rh);
+                var resultado = JArray.Parse(json_response);
+
+
+                foreach (var item in resultado)
+                {
+                    var rh = DeJsonArh(item);
+                    list.Add(rh);
+                }
             }
 
             return list;
@@ -39,7 +44,8 @@ namespace BussManager.recursos_humanos
                 Cargo = token["cargo"].ToString(),
                 Usuario = token["usuario"].ToString(),
                 Contrasenia = token["contrasenia"].ToString(),
-                Estado = token["estado"].ToString()
+                Estado = token["estado"].ToString(),
+                Nivel = int.Parse(token["nivel"].ToString())
             };
         }
 
@@ -49,7 +55,7 @@ namespace BussManager.recursos_humanos
 
             var query = $"select * from {view} where usuario = '{usuario}'";
             var dbAnswer = db.bringJsonData(query);
-            var resultado =  dbAnswer != string.Empty? JArray.Parse(dbAnswer).First():null;
+            var resultado = dbAnswer != string.Empty ? JArray.Parse(dbAnswer).First() : null;
 
             if (resultado != null)
             {
@@ -74,7 +80,26 @@ namespace BussManager.recursos_humanos
                 {
                     rh.Add(DeJsonArh(item));
                 }
-                
+
+            }
+            return rh;
+        }
+
+        public List<RecursoHumano> TraerVendedores()
+        {
+            List<RecursoHumano> rh = new List<RecursoHumano>();
+
+            var query = $"select * from {view} where cargo like '%Vendedor%'";
+            var dbAnswer = db.bringJsonData(query);
+            var resultado = dbAnswer == string.Empty ? null : JArray.Parse(dbAnswer);
+
+            if (resultado != null)
+            {
+                foreach (var item in resultado)
+                {
+                    rh.Add(DeJsonArh(item));
+                }
+
             }
             return rh;
         }

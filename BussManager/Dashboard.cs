@@ -12,9 +12,12 @@ using BussManager.Settings.clase_equipos;
 using BussManager.Settings.modelo_equipos;
 using BussManager.Settings.Tipo_reparaciones;
 using BussManager.Inventario.Equipos;
-using BussManager.Venta;
+using BussManager.Venta.Equipos;
+using BussManager.Venta.Accesorios;
 using BussManager.Reparaciones;
 using BussManager.Inventario.Accesorios;
+using BussManager.Reportes;
+using BussManager.Settings;
 
 namespace BussManager
 {
@@ -27,18 +30,14 @@ namespace BussManager
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            BussManager.recursos_humanos.ServicioRecursoHumano rh = new recursos_humanos.ServicioRecursoHumano();
-
-            // testGrid.DataSource = rh.TraerRecursosHumanos();
-            // this.Enabled = false;
-            // loginToolStripMenuItem_Click(null, null);
+            ManejadorDePermisos.ComprobarPermisos(this);
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-            this.Enabled = true;
+            this.Close();
+            UsuarioLogueado.CerrarSession();
+            UsuarioLogueado.frm.Show();
         }
 
         private void tipoReparacionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,13 +77,13 @@ namespace BussManager
 
         private void cmdLlamarVentaAcc_Click(object sender, EventArgs e)
         {
-            Venta.Accesorios.frmVentasAcc frm = new Venta.Accesorios.frmVentasAcc();
+            frmVentasAcc frm = new Venta.Accesorios.frmVentasAcc();
             frm.ShowDialog();
         }
 
         private void cmdLlamarVentaEquios_Click(object sender, EventArgs e)
         {
-            Venta.Equipos.frmVentaEquipos frm = new Venta.Equipos.frmVentaEquipos();
+            frmVentaEquipos frm = new Venta.Equipos.frmVentaEquipos();
             frm.ShowDialog();
 
         }
@@ -157,6 +156,65 @@ namespace BussManager
         {
             frmClases frmClaseEquipos = new frmClases();
             frmClaseEquipos.ShowDialog();
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            frmCompraAccesorio frm = new frmCompraAccesorio();
+            frm.ShowDialog();
+        }
+
+        private void btnVerReporteGeneralMensual_Click(object sender, EventArgs e)
+        {
+            frmReporteGeneralMensual frm = new frmReporteGeneralMensual();
+            frm.ShowDialog();
+        }
+
+        private void btnVerReportePerdida_Click(object sender, EventArgs e)
+        {
+            frmPerdidaAccesorio frm = new frmPerdidaAccesorio();
+            frm.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            UsuarioLogueado.frm.Show();
+        }
+
+        private void cmdInventarioCelulares_Click(object sender, EventArgs e)
+        {
+            frmEquipos frm = new frmEquipos();
+            frm.ShowDialog();
+        }
+
+        private void cmdVentaCelulares_Click(object sender, EventArgs e)
+        {
+            frmVentaEquipos frm = new Venta.Equipos.frmVentaEquipos();
+            frm.ShowDialog();
+
+        }
+
+        private void cmdVerReporteCelulares_Click(object sender, EventArgs e)
+        {
+            frmReporteVentaEquipos frm = new frmReporteVentaEquipos();
+            frm.ShowDialog();
+        }
+
+        private void cmdVerReparaciones_Click(object sender, EventArgs e)
+        {
+            frmReparaciones frm = new frmReparaciones();
+            frm.ShowDialog();
+        }
+
+        private void cmdReporteReparaciones_Click(object sender, EventArgs e)
+        {
+            frmReporteReparaciones frm = new frmReporteReparaciones();
+            frm.ShowDialog();
         }
     }
 }

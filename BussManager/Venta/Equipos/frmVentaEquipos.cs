@@ -201,5 +201,14 @@ namespace BussManager.Venta.Equipos
             LimpiarFrmVentaEquipos();
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalApagar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
