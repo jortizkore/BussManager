@@ -93,9 +93,8 @@
             this.reporteVentaEquiposToolStripMenuItem,
             this.reporteVentaEquiposToolStripMenuItem1});
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(169, 30);
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.equiposToolStripMenuItem.Text = "Equipos";
-            this.equiposToolStripMenuItem.Visible = false;
             this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
             // 
             // ventaEquiposToolStripMenuItem
@@ -127,7 +126,7 @@
             this.inventarioToolStripMenuItem,
             this.reporteDeVentasAccToolStripMenuItem});
             this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
-            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(169, 30);
+            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.accesoriosToolStripMenuItem.Text = "Accesorios";
             // 
             // registrarCompraToolStripMenuItem
@@ -170,7 +169,6 @@
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(151, 29);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
-            this.configuraciónToolStripMenuItem.Visible = false;
             // 
             // registrosToolStripMenuItem
             // 
@@ -179,7 +177,7 @@
             this.tipoReparacionesToolStripMenuItem,
             this.claseDeEquiposToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.registrosToolStripMenuItem.Text = "Registros";
             // 
             // marcaEqioposToolStripMenuItem

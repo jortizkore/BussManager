@@ -64,10 +64,11 @@ namespace BussManager.Venta.Accesorios
             {
                 var totalVentas = listaVentas.Sum(x => x.Cantidad * x.PrecioUnidad);
                 var totalCostoVentas = listaVentas.Sum(x => x.CostoUnidad * x.Cantidad);
+                var totalGanancias = listaVentas.Sum(x => x.TotalGanancia);
                 lblTotalVentas.Text = totalVentas.ToString("c");
                 lblTotalAccVendios.Text = listaVentas.Sum(x => x.Cantidad).ToString();
-                lblTotalGanancias.Text = listaVentas.Sum(x => x.TotalGanancia).ToString("c");
-                lblPorcentajeGanancias.Text = ((totalCostoVentas / totalVentas) * 100).ToString("n") + "%";
+                lblTotalGanancias.Text = totalGanancias.ToString("c");
+                lblPorcentajeGanancias.Text = ((totalGanancias/ totalCostoVentas) * 100).ToString("n") + "%";
             }
         }
 

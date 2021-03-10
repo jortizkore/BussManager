@@ -60,6 +60,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 22);
             this.label1.TabIndex = 0;
+            this.label1.Tag = "5";
             this.label1.Text = "Producto:";
             // 
             // label2
@@ -69,6 +70,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 22);
             this.label2.TabIndex = 0;
+            this.label2.Tag = "5";
             this.label2.Text = "Costo";
             // 
             // label3
@@ -78,6 +80,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 22);
             this.label3.TabIndex = 0;
+            this.label3.Tag = "5";
             this.label3.Text = "Precio venta";
             // 
             // txtCompraAccesorio
@@ -86,6 +89,7 @@
             this.txtCompraAccesorio.Name = "txtCompraAccesorio";
             this.txtCompraAccesorio.Size = new System.Drawing.Size(267, 27);
             this.txtCompraAccesorio.TabIndex = 0;
+            this.txtCompraAccesorio.Tag = "5";
             // 
             // numCostoAccesorio
             // 
@@ -98,6 +102,7 @@
             this.numCostoAccesorio.Name = "numCostoAccesorio";
             this.numCostoAccesorio.Size = new System.Drawing.Size(100, 27);
             this.numCostoAccesorio.TabIndex = 2;
+            this.numCostoAccesorio.Tag = "5";
             // 
             // numPrecioAccesorio
             // 
@@ -110,6 +115,7 @@
             this.numPrecioAccesorio.Name = "numPrecioAccesorio";
             this.numPrecioAccesorio.Size = new System.Drawing.Size(94, 27);
             this.numPrecioAccesorio.TabIndex = 3;
+            this.numPrecioAccesorio.Tag = "5";
             // 
             // groupBox1
             // 
@@ -192,6 +198,7 @@
             this.btnInsertarAccesorios.Name = "btnInsertarAccesorios";
             this.btnInsertarAccesorios.Size = new System.Drawing.Size(120, 49);
             this.btnInsertarAccesorios.TabIndex = 7;
+            this.btnInsertarAccesorios.Tag = "5";
             this.btnInsertarAccesorios.Text = "Insertar";
             this.btnInsertarAccesorios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInsertarAccesorios.UseVisualStyleBackColor = true;
@@ -223,6 +230,7 @@
             this.numCantidadAccesorio.Name = "numCantidadAccesorio";
             this.numCantidadAccesorio.Size = new System.Drawing.Size(120, 27);
             this.numCantidadAccesorio.TabIndex = 4;
+            this.numCantidadAccesorio.Tag = "5";
             // 
             // label4
             // 
@@ -231,6 +239,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 22);
             this.label4.TabIndex = 0;
+            this.label4.Tag = "5";
             this.label4.Text = "Cantidad";
             // 
             // grdCompraAccesorios

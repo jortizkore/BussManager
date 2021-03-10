@@ -68,6 +68,7 @@ namespace BussManager.Inventario.Accesorios
                     servicioAccesorio.InsertarAccesorio(accesorioSeleccionado, int.Parse(numCantidadAccesorio.Value.ToString()), DateTime.Now.Date);
                     LlenarGridInventarioAccesorio();
                     MessageManager.InfoMessage("Completado!");
+                    Limpiar();
 
                 }
                 catch (Exception es)
@@ -76,6 +77,14 @@ namespace BussManager.Inventario.Accesorios
                 }
 
             }
+        }
+
+        void Limpiar()
+        {
+            txtCompraAccesorio.Text = string.Empty;
+            numCantidadAccesorio.Value = 0;
+            numCostoAccesorio.Value = 0;
+            txtCompraAccesorio.Focus();
         }
 
         void filtroGridAccesorios()
