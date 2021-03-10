@@ -1,4 +1,5 @@
-.vs/
+.vs
 BussManager.Test
 Facturas
 *.log
+.vs/BussManager/v15/.suo
