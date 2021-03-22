@@ -79,26 +79,32 @@
             // 
             // cmdLogin
             // 
-            this.cmdLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.cmdLogin.FlatAppearance.BorderSize = 0;
+            this.cmdLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdLogin.Location = new System.Drawing.Point(19, 472);
             this.cmdLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdLogin.Name = "cmdLogin";
             this.cmdLogin.Size = new System.Drawing.Size(183, 57);
             this.cmdLogin.TabIndex = 2;
             this.cmdLogin.Text = "Login";
-            this.cmdLogin.UseVisualStyleBackColor = true;
+            this.cmdLogin.UseVisualStyleBackColor = false;
             this.cmdLogin.Click += new System.EventHandler(this.cmdLogin_Click);
             // 
             // cmdCancel
             // 
-            this.cmdCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCancel.BackColor = System.Drawing.Color.Red;
+            this.cmdCancel.FlatAppearance.BorderSize = 0;
+            this.cmdCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCancel.Location = new System.Drawing.Point(265, 472);
             this.cmdCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(183, 57);
             this.cmdCancel.TabIndex = 3;
             this.cmdCancel.Text = "Cancel";
-            this.cmdCancel.UseVisualStyleBackColor = true;
+            this.cmdCancel.UseVisualStyleBackColor = false;
             this.cmdCancel.Click += new System.EventHandler(this.cmdCancel_Click);
             // 
             // loginImage

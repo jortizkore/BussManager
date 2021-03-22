@@ -28,7 +28,7 @@ namespace BussManager.Settings
         private void setConnectionSettings()
         {
             this.conStr = $"Server={server};Database={database};Trusted_Connection=True;";
-            //this.conStr = "Data Source=SQL5078.site4now.net;Initial Catalog=DB_A6F393_bussmanager;User Id=DB_A6F393_bussmanager_admin;Password=Sincontrasena01";
+            // this.conStr = "Data Source=SQL5078.site4now.net;Initial Catalog=DB_A6F393_bussmanager;User Id=DB_A6F393_bussmanager_admin;Password=Sincontrasena01";
             this.connection = new SqlConnection(this.conStr);
             this.command = new SqlCommand();
             this.command.Connection = this.connection;

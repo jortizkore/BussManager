@@ -96,8 +96,10 @@ namespace BussManager.Venta.Accesorios
 
         void refreshTotals()
         {
+            var totalApagar = ListaVentas.Sum(x => x.Preciounidad * x.Cantidad);
             lblCantidadArticulos.Text = ListaVentas.Sum(x => x.Cantidad).ToString();
-            lblTotalAPagar.Text = ListaVentas.Sum(x => x.Preciounidad * x.Cantidad).ToString("c");
+            lblTotalAPagar.Text = totalApagar.ToString("c");
+            numEfectivo.Value = totalApagar;
 
         }
 
@@ -162,28 +164,31 @@ namespace BussManager.Venta.Accesorios
 
             VentaAcc ServVenta = new VentaAcc();
             Factura Servfact = new Factura(ListaVentas);
-            try
+            var totalApagar = ListaVentas.Sum(x => x.Total);
+            if (numEfectivo.Value >= totalApagar)
             {
-                ServVenta.GuardarListaVenta(ListaVentas);
-                if (Servfact.CrearFactura())
+                try
                 {
-                    var verFact = MessageManager.Question("Desea ver la factura?");
-                    if (verFact == DialogResult.Yes)
-                    {
-                        Process.Start(Servfact.NombreFactura());
-                    }
+                    decimal devuelta = numEfectivo.Value - totalApagar;
+                    ServVenta.GuardarListaVenta(ListaVentas);
+                    Reportes.frmFactura frmFactura = new Reportes.frmFactura(ListaVentas, totalApagar, numEfectivo.Value, devuelta);
+                    frmFactura.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageManager.AlerMessage(ex.Message);
+                }
+                finally
+                {
+                    Limpiar();
+                    CargarComboAcc();
+                    AccSeleccionado = null;
+                    refreshTotals();
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageManager.AlerMessage(ex.Message);
-            }
-            finally
-            {
-                Limpiar();
-                CargarComboAcc();
-                AccSeleccionado = null;
-                refreshTotals();
+                MessageManager.AlerMessage("El efectivo proporcionado es inferior al toal de la factura");
             }
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompraAccesorio));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,12 +41,12 @@
             this.lbltxt = new System.Windows.Forms.Label();
             this.lbCantidadInventario = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnInsertarAccesorios = new System.Windows.Forms.Button();
             this.btnBuscarComprasAccesorios = new System.Windows.Forms.Button();
             this.txtBuscarComprasAccesorios = new System.Windows.Forms.TextBox();
             this.numCantidadAccesorio = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.grdCompraAccesorios = new System.Windows.Forms.DataGridView();
-            this.btnInsertarAccesorios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoAccesorio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioAccesorio)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -184,6 +185,19 @@
             this.label5.Tag = "1";
             this.label5.Text = "Cant. en inventario:";
             // 
+            // btnInsertarAccesorios
+            // 
+            this.btnInsertarAccesorios.Image = global::BussManager.Properties.Resources.arrow_pointing_down;
+            this.btnInsertarAccesorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInsertarAccesorios.Location = new System.Drawing.Point(283, 87);
+            this.btnInsertarAccesorios.Name = "btnInsertarAccesorios";
+            this.btnInsertarAccesorios.Size = new System.Drawing.Size(120, 49);
+            this.btnInsertarAccesorios.TabIndex = 7;
+            this.btnInsertarAccesorios.Text = "Insertar";
+            this.btnInsertarAccesorios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInsertarAccesorios.UseVisualStyleBackColor = true;
+            this.btnInsertarAccesorios.Click += new System.EventHandler(this.btnInsertarAccesorios_Click);
+            // 
             // btnBuscarComprasAccesorios
             // 
             this.btnBuscarComprasAccesorios.Location = new System.Drawing.Point(9, 159);
@@ -225,7 +239,16 @@
             this.grdCompraAccesorios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdCompraAccesorios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grdCompraAccesorios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grdCompraAccesorios.BackgroundColor = System.Drawing.Color.PeachPuff;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdCompraAccesorios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdCompraAccesorios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCompraAccesorios.Location = new System.Drawing.Point(2, 204);
             this.grdCompraAccesorios.Name = "grdCompraAccesorios";
@@ -234,19 +257,6 @@
             this.grdCompraAccesorios.Size = new System.Drawing.Size(879, 269);
             this.grdCompraAccesorios.TabIndex = 5;
             this.grdCompraAccesorios.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdCompraAccesorios_CellMouseDoubleClick);
-            // 
-            // btnInsertarAccesorios
-            // 
-            this.btnInsertarAccesorios.Image = global::BussManager.Properties.Resources.arrow_pointing_down;
-            this.btnInsertarAccesorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertarAccesorios.Location = new System.Drawing.Point(283, 87);
-            this.btnInsertarAccesorios.Name = "btnInsertarAccesorios";
-            this.btnInsertarAccesorios.Size = new System.Drawing.Size(120, 49);
-            this.btnInsertarAccesorios.TabIndex = 7;
-            this.btnInsertarAccesorios.Text = "Insertar";
-            this.btnInsertarAccesorios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInsertarAccesorios.UseVisualStyleBackColor = true;
-            this.btnInsertarAccesorios.Click += new System.EventHandler(this.btnInsertarAccesorios_Click);
             // 
             // frmCompraAccesorio
             // 

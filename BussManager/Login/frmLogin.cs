@@ -23,6 +23,7 @@ namespace BussManager.Login
         private void cmdLogin_Click(object sender, EventArgs e)
         {
             Loguear();
+            Settings.InformacionDeEmpresa.CargarInformacion();
         }
 
         private void Loguear()

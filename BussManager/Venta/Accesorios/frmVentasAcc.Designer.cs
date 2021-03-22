@@ -41,17 +41,20 @@
             this.lblCantidadEnInventario = new System.Windows.Forms.Label();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numEfectivo = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnFacturar = new System.Windows.Forms.Button();
             this.lstVentas = new System.Windows.Forms.ListView();
             this.Accesorio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Precio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnFacturar = new System.Windows.Forms.Button();
             this.btnAgregarALaLista = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numEfectivo)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbArticuloSeleccionado
@@ -88,7 +91,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(225, 17);
+            this.label3.Location = new System.Drawing.Point(163, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 22);
             this.label3.TabIndex = 3;
@@ -98,7 +101,7 @@
             // 
             this.lblTotalAPagar.AutoSize = true;
             this.lblTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAPagar.Location = new System.Drawing.Point(309, 18);
+            this.lblTotalAPagar.Location = new System.Drawing.Point(247, 22);
             this.lblTotalAPagar.Name = "lblTotalAPagar";
             this.lblTotalAPagar.Size = new System.Drawing.Size(20, 22);
             this.lblTotalAPagar.TabIndex = 3;
@@ -107,6 +110,7 @@
             // dtFechaFactura
             // 
             this.dtFechaFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtFechaFactura.Enabled = false;
             this.dtFechaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaFactura.Location = new System.Drawing.Point(399, 2);
             this.dtFechaFactura.Name = "dtFechaFactura";
@@ -169,7 +173,7 @@
             0});
             this.numCantidad.Name = "numCantidad";
             this.numCantidad.Size = new System.Drawing.Size(76, 27);
-            this.numCantidad.TabIndex = 5;
+            this.numCantidad.TabIndex = 1;
             this.numCantidad.Value = new decimal(new int[] {
             1,
             0,
@@ -179,7 +183,9 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.numEfectivo);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblCantidadArticulos);
@@ -187,10 +193,63 @@
             this.groupBox1.Controls.Add(this.btnFacturar);
             this.groupBox1.Location = new System.Drawing.Point(12, 136);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(673, 66);
+            this.groupBox1.Size = new System.Drawing.Size(685, 66);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Totales";
+            // 
+            // numEfectivo
+            // 
+            this.numEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numEfectivo.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numEfectivo.Location = new System.Drawing.Point(424, 23);
+            this.numEfectivo.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.numEfectivo.Name = "numEfectivo";
+            this.numEfectivo.Size = new System.Drawing.Size(64, 26);
+            this.numEfectivo.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::BussManager.Properties.Resources.wastebasket;
+            this.button1.Location = new System.Drawing.Point(632, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(46, 49);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(340, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 22);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Efectivo:";
+            // 
+            // btnFacturar
+            // 
+            this.btnFacturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturar.Image = global::BussManager.Properties.Resources.money_finance_business_coin_dollar_icon_1759301;
+            this.btnFacturar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturar.Location = new System.Drawing.Point(494, 11);
+            this.btnFacturar.Name = "btnFacturar";
+            this.btnFacturar.Size = new System.Drawing.Size(132, 49);
+            this.btnFacturar.TabIndex = 3;
+            this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFacturar.UseVisualStyleBackColor = true;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // lstVentas
             // 
@@ -204,7 +263,7 @@
             this.lstVentas.Location = new System.Drawing.Point(15, 208);
             this.lstVentas.Name = "lstVentas";
             this.lstVentas.Size = new System.Drawing.Size(681, 168);
-            this.lstVentas.TabIndex = 8;
+            this.lstVentas.TabIndex = 4;
             this.lstVentas.UseCompatibleStateImageBehavior = false;
             this.lstVentas.View = System.Windows.Forms.View.Details;
             // 
@@ -234,31 +293,6 @@
             this.label5.Size = new System.Drawing.Size(87, 22);
             this.label5.TabIndex = 9;
             this.label5.Text = "Cantidad:";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::BussManager.Properties.Resources.wastebasket;
-            this.button1.Location = new System.Drawing.Point(621, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 49);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnFacturar
-            // 
-            this.btnFacturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacturar.Image = global::BussManager.Properties.Resources.money_finance_business_coin_dollar_icon_1759301;
-            this.btnFacturar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturar.Location = new System.Drawing.Point(483, 11);
-            this.btnFacturar.Name = "btnFacturar";
-            this.btnFacturar.Size = new System.Drawing.Size(132, 49);
-            this.btnFacturar.TabIndex = 2;
-            this.btnFacturar.Text = "Facturar";
-            this.btnFacturar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFacturar.UseVisualStyleBackColor = true;
-            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // btnAgregarALaLista
             // 
@@ -296,12 +330,13 @@
             this.MinimumSize = new System.Drawing.Size(725, 419);
             this.Name = "frmVentasAcc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Accesorios";
+            this.Text = "Venta productos";
             this.Load += new System.EventHandler(this.frmVentasAcc_Load);
             this.SizeChanged += new System.EventHandler(this.frmVentasAcc_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numEfectivo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +365,7 @@
         private System.Windows.Forms.Button btnFacturar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown numEfectivo;
     }
 }

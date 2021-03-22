@@ -125,6 +125,7 @@ namespace BussManager.Venta.Accesorios
         public int Cantidad { get; set; }
         public decimal Preciounidad { get; set; }
         public decimal Costo { get; set; }
+        public decimal Total { get { return Cantidad * Preciounidad; } }
         public DateTime FechaVenta { get; set; }
     }
 }
